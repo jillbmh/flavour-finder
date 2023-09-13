@@ -1,1 +1,1 @@
-# flavour-finder
+# Flavour Finder
