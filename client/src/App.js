@@ -1,17 +1,22 @@
-import { useEffect } from 'react'
-import axios from 'axios'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Header from './components/Header'
+import Home from './components/Home'
+import BrowseRecipes from './components/BrowseRecipes'
+import SingleRecipe from './components/SingleRecipe'
+import Blog from './components/Blog'
 
 export default function App() {
-  useEffect(() => {
-    async function getData(){
-      try {
-        await axios.get('/api/products') // <---- Replace with your endpoint to test the proxy
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    getData()
-  }, [])
+  return (
+    <BrowserRouter>
+      {/* Show Header on all pages */}
+      <Header />
 
-  return <h1>Hello World</h1>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/recipes" element={<BrowseRecipes />} />
+        <Route path="/recipes/:id" element={<SingleRecipe />} />
+        <Route path="/blogs/:id" element={<Blog />} />
+      </Routes>
+    </BrowserRouter>
+  )
 }

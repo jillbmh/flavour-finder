@@ -12,7 +12,7 @@ app.use((req, res, next) => {
   next()
 })
 
-app.use(router)
+app.use('/api', router)
 
 app.use((req, res) => {
   return res.status(404).json({ message: 'Route not found' })
