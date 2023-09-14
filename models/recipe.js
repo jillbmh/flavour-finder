@@ -6,10 +6,11 @@ const recipeSchema = new mongoose.Schema(
     image: { type: String, required: true },
     cuisine: { type: String, required: true },
     type: { type: String, required: true },
-    cookingTime: { type: String, required: true },
+    cookingTime: { type: Object, required: true },
     serves: { type: Number, required: true },
-    ingredients: [{ type: String }],
-    method: { type: String, required: true },
+    ingredients: [{ type: Object }],
+    method: [{ type: String }],
+    spiceLevel: { type: Number, min: 1, max: 4 },
     addedBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: false }
     // comments: [commentSchema],
     // rating: [ratingSchema]
