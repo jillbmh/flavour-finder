@@ -25,7 +25,7 @@ export default [
     ### Nut Butter and Banana Sandwich
     For those who prefer a breakfast they can eat on the go, a nut butter and banana sandwich is an ideal option. Spread almond or peanut butter between two slices of whole-grain bread, add banana slices, and you have a sandwich that is both satisfying and healthy.
   
-    The key to a revolutionary breakfast is not just what you eat but also how you prepare it. Incorporate fresh ingredients, experiment with new recipes, and take the time to savor each bite. Not only will these healthy breakfast ideas help improve your physical well-being, but they'll also give you the mental boost needed to tackle whatever challenges the day may bring.`
+    The key to a revolutionary breakfast is not just what you eat but also how you prepare it. Incorporate fresh ingredients, experiment with new recipes, and take the time to savor each bite. Not only will these healthy breakfast ideas help improve your physical well-being, but they'll also give you the mental boost needed to tackle whatever challenges the day may bring.`,
   },
   {
     image: 'turmeric_health_benefits.png',
@@ -55,7 +55,7 @@ export default [
     ### How to Incorporate Turmeric into Your Diet
     Turmeric can be easily incorporated into your diet. It pairs well with a variety of foods, from scrambled eggs and soups to smoothies and rice dishes. One popular way to consume it is by making "Golden Milk," a warm beverage made with milk, turmeric, and other spices like cinnamon and ginger.
   
-    In conclusion, the health benefits of turmeric make it a worthy addition to anyone's diet. Whether you're trying to reduce inflammation, boost your antioxidants, or simply add some zest to your meals, turmeric has something to offer. So the next time you're cooking, consider reaching for that jar of turmeric to not just spice up your dish, but also your life.`
+    In conclusion, the health benefits of turmeric make it a worthy addition to anyone's diet. Whether you're trying to reduce inflammation, boost your antioxidants, or simply add some zest to your meals, turmeric has something to offer. So the next time you're cooking, consider reaching for that jar of turmeric to not just spice up your dish, but also your life.`,
   },
   {
     image: 'vegan_protein_sources.png',
@@ -88,7 +88,7 @@ export default [
     ### Tips for Meal Planning
     The key to a protein-rich vegan diet is variety. Make sure to incorporate different protein sources throughout your day. You can also combine foods like legumes and grains to create a complete protein, which provides all nine essential amino acids.
   
-    Being vegan doesn’t mean compromising on protein or relying on supplements. Mother Nature offers a cornucopia of protein-rich foods that are plant-based, proving that you can be vegan and still meet all your nutritional needs. So the next time someone asks, "Where do you get your protein?", you’ll have plenty to say.`
+    Being vegan doesn’t mean compromising on protein or relying on supplements. Mother Nature offers a cornucopia of protein-rich foods that are plant-based, proving that you can be vegan and still meet all your nutritional needs. So the next time someone asks, "Where do you get your protein?", you’ll have plenty to say.`,
   },
   {
     image: 'saving_on_groceries.png',
@@ -127,7 +127,6 @@ export default [
     ### Don’t Be Afraid to Freeze
     If you find a good deal on something that can be frozen, like meat or bread, don’t be afraid to stock up and freeze the extras. Just make sure to use them before they get freezer burn.
   
-    By applying these tips, you'll find that your food bills start to decrease, leaving you with extra money to use elsewhere. Saving on groceries doesn't mean you have to compromise on quality or variety; it simply means you need to shop smarter. Happy shopping!`
-  },
-  
+    By applying these tips, you'll find that your food bills start to decrease, leaving you with extra money to use elsewhere. Saving on groceries doesn't mean you have to compromise on quality or variety; it simply means you need to shop smarter. Happy shopping!`,
+  }
 ]
