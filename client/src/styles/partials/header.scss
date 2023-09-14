@@ -1,4 +1,10 @@
+@import '../variables.scss';
+
 header {
+  width: 100%;
   background-color: #C57D4A;
   color: #f7f3e8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

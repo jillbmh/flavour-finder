@@ -6,7 +6,7 @@ export default function Header() {
     <header>
       <span>Burger Menu Icon</span>
       <Link to='/'>
-        <img src={Logo}></img>
+        <img src={Logo} width="312px"></img>
       </Link>
       <span>Account Person Guy Icon</span>
     </header>
