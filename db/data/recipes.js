@@ -1,6 +1,7 @@
 export default [
   {
-    dish: 'Sushi',
+    
+    title: 'Sushi',
     image: 'sushi.png',
     cuisine: 'Japan',
     ingredients: ['Rice', 'fish', 'seaweed', 'vegetables'],
@@ -10,7 +11,7 @@ export default [
     method: 'Roll ingredients in seaweed. Slice and serve.',
   },
   {
-    dish: 'Spaghetti Carbonara',
+    title: 'Spaghetti Carbonara',
     image: 'spaghetti_carbonara.png',
     cuisine: 'Italy',
     ingredients: ['Spaghetti', 'Bacon', 'Egg', 'Parmesan'],
@@ -20,7 +21,7 @@ export default [
     method: 'Boil pasta, cook bacon, mix egg and cheese, combine.',
   },
   {
-    dish: 'Chicken Curry',
+    title: 'Chicken Curry',
     image: 'chicken_curry.png',
     cuisine: 'India',
     ingredients: ['Chicken', 'Curry Powder', 'Coconut Milk'],
@@ -30,7 +31,7 @@ export default [
     method: 'Cook chicken, add curry powder and coconut milk.',
   },
   {
-    dish: 'Vegan Tacos',
+    title: 'Vegan Tacos',
     image: 'vegan_tacos.png',
     cuisine: 'Mexico',
     ingredients: ['Tortillas', 'Vegan Meat', 'Lettuce', 'Tomato'],
@@ -40,7 +41,7 @@ export default [
     method: 'Prepare vegan meat, compile ingredients in tortilla.',
   },
   {
-    dish: 'Beef Stroganoff',
+    title: 'Beef Stroganoff',
     image: 'beef_stroganoff.png',
     cuisine: 'Russia',
     ingredients: ['Beef', 'Mushrooms', 'Sour Cream'],
@@ -50,7 +51,7 @@ export default [
     method: 'Cook beef, sauté mushrooms, add sour cream.',
   },
   {
-    dish: 'Chocolate Cake',
+    title: 'Chocolate Cake',
     image: 'chocolate_cake.png',
     cuisine: 'USA',
     ingredients: ['Flour', 'Cocoa', 'Sugar', 'Egg'],
@@ -60,7 +61,7 @@ export default [
     method: 'Mix ingredients, bake in oven.',
   },
   {
-    dish: 'Greek Salad',
+    title: 'Greek Salad',
     image: 'greek_salad.png',
     cuisine: 'Greece',
     ingredients: ['Tomato', 'Cucumber', 'Feta'],
@@ -70,7 +71,7 @@ export default [
     method: 'Chop ingredients, mix, add feta on top.',
   },
   {
-    dish: 'Apple Pie',
+    title: 'Apple Pie',
     image: 'apple_pie.png',
     cuisine: 'USA',
     ingredients: ['Apple', 'Flour', 'Sugar', 'Butter'],
@@ -80,7 +81,7 @@ export default [
     method: 'Prepare dough, fill with apple mixture, bake.',
   },
   {
-    dish: 'Pho',
+    title: 'Pho',
     image: 'pho.png',
     cuisine: 'Vietnam',
     ingredients: ['Rice Noodles', 'Beef', 'Stock', 'Herbs'],
@@ -90,7 +91,7 @@ export default [
     method: 'Prepare stock, cook noodles, assemble with beef and herbs.',
   },
   {
-    dish: 'Fish Tacos',
+    title: 'Fish Tacos',
     image: 'fish_tacos.png',
     cuisine: 'Mexico',
     ingredients: ['Fish', 'Tortillas', 'Cabbage', 'Sauce'],
@@ -100,7 +101,7 @@ export default [
     method: 'Fry fish, assemble in tortillas with cabbage and sauce.',
   },
   {
-    dish: 'Bruschetta',
+    title: 'Bruschetta',
     image: 'bruschetta.png',
     cuisine: 'Italy',
     ingredients: ['Bread', 'Tomatoes', 'Basil', 'Olive Oil'],
@@ -110,7 +111,7 @@ export default [
     method: 'Toast bread, top with chopped tomatoes, basil, and olive oil.',
   },
   {
-    dish: 'Spring Rolls',
+    title: 'Spring Rolls',
     image: 'spring_rolls.png',
     cuisine: 'Vietnam',
     ingredients: ['Rice Paper', 'Vegetables', 'Shrimp'],
@@ -120,7 +121,7 @@ export default [
     method: 'Prepare filling, roll in rice paper.',
   },
   {
-    dish: 'Garlic Bread',
+    title: 'Garlic Bread',
     image: 'garlic_bread.png',
     cuisine: 'Italy',
     ingredients: ['Bread', 'Garlic', 'Butter'],
@@ -130,17 +131,7 @@ export default [
     method: 'Spread garlic butter on bread, bake until golden.',
   },
   {
-    dish: 'Guacamole',
-    image: 'guacamole.png',
-    cuisine: 'Mexico',
-    ingredients: ['Avocado', 'Onion', 'Tomato', 'Lime'],
-    cookingTime: '10 minutes',
-    type: 'starter',
-    serves: '4',
-    method: 'Mash avocado, mix in chopped onion, tomato, and lime juice.',
-  },
-  {
-    dish: 'Caesar Salad',
+    title: 'Caesar Salad',
     image: 'caesar_salad.png',
     cuisine: 'USA',
     ingredients: ['Lettuce', 'Croutons', 'Parmesan', 'Caesar Dressing'],
@@ -150,7 +141,7 @@ export default [
     method: 'Toss lettuce, croutons, and dressing. Top with Parmesan.',
   },
   {
-    dish: 'Pasta Primavera',
+    title: 'Pasta Primavera',
     image: 'pasta_primavera.png',
     cuisine: 'Italy',
     ingredients: ['Pasta', 'Vegetables', 'Olive Oil'],
@@ -160,7 +151,7 @@ export default [
     method: 'Boil pasta, sauté vegetables, combine.',
   },
   {
-    dish: 'Fish and Chips',
+    title: 'Fish and Chips',
     image: 'fish_and_chips.png',
     cuisine: 'UK',
     ingredients: ['Fish', 'Potatoes', 'Oil'],
@@ -170,7 +161,7 @@ export default [
     method: 'Fry fish and chips until golden brown.',
   },
   {
-    dish: 'Risotto',
+    title: 'Risotto',
     image: 'risotto.png',
     cuisine: 'Italy',
     ingredients: ['Rice', 'Stock', 'Parmesan'],
@@ -180,7 +171,7 @@ export default [
     method: 'Stir rice and stock until creamy, add Parmesan.',
   },
   {
-    dish: 'Tiramisu',
+    title: 'Tiramisu',
     image: 'tiramisu.png',
     cuisine: 'Italy',
     ingredients: ['Mascarpone', 'Coffee', 'Ladyfingers'],
@@ -190,7 +181,7 @@ export default [
     method: 'Soak ladyfingers in coffee, layer with mascarpone.',
   },
   {
-    dish: 'Lamb Kebabs',
+    title: 'Lamb Kebabs',
     image: 'lamb_kebabs.png',
     cuisine: 'Middle East',
     ingredients: ['Lamb', 'Spices', 'Skewers'],
@@ -200,7 +191,7 @@ export default [
     method: 'Marinate lamb, skewer, and grill.',
   },
   {
-    dish: 'Miso Soup',
+    title: 'Miso Soup',
     image: 'miso_soup.png',
     cuisine: 'Japan',
     ingredients: ['Miso Paste', 'Seaweed', 'Tofu'],
@@ -210,7 +201,7 @@ export default [
     method: 'Dissolve miso in hot water, add seaweed and tofu.',
   },
   {
-    dish: 'Garlic Mashed Potatoes',
+    title: 'Garlic Mashed Potatoes',
     image: 'garlic_mashed_potatoes.png',
     cuisine: 'USA',
     ingredients: ['Potatoes', 'Garlic', 'Butter'],
@@ -220,7 +211,7 @@ export default [
     method: 'Boil potatoes, mash with garlic and butter.',
   },
   {
-    dish: 'Biryani',
+    title: 'Biryani',
     image: 'biryani.png',
     cuisine: 'India',
     ingredients: ['Rice', 'Chicken', 'Spices'],
@@ -230,7 +221,7 @@ export default [
     method: 'Layer cooked chicken and spiced rice, then bake.',
   },
   {
-    dish: 'Coleslaw',
+    title: 'Coleslaw',
     image: 'coleslaw.png',
     cuisine: 'USA',
     ingredients: ['Cabbage', 'Carrots', 'Mayonnaise'],
@@ -240,7 +231,7 @@ export default [
     method: 'Shred vegetables, mix with mayonnaise.',
   },
   {
-    dish: 'Ratatouille',
+    title: 'Ratatouille',
     image: 'ratatouille.png',
     cuisine: 'France',
     ingredients: ['Zucchini', 'Eggplant', 'Tomatoes'],
@@ -250,7 +241,7 @@ export default [
     method: 'Slice and layer vegetables, bake in oven.',
   },
   {
-    dish: 'Panna Cotta',
+    title: 'Panna Cotta',
     image: 'panna_cotta.png',
     cuisine: 'Italy',
     ingredients: ['Cream', 'Sugar', 'Gelatin'],
@@ -260,7 +251,7 @@ export default [
     method: 'Mix ingredients, pour into molds, refrigerate.',
   },
   {
-    dish: 'Waldorf Salad',
+    title: 'Waldorf Salad',
     image: 'waldorf_salad.png',
     cuisine: 'USA',
     ingredients: ['Apples', 'Walnuts', 'Celery', 'Mayonnaise'],
@@ -270,7 +261,7 @@ export default [
     method: 'Chop ingredients, mix with mayonnaise.',
   },
   {
-    dish: 'Pad Thai',
+    title: 'Pad Thai',
     image: 'pad_thai.png',
     cuisine: 'Thailand',
     ingredients: ['Rice Noodles', 'Shrimp', 'Peanuts'],
@@ -280,7 +271,7 @@ export default [
     method: 'Cook noodles, sauté shrimp, mix with sauce and peanuts.',
   },
   {
-    dish: 'Brownies',
+    title: 'Brownies',
     image: 'brownies.png',
     cuisine: 'USA',
     ingredients: ['Cocoa', 'Flour', 'Sugar', 'Egg'],
@@ -290,7 +281,7 @@ export default [
     method: 'Mix ingredients, bake in oven.',
   },
   {
-    dish: 'Quinoa Salad',
+    title: 'Quinoa Salad',
     image: 'quinoa_salad.png',
     cuisine: 'International',
     ingredients: ['Quinoa', 'Vegetables', 'Olive Oil'],
@@ -300,7 +291,7 @@ export default [
     method: 'Cook quinoa, mix with chopped vegetables and olive oil.',
   },
   {
-    dish: 'Chili Con Carne',
+    title: 'Chili Con Carne',
     image: 'chili_con_carne.png',
     cuisine: 'USA',
     ingredients: ['Beef', 'Beans', 'Tomatoes', 'Spices'],
@@ -310,7 +301,7 @@ export default [
     method: 'Cook beef, mix with beans, tomatoes, and spices, simmer.',
   },
   {
-    dish: 'French Onion Soup',
+    title: 'French Onion Soup',
     image: 'french_onion_soup.png',
     cuisine: 'France',
     ingredients: ['Onions', 'Beef Stock', 'Cheese'],
@@ -320,7 +311,7 @@ export default [
     method: 'Sauté onions, add beef stock, top with cheese, broil.',
   },
   {
-    dish: 'Eggplant Parmesan',
+    title: 'Eggplant Parmesan',
     image: 'eggplant_parmesan.png',
     cuisine: 'Italy',
     ingredients: ['Eggplant', 'Tomato Sauce', 'Parmesan'],
@@ -330,7 +321,7 @@ export default [
     method: 'Layer sliced eggplant, tomato sauce, and Parmesan, then bake.',
   },
   {
-    dish: 'Sweet Potato Fries',
+    title: 'Sweet Potato Fries',
     image: 'sweet_potato_fries.png',
     cuisine: 'USA',
     ingredients: ['Sweet Potatoes', 'Oil'],
@@ -340,7 +331,7 @@ export default [
     method: 'Cut sweet potatoes into fries, fry until crispy.',
   },
   {
-    dish: 'Ceviche',
+    title: 'Ceviche',
     image: 'ceviche.png',
     cuisine: 'Peru',
     ingredients: ['Fish', 'Lime', 'Onion'],
@@ -350,7 +341,7 @@ export default [
     method: 'Marinate fish in lime juice, add chopped onion.',
   },
   {
-    dish: 'Lemon Bars',
+    title: 'Lemon Bars',
     image: 'lemon_bars.png',
     cuisine: 'USA',
     ingredients: ['Flour', 'Sugar', 'Lemon'],
@@ -360,7 +351,7 @@ export default [
     method: 'Prepare crust, add lemon filling, bake.',
   },
   {
-    dish: 'Churros',
+    title: 'Churros',
     image: 'churros.png',
     cuisine: 'Spain',
     ingredients: ['Flour', 'Water', 'Sugar'],
@@ -370,7 +361,7 @@ export default [
     method: 'Pipe dough into hot oil, fry, coat with sugar.',
   },
   {
-    dish: 'Potato Salad',
+    title: 'Potato Salad',
     image: 'potato_salad.png',
     cuisine: 'Germany',
     ingredients: ['Potatoes', 'Mayonnaise', 'Pickles'],
@@ -380,7 +371,7 @@ export default [
     method: 'Boil potatoes, mix with mayonnaise and pickles.',
   },
   {
-    dish: 'Hummus',
+    title: 'Hummus',
     image: 'hummus.png',
     cuisine: 'Middle East',
     ingredients: ['Chickpeas', 'Tahini', 'Lemon'],
@@ -390,7 +381,7 @@ export default [
     method: 'Blend chickpeas, tahini, and lemon juice.',
   },
   {
-    dish: 'Tacos',
+    title: 'Tacos',
     image: 'tacos.png',
     cuisine: 'Mexico',
     ingredients: ['Tortillas', 'Beef', 'Cheese'],
@@ -400,7 +391,7 @@ export default [
     method: 'Cook beef, assemble in tortillas with cheese.',
   },
   {
-    dish: 'Sourdough Bread',
+    title: 'Sourdough Bread',
     image: 'sourdough_bread.png',
     cuisine: 'International',
     ingredients: ['Flour', 'Sourdough Starter'],
@@ -410,7 +401,7 @@ export default [
     method: 'Prepare dough, let rise, bake.',
   },
   {
-    dish: 'Tom Yum Soup',
+    title: 'Tom Yum Soup',
     image: 'tom_yum_soup.png',
     cuisine: 'Thailand',
     ingredients: ['Shrimp', 'Lemongrass', 'Chilies'],
@@ -420,7 +411,7 @@ export default [
     method: 'Boil shrimp and herbs, add spices.',
   },
   {
-    dish: 'Baklava',
+    title: 'Baklava',
     image: 'baklava.png',
     cuisine: 'Turkey',
     ingredients: ['Phyllo Dough', 'Nuts', 'Honey'],
@@ -430,7 +421,7 @@ export default [
     method: 'Layer phyllo and nuts, bake, pour honey.',
   },
   {
-    dish: 'Peking Duck',
+    title: 'Peking Duck',
     image: 'peking_duck.png',
     cuisine: 'China',
     ingredients: ['Duck', 'Soy Sauce', 'Honey'],
@@ -440,17 +431,7 @@ export default [
     method: 'Marinate duck, roast in oven.',
   },
   {
-    dish: 'Guacamole',
-    image: 'guacamole.png',
-    cuisine: 'Mexico',
-    ingredients: ['Avocados', 'Onion', 'Lime'],
-    cookingTime: '10 minutes',
-    type: 'starter',
-    serves: '4',
-    method: 'Mash avocados, mix with chopped onion and lime juice.',
-  },
-  {
-    dish: 'Apple Crisp',
+    title: 'Apple Crisp',
     image: 'apple_crisp.png',
     cuisine: 'USA',
     ingredients: ['Apples', 'Sugar', 'Oats'],
@@ -460,7 +441,7 @@ export default [
     method: 'Layer sliced apples and topping, bake.',
   },
   {
-    dish: 'Cabbage Rolls',
+    title: 'Cabbage Rolls',
     image: 'cabbage_rolls.png',
     cuisine: 'Eastern Europe',
     ingredients: ['Cabbage', 'Meat', 'Rice'],
@@ -470,7 +451,7 @@ export default [
     method: 'Wrap meat and rice in cabbage leaves, simmer in sauce.',
   },
   {
-    dish: 'Samosas',
+    title: 'Samosas',
     image: 'samosas.png',
     cuisine: 'India',
     ingredients: ['Dough', 'Potatoes', 'Peas'],
@@ -480,7 +461,7 @@ export default [
     method: 'Fill dough with spiced potatoes and peas, fry.',
   },
   {
-    dish: 'Crepes',
+    title: 'Crepes',
     image: 'crepes.png',
     cuisine: 'France',
     ingredients: ['Flour', 'Milk', 'Egg'],
@@ -490,7 +471,7 @@ export default [
     method: 'Mix batter, cook thin layers in a pan.',
   },
   {
-    dish: 'Pasta Salad',
+    title: 'Pasta Salad',
     image: 'pasta_salad.png',
     cuisine: 'Italy',
     ingredients: ['Pasta', 'Vegetables', 'Cheese'],

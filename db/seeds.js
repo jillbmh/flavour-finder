@@ -1,4 +1,4 @@
-import mongoose from 'mongoose' 
+import mongoose from 'mongoose'
 import 'dotenv/config'
 
 // Model
@@ -7,7 +7,7 @@ import User from '../models/user.js'
 
 // Data
 import recipeData from './data/recipes.js' 
-import userData from './data/recipes.js'
+import userData from './data/users.js'
 
 
 const seedDatabase = async () => {
