@@ -1,6 +1,5 @@
 export default [
   {
-    
     title: 'Sushi',
     image: 'sushi.png',
     cuisine: 'Japan',
