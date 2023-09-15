@@ -1,14 +1,21 @@
 import { Link } from 'react-router-dom'
 import Logo from '../images/logo.png'
+import AccountIcon from '../images/account-icon.png'
+import MenuIcon from '../images/menu-icon.png'
+import LogoText from '../images/logo-text.png'
 
 export default function Header() {
   return (
     <header>
-      <span>Burger Menu Icon</span>
+      <img src={MenuIcon} width="20px"></img>
       <Link to='/'>
-        <img src={Logo} width="312px"></img>
+        <div className="logo-container">
+          <img src={Logo} height="26px"></img>
+          <img src={LogoText} height="10px"></img>
+          {/* <span>Flavour Finder</span> */}
+        </div>
       </Link>
-      <span>Account Person Guy Icon</span>
+      <img src={AccountIcon} width="16px"></img>
     </header>
   )
 }
