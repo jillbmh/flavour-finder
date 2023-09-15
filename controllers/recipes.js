@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 import Recipe from '../models/recipe.js'
-import recipe from '../models/recipe.js'
+
 
 // Index route
 export const getAllRecipes = async (req, res) => {
