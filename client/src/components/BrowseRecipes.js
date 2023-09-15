@@ -36,6 +36,7 @@ export default function BrowseRecipes() {
                 </div>
               </Link>
             </div>
+            
           ))
         ) : (
           'Loading...'
@@ -49,7 +50,7 @@ export default function BrowseRecipes() {
             .map(recipe => (
               <div key={recipe._id} className="recipe-container">
                 <Link
-                  to={`/recipes/${recipe.id}`}
+                  to={`/recipes/${recipe._id}`}
                   className="recipe-small"
                   style={{ backgroundImage: `url(${recipe.image})` }}
                 >
