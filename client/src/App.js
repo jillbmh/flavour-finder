@@ -4,6 +4,8 @@ import Home from './components/Home'
 import BrowseRecipes from './components/BrowseRecipes'
 import SingleRecipe from './components/SingleRecipe'
 import Blog from './components/Blog'
+import SingleBlog from './components/SingleBlog'
+
 
 export default function App() {
   return (
@@ -15,7 +17,8 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/recipes" element={<BrowseRecipes />} />
         <Route path="/recipes/:id" element={<SingleRecipe />} />
-        <Route path="/blogs/:id" element={<Blog />} />
+        <Route path="/blogs/:id" element={<SingleBlog/>} />
+        <Route path="/blogs" element={<Blog />} />
       </Routes>
     </BrowserRouter>
   )

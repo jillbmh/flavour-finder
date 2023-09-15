@@ -1,0 +1,34 @@
+@import '../variables.scss';
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.blog-single-container {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+border: 1px solid #f7f3e838;
+background-color: #DB9C6F;
+max-width: 500px;
+margin-top: 5rem;
+text-align: center;
+padding-bottom: 15px;
+margin-bottom: 15px;
+}
+
+h2, h3 {
+    padding: 15px;
+}
+
+img {
+    border: 1px solid #f7f3e838;
+    margin: 10px;
+}
+
+p {
+    padding: 10px 20px;
+}
