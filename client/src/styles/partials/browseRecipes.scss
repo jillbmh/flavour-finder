@@ -1,0 +1,27 @@
+body {
+    background-color: #C57D4A;
+}
+
+h1 {
+    text-align: center;
+    color:#f7f3e8;
+}
+
+.grid-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .recipe-container {
+        min-height: 50px;
+        min-width: 25rem;
+        margin: 2px;
+        min-height: 50px;
+        background-color: #DB9C6F;
+        text-align: center;
+        a {
+            text-decoration: none;
+            color:#f7f3e8;
+          }
+    }
+}
