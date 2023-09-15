@@ -8,16 +8,24 @@ import LogoText from '../images/logo-text.png'
 export default function Header() {
   return (
     <header>
+      {/* Tablet Up Menu */}
+      <div className='tablet-up-menu-items'>
+        <Link to='/recipes'>Recipes</Link>
+      </div>
+
+      {/* Logo stuff */}
       <Link to='/'>
         <div className='logo-container'>
-          <img src={Logo} height='22px'></img>
-          <img src={LogoText} height='20px'></img>
+          <img src={Logo}></img>
+          <img src={LogoText}></img>
         </div>
       </Link>
+
+      {/* Icons */}
       <div className='header-buttons-container'>
-        <img src={SearchIcon} height='16px'></img>
-        <img src={AccountIcon} height='16px'></img>
-        <img src={MenuIcon} height='14px' width='18px'></img>
+        <img src={SearchIcon}></img>
+        <img src={AccountIcon}></img>
+        <img src={MenuIcon} width='18px' className='menu-icon'></img>
       </div>
     </header>
   )

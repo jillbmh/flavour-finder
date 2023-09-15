@@ -1,10 +1,7 @@
-body {
-    background-color: #C57D4A;
-}
+@import '../variables.scss';
 
 h1 {
     text-align: center;
-    color:#f7f3e8;
 }
 
 .grid-container {
@@ -13,15 +10,20 @@ h1 {
     justify-content: center;
     align-items: center;
     .recipe-container {
-        min-width: 25rem;
-        margin: 2px;
-        min-height: 250px;
+        width: 380px;
+        max-width: 100%;
+        height: 250px;
+        margin: 8px;
         background-size: cover;
         text-align: center;
-        border: 4px solid #DB9C6F;
         a {
             text-decoration: none;
-            color:#f7f3e8;
+            color: $text-light;
           }
+    }
+
+    @media (min-width: $tablet-width) {
+      flex-direction: row;
+      flex-wrap: wrap;
     }
 }

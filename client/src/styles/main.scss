@@ -5,6 +5,8 @@
 @import 'partials/blogs.scss';
 @import 'partials/singleBlog.scss';
 
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,5 +15,5 @@
 body {
   background-color: $background-dark;
   color: $text-light;
-  font-family: Helvetica;
+  font-family: 'Quicksand';
 }
