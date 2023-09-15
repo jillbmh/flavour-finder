@@ -2,17 +2,17 @@ export default [
   {
     title: 'Sushi',
     image: 'sushi.png',
-    cuisine: 'Japan',
+    cuisine: 'Japanese',
     ingredients: [
       { ingredient: 'Rice', amount: '300 grams' },
       { ingredient: 'fish', amount: '225 grams' },
       { ingredient: 'seaweed', amount: '25 grams' },
-      { ingredient: 'vegetables', amount: '500 grams' },
+      { ingredient: 'vegetables', amount: '500 grams' }
     ],
     cookingTime: { hours: 0, minutes: 15 },
     type: 'main',
     serves: 4,
-    method: ['Roll ingredients in seaweed.', 'Slice and serve.'],
+    method: ['Roll ingredients in seaweed.', 'Slice and serve.']
   },
   {
     title: 'Caprese Salad',
@@ -25,7 +25,7 @@ export default [
       { ingredient: 'Olive oil', amount: '2 tablespoons' },
       { ingredient: 'Balsamic glaze', amount: '1 tablespoon' },
       { ingredient: 'Salt', amount: 'to taste' },
-      { ingredient: 'Black pepper', amount: 'to taste' },
+      { ingredient: 'Black pepper', amount: 'to taste' }
     ],
     cookingTime: { hours: 0, minutes: 10 },
     type: 'starter',
@@ -36,8 +36,8 @@ export default [
       'Place a basil leaf between each of the tomato and mozzarella slices.',
       'Drizzle olive oil and balsamic glaze over the arrangement.',
       'Season with salt and black pepper to taste.',
-      'Serve immediately.',
-    ],
+      'Serve immediately.'
+    ]
   },
   {
     title: 'Chocolate Avocado Pudding',
@@ -48,7 +48,7 @@ export default [
       { ingredient: 'Cocoa powder', amount: '1/4 cup' },
       { ingredient: 'Almond milk', amount: '1/2 cup' },
       { ingredient: 'Maple syrup', amount: '3 tablespoons' },
-      { ingredient: 'Vanilla extract', amount: '1 teaspoon' },
+      { ingredient: 'Vanilla extract', amount: '1 teaspoon' }
     ],
     cookingTime: { hours: 0, minutes: 10 },
     type: 'dessert',
@@ -57,8 +57,8 @@ export default [
       'Scoop the avocado flesh into a blender.',
       'Add cocoa powder, almond milk, maple syrup, and vanilla extract.',
       'Blend until smooth.',
-      'Chill in the fridge for at least 1 hour before serving.',
-    ],
+      'Chill in the fridge for at least 1 hour before serving.'
+    ]
   },
   {
     title: 'Guacamole',
@@ -70,12 +70,12 @@ export default [
       { ingredient: 'Tomato', amount: '1 medium' },
       { ingredient: 'Lime juice', amount: '2 tablespoons' },
       { ingredient: 'Salt', amount: 'to taste' },
-      { ingredient: 'Cilantro', amount: '1/4 cup' },
+      { ingredient: 'Cilantro', amount: '1/4 cup' }
     ],
     cookingTime: { hours: 0, minutes: 15 },
     type: 'starter',
     serves: 4,
-    method: ['Mash avocados.', 'Chop onion and tomato.', 'Mix all ingredients.', 'Season with salt.'],
+    method: ['Mash avocados.', 'Chop onion and tomato.', 'Mix all ingredients.', 'Season with salt.']
   },
   {
     title: 'Spicy Chickpea Curry',
@@ -86,7 +86,7 @@ export default [
       { ingredient: 'Coconut milk', amount: '1 can' },
       { ingredient: 'Onion', amount: '1 medium' },
       { ingredient: 'Garlic', amount: '2 cloves' },
-      { ingredient: 'Curry powder', amount: '2 tablespoons' },
+      { ingredient: 'Curry powder', amount: '2 tablespoons' }
     ],
     cookingTime: { hours: 0, minutes: 30 },
     type: 'main',
@@ -95,9 +95,9 @@ export default [
       'Sauté onions and garlic.',
       'Add chickpeas and spices.',
       'Pour in coconut milk.',
-      'Simmer until thickened.',
+      'Simmer until thickened.'
     ],
-    spiceLevel: 3,
+    spiceLevel: 3
   },
   {
     title: 'Grilled Chicken Caesar Salad',
@@ -107,12 +107,12 @@ export default [
       { ingredient: 'Chicken breast', amount: '2 pieces' },
       { ingredient: 'Romaine lettuce', amount: '1 head' },
       { ingredient: 'Parmesan cheese', amount: '1/2 cup' },
-      { ingredient: 'Caesar dressing', amount: '1/4 cup' },
+      { ingredient: 'Caesar dressing', amount: '1/4 cup' }
     ],
     cookingTime: { hours: 0, minutes: 20 },
     type: 'main',
     serves: 2,
-    method: ['Grill chicken.', 'Chop lettuce.', 'Toss with dressing and cheese.', 'Top with sliced chicken.'],
+    method: ['Grill chicken.', 'Chop lettuce.', 'Toss with dressing and cheese.', 'Top with sliced chicken.']
   },
   {
     title: 'Stir-fry Tofu and Vegetables',
@@ -122,7 +122,7 @@ export default [
       { ingredient: 'Tofu', amount: '300 grams' },
       { ingredient: 'Mixed vegetables', amount: '2 cups' },
       { ingredient: 'Soy sauce', amount: '3 tablespoons' },
-      { ingredient: 'Garlic', amount: '2 cloves' },
+      { ingredient: 'Garlic', amount: '2 cloves' }
     ],
     cookingTime: { hours: 0, minutes: 20 },
     type: 'main',
@@ -131,8 +131,8 @@ export default [
       'Stir-fry tofu until browned.',
       'Add vegetables and garlic.',
       'Pour soy sauce.',
-      'Cook until vegetables are tender.',
-    ],
+      'Cook until vegetables are tender.'
+    ]
   },
   {
     title: 'Fish Tacos',
@@ -143,12 +143,12 @@ export default [
       { ingredient: 'Tortillas', amount: '8 small' },
       { ingredient: 'Cabbage', amount: '1 cup' },
       { ingredient: 'Cream sauce', amount: '1/4 cup' },
-      { ingredient: 'Lime', amount: '1' },
+      { ingredient: 'Lime', amount: '1' }
     ],
     cookingTime: { hours: 0, minutes: 20 },
     type: 'main',
     serves: 4,
-    method: ['Grill fish.', 'Assemble tacos with cabbage.', 'Drizzle with cream sauce.', 'Serve with lime wedges.'],
+    method: ['Grill fish.', 'Assemble tacos with cabbage.', 'Drizzle with cream sauce.', 'Serve with lime wedges.']
   },
   {
     title: 'Spaghetti Carbonara',
@@ -158,12 +158,12 @@ export default [
       { ingredient: 'Spaghetti', amount: '300 grams' },
       { ingredient: 'Egg yolks', amount: '3' },
       { ingredient: 'Parmesan cheese', amount: '1 cup' },
-      { ingredient: 'Pancetta', amount: '150 grams' },
+      { ingredient: 'Pancetta', amount: '150 grams' }
     ],
     cookingTime: { hours: 0, minutes: 20 },
     type: 'main',
     serves: 4,
-    method: ['Cook spaghetti.', 'Fry pancetta.', 'Mix egg yolks and cheese.', 'Combine all and serve.'],
+    method: ['Cook spaghetti.', 'Fry pancetta.', 'Mix egg yolks and cheese.', 'Combine all and serve.']
   },
   {
     title: 'Apple Crumble',
@@ -173,12 +173,12 @@ export default [
       { ingredient: 'Apples', amount: '4' },
       { ingredient: 'Sugar', amount: '1/2 cup' },
       { ingredient: 'Oats', amount: '1 cup' },
-      { ingredient: 'Butter', amount: '1/2 cup' },
+      { ingredient: 'Butter', amount: '1/2 cup' }
     ],
     cookingTime: { hours: 0, minutes: 45 },
     type: 'dessert',
     serves: 4,
-    method: ['Slice apples.', 'Mix with sugar.', 'Top with oats and butter.', 'Bake until golden.'],
+    method: ['Slice apples.', 'Mix with sugar.', 'Top with oats and butter.', 'Bake until golden.']
   },
   {
     title: 'Churros',
@@ -188,12 +188,12 @@ export default [
       { ingredient: 'Flour', amount: '1 cup' },
       { ingredient: 'Water', amount: '1 cup' },
       { ingredient: 'Sugar', amount: '2 tablespoons' },
-      { ingredient: 'Cinnamon', amount: '1 teaspoon' },
+      { ingredient: 'Cinnamon', amount: '1 teaspoon' }
     ],
     cookingTime: { hours: 0, minutes: 30 },
     type: 'dessert',
     serves: 4,
-    method: ['Make dough.', 'Pipe into hot oil.', 'Fry until golden.', 'Roll in sugar and cinnamon.'],
+    method: ['Make dough.', 'Pipe into hot oil.', 'Fry until golden.', 'Roll in sugar and cinnamon.']
   },
   {
     title: 'Spicy Mango Salsa',
@@ -205,7 +205,7 @@ export default [
       { ingredient: 'Jalapeño', amount: '1' },
       { ingredient: 'Cilantro', amount: '1/2 cup' },
       { ingredient: 'Lime juice', amount: '2 tablespoons' },
-      { ingredient: 'Salt', amount: 'to taste' },
+      { ingredient: 'Salt', amount: 'to taste' }
     ],
     cookingTime: { hours: 0, minutes: 15 },
     type: 'starter',
@@ -216,9 +216,9 @@ export default [
       'In a bowl, mix together all the chopped ingredients.',
       'Add lime juice and salt to taste.',
       'Stir well and let sit for at least 10 minutes to meld flavors.',
-      'Serve with tortilla chips or as a topping for grilled chicken or fish.',
+      'Serve with tortilla chips or as a topping for grilled chicken or fish.'
     ],
-    spiceLevel: 2,
+    spiceLevel: 2
   },
   {
     title: 'Cucumber Gazpacho',
@@ -230,7 +230,7 @@ export default [
       { ingredient: 'Greek yogurt', amount: '1 cup' },
       { ingredient: 'Olive oil', amount: '2 tablespoons' },
       { ingredient: 'Salt', amount: 'to taste' },
-      { ingredient: 'Black pepper', amount: 'to taste' },
+      { ingredient: 'Black pepper', amount: 'to taste' }
     ],
     cookingTime: { hours: 0, minutes: 20 },
     type: 'starter',
@@ -241,8 +241,8 @@ export default [
       'Blend until smooth.',
       'Season with salt and black pepper to taste.',
       'Chill in the fridge for at least 1 hour before serving.',
-      'Serve cold.',
-    ],
+      'Serve cold.'
+    ]
   },
   {
     title: 'Beef Stir-Fry',
@@ -254,7 +254,7 @@ export default [
       { ingredient: 'Onion', amount: '1 large' },
       { ingredient: 'Soy sauce', amount: '3 tablespoons' },
       { ingredient: 'Garlic', amount: '3 cloves' },
-      { ingredient: 'Olive oil', amount: '2 tablespoons' },
+      { ingredient: 'Olive oil', amount: '2 tablespoons' }
     ],
     cookingTime: { hours: 0, minutes: 20 },
     type: 'main',
@@ -267,8 +267,8 @@ export default [
       'Add beef strips and cook until browned.',
       'Add sliced bell peppers and onion, stir-fry until softened.',
       'Add soy sauce and mix well.',
-      'Serve over rice or noodles.',
-    ],
+      'Serve over rice or noodles.'
+    ]
   },
   {
     title: 'Chicken Alfredo Pasta',
@@ -282,7 +282,7 @@ export default [
       { ingredient: 'Garlic', amount: '2 cloves' },
       { ingredient: 'Olive oil', amount: '2 tablespoons' },
       { ingredient: 'Salt', amount: 'to taste' },
-      { ingredient: 'Black pepper', amount: 'to taste' },
+      { ingredient: 'Black pepper', amount: 'to taste' }
     ],
     cookingTime: { hours: 0, minutes: 30 },
     type: 'main',
@@ -296,8 +296,8 @@ export default [
       'Add parmesan cheese and stir until sauce thickens.',
       'Slice cooked chicken and add to the sauce.',
       'Add cooked pasta to the pan and mix well.',
-      'Serve hot.',
-    ],
+      'Serve hot.'
+    ]
   },
   {
     title: 'Garlic Bread',
@@ -308,7 +308,7 @@ export default [
       { ingredient: 'Butter', amount: '1/2 cup' },
       { ingredient: 'Garlic', amount: '4 cloves' },
       { ingredient: 'Parsley', amount: '2 tablespoons' },
-      { ingredient: 'Salt', amount: 'to taste' },
+      { ingredient: 'Salt', amount: 'to taste' }
     ],
     cookingTime: { hours: 0, minutes: 15 },
     type: 'side',
@@ -321,8 +321,8 @@ export default [
       'Spread the garlic butter mixture between the slices.',
       'Wrap the baguette in aluminum foil and bake for 10 minutes.',
       'Open the foil and bake for another 5 minutes to crisp the top.',
-      'Serve hot.',
-    ],
+      'Serve hot.'
+    ]
   },
   {
     title: 'Roasted Sweet Potatoes',
@@ -333,7 +333,7 @@ export default [
       { ingredient: 'Olive oil', amount: '3 tablespoons' },
       { ingredient: 'Salt', amount: 'to taste' },
       { ingredient: 'Black pepper', amount: 'to taste' },
-      { ingredient: 'Paprika', amount: '1 teaspoon' },
+      { ingredient: 'Paprika', amount: '1 teaspoon' }
     ],
     cookingTime: { hours: 0, minutes: 45 },
     type: 'side',
@@ -344,8 +344,8 @@ export default [
       'In a bowl, mix olive oil, salt, black pepper, and paprika.',
       'Toss sweet potatoes in the mixture.',
       'Spread on a baking sheet and roast for 35-40 minutes or until tender.',
-      'Serve hot.',
-    ],
+      'Serve hot.'
+    ]
   },
   {
     title: 'Chocolate Brownies',
@@ -358,7 +358,7 @@ export default [
       { ingredient: 'Vanilla extract', amount: '1 teaspoon' },
       { ingredient: 'Cocoa powder', amount: '1/3 cup' },
       { ingredient: 'All-purpose flour', amount: '1/2 cup' },
-      { ingredient: 'Salt', amount: '1/4 teaspoon' },
+      { ingredient: 'Salt', amount: '1/4 teaspoon' }
     ],
     cookingTime: { hours: 0, minutes: 40 },
     type: 'dessert',
@@ -373,8 +373,8 @@ export default [
       'Pour into prepared pan.',
       'Bake for 20-25 minutes or until a toothpick comes out slightly sticky.',
       'Let cool before cutting into squares.',
-      'Serve.',
-    ],
+      'Serve.'
+    ]
   },
   {
     title: 'Fruit Salad',
@@ -386,7 +386,7 @@ export default [
       { ingredient: 'Orange', amount: '1' },
       { ingredient: 'Grapes', amount: '1 cup' },
       { ingredient: 'Kiwi', amount: '1' },
-      { ingredient: 'Honey', amount: '2 tablespoons' },
+      { ingredient: 'Honey', amount: '2 tablespoons' }
     ],
     cookingTime: { hours: 0, minutes: 15 },
     type: 'dessert',
@@ -397,8 +397,8 @@ export default [
       'Drizzle honey over the fruit.',
       'Mix well.',
       'Chill for at least 30 minutes before serving.',
-      'Serve cold.',
-    ],
+      'Serve cold.'
+    ]
   },
   {
     title: 'Shrimp Cocktail',
@@ -407,7 +407,7 @@ export default [
     ingredients: [
       { ingredient: 'Shrimp', amount: '1 pound' },
       { ingredient: 'Lemon slices', amount: '2' },
-      { ingredient: 'Cocktail sauce', amount: '1 cup' },
+      { ingredient: 'Cocktail sauce', amount: '1 cup' }
     ],
     cookingTime: { hours: 0, minutes: 15 },
     type: 'starter',
@@ -416,8 +416,8 @@ export default [
       'Boil water in a large pot, add lemon slices.',
       'Add shrimp and cook until pink, about 3-5 minutes.',
       'Remove shrimp and chill in the refrigerator.',
-      'Serve chilled shrimp with cocktail sauce.',
-    ],
+      'Serve chilled shrimp with cocktail sauce.'
+    ]
   },
   {
     title: 'Stuffed Mushrooms',
@@ -429,7 +429,7 @@ export default [
       { ingredient: 'Garlic', amount: '2 cloves' },
       { ingredient: 'Parsley', amount: '2 tablespoons' },
       { ingredient: 'Salt', amount: 'to taste' },
-      { ingredient: 'Black pepper', amount: 'to taste' },
+      { ingredient: 'Black pepper', amount: 'to taste' }
     ],
     cookingTime: { hours: 0, minutes: 25 },
     type: 'starter',
@@ -441,8 +441,8 @@ export default [
       'Season with salt and black pepper.',
       'Stuff the mushroom caps with the mixture.',
       'Bake for 20 minutes or until mushrooms are tender.',
-      'Serve hot.',
-    ],
+      'Serve hot.'
+    ]
   },
   {
     title: 'Paneer Tikka',
@@ -455,7 +455,7 @@ export default [
       { ingredient: 'Turmeric', amount: '1/2 teaspoon' },
       { ingredient: 'Garam masala', amount: '1 teaspoon' },
       { ingredient: 'Salt', amount: 'to taste' },
-      { ingredient: 'Lemon juice', amount: '1 tablespoon' },
+      { ingredient: 'Lemon juice', amount: '1 tablespoon' }
     ],
     cookingTime: { hours: 0, minutes: 40 },
     type: 'main',
@@ -467,9 +467,9 @@ export default [
       'Preheat grill or oven to medium-high.',
       'Thread paneer onto skewers.',
       'Grill for 8-10 minutes or until golden.',
-      'Serve hot with mint chutney.',
+      'Serve hot with mint chutney.'
     ],
-    spiceLevel: 2,
+    spiceLevel: 2
   },
   {
     title: 'Vegan Stir-Fried Tofu',
@@ -482,7 +482,7 @@ export default [
       { ingredient: 'Soy sauce', amount: '3 tablespoons' },
       { ingredient: 'Garlic', amount: '2 cloves' },
       { ingredient: 'Olive oil', amount: '2 tablespoons' },
-      { ingredient: 'Sesame seeds', amount: '1 tablespoon' },
+      { ingredient: 'Sesame seeds', amount: '1 tablespoon' }
     ],
     cookingTime: { hours: 0, minutes: 30 },
     type: 'main',
@@ -495,8 +495,8 @@ export default [
       'Add tofu cubes and cook until golden.',
       'Add steamed vegetables and soy sauce, stir well.',
       'Garnish with sesame seeds.',
-      'Serve hot.',
-    ],
+      'Serve hot.'
+    ]
   },
   {
     title: 'Quinoa Salad',
@@ -509,7 +509,7 @@ export default [
       { ingredient: 'Olive oil', amount: '2 tablespoons' },
       { ingredient: 'Lemon juice', amount: '1 tablespoon' },
       { ingredient: 'Salt', amount: 'to taste' },
-      { ingredient: 'Black pepper', amount: 'to taste' },
+      { ingredient: 'Black pepper', amount: 'to taste' }
     ],
     cookingTime: { hours: 0, minutes: 25 },
     type: 'side',
@@ -520,8 +520,8 @@ export default [
       'In a large bowl, mix cooked quinoa, cucumber, and cherry tomatoes.',
       'In a separate bowl, whisk together olive oil, lemon juice, salt, and pepper.',
       'Pour the dressing over the quinoa mixture and mix well.',
-      'Serve cold or at room temperature.',
-    ],
+      'Serve cold or at room temperature.'
+    ]
   },
   {
     title: 'Mashed Potatoes',
@@ -532,7 +532,7 @@ export default [
       { ingredient: 'Butter', amount: '1/2 cup' },
       { ingredient: 'Milk', amount: '1/4 cup' },
       { ingredient: 'Salt', amount: 'to taste' },
-      { ingredient: 'Black pepper', amount: 'to taste' },
+      { ingredient: 'Black pepper', amount: 'to taste' }
     ],
     cookingTime: { hours: 0, minutes: 30 },
     type: 'side',
@@ -544,8 +544,8 @@ export default [
       'Mash the potatoes.',
       'Add butter, milk, salt, and black pepper.',
       'Mix until smooth.',
-      'Serve hot.',
-    ],
+      'Serve hot.'
+    ]
   },
   {
     title: 'Vegan Tacos',
@@ -559,7 +559,7 @@ export default [
       { ingredient: 'Red onion', amount: '1' },
       { ingredient: 'Cilantro', amount: '1 bunch' },
       { ingredient: 'Lime', amount: '1' },
-      { ingredient: 'Salt', amount: 'to taste' },
+      { ingredient: 'Salt', amount: 'to taste' }
     ],
     cookingTime: { hours: 0, minutes: 20 },
     type: 'main',
@@ -570,8 +570,8 @@ export default [
       'Add lime juice and salt to taste.',
       'Heat black beans in a pan.',
       'Assemble tacos with a layer of black beans followed by the avocado mixture.',
-      'Serve immediately.',
-    ],
+      'Serve immediately.'
+    ]
   },
   {
     title: 'Quinoa Stuffed Peppers',
@@ -585,7 +585,7 @@ export default [
       { ingredient: 'Cheese', amount: '1 cup' },
       { ingredient: 'Olive oil', amount: '1 tablespoon' },
       { ingredient: 'Salt', amount: 'to taste' },
-      { ingredient: 'Black pepper', amount: 'to taste' },
+      { ingredient: 'Black pepper', amount: 'to taste' }
     ],
     cookingTime: { hours: 0, minutes: 45 },
     type: 'main',
@@ -600,8 +600,8 @@ export default [
       'Place stuffed peppers in a baking dish.',
       'Top with remaining cheese.',
       'Bake for 25-30 minutes or until peppers are tender.',
-      'Serve hot.',
-    ],
+      'Serve hot.'
+    ]
   },
   {
     title: 'Chicken Marsala',
@@ -615,7 +615,7 @@ export default [
       { ingredient: 'Olive oil', amount: '2 tablespoons' },
       { ingredient: 'Butter', amount: '1 tablespoon' },
       { ingredient: 'Salt', amount: 'to taste' },
-      { ingredient: 'Black pepper', amount: 'to taste' },
+      { ingredient: 'Black pepper', amount: 'to taste' }
     ],
     cookingTime: { hours: 0, minutes: 30 },
     type: 'main',
@@ -629,8 +629,8 @@ export default [
       'Reduce heat and simmer until the sauce thickens.',
       'Add chicken back into the pan.',
       'Stir in butter to finish the sauce.',
-      'Serve hot over pasta or rice.',
-    ],
+      'Serve hot over pasta or rice.'
+    ]
   },
   {
     title: 'Lamb Curry',
@@ -647,7 +647,7 @@ export default [
       { ingredient: 'Cumin', amount: '1 teaspoon' },
       { ingredient: 'Coriander', amount: '1 teaspoon' },
       { ingredient: 'Coconut milk', amount: '1 cup' },
-      { ingredient: 'Salt', amount: 'to taste' },
+      { ingredient: 'Salt', amount: 'to taste' }
     ],
     cookingTime: { hours: 1, minutes: 0 },
     type: 'main',
@@ -659,9 +659,9 @@ export default [
       'Add chopped tomatoes, garam masala, and coriander.',
       'Cover and cook until lamb is tender.',
       'Stir in coconut milk and simmer for 10 minutes.',
-      'Serve hot with rice or naan.',
+      'Serve hot with rice or naan.'
     ],
-    spiceLevel: 3,
+    spiceLevel: 3
   },
   {
     title: 'Shrimp Paella',
@@ -676,7 +676,7 @@ export default [
       { ingredient: 'Peas', amount: '1 cup' },
       { ingredient: 'Olive oil', amount: '2 tablespoons' },
       { ingredient: 'Salt', amount: 'to taste' },
-      { ingredient: 'Paprika', amount: '1 teaspoon' },
+      { ingredient: 'Paprika', amount: '1 teaspoon' }
     ],
     cookingTime: { hours: 1, minutes: 0 },
     type: 'main',
@@ -689,8 +689,8 @@ export default [
       'Add saffron to the chicken stock and pour over the rice.',
       'Arrange shrimp on top.',
       'Cook until rice is done and shrimp are pink.',
-      'Serve hot.',
-    ],
+      'Serve hot.'
+    ]
   },
   {
     title: 'Pulled Pork Sandwich',
@@ -701,7 +701,7 @@ export default [
       { ingredient: 'Barbecue sauce', amount: '1 cup' },
       { ingredient: 'Buns', amount: '4' },
       { ingredient: 'Salt', amount: 'to taste' },
-      { ingredient: 'Black pepper', amount: 'to taste' },
+      { ingredient: 'Black pepper', amount: 'to taste' }
     ],
     cookingTime: { hours: 4, minutes: 0 },
     type: 'main',
@@ -712,8 +712,8 @@ export default [
       'Wrap pork in aluminum foil and bake for 4 hours.',
       'Remove from oven and shred the meat.',
       'Mix shredded pork with barbecue sauce.',
-      'Serve on buns.',
-    ],
+      'Serve on buns.'
+    ]
   },
   {
     title: 'Vegetable Stir-Fry',
@@ -725,7 +725,7 @@ export default [
       { ingredient: 'Garlic', amount: '2 cloves' },
       { ingredient: 'Ginger', amount: '1 inch' },
       { ingredient: 'Olive oil', amount: '2 tablespoons' },
-      { ingredient: 'Tofu (optional)', amount: '1 cup' },
+      { ingredient: 'Tofu (optional)', amount: '1 cup' }
     ],
     cookingTime: { hours: 0, minutes: 20 },
     type: 'main',
@@ -736,8 +736,8 @@ export default [
       'Add mixed vegetables and tofu if using.',
       'Stir-fry until vegetables are cooked.',
       'Add soy sauce and mix well.',
-      'Serve hot with rice or noodles.',
-    ],
+      'Serve hot with rice or noodles.'
+    ]
   },
   {
     title: 'Lentil Soup',
@@ -751,7 +751,7 @@ export default [
       { ingredient: 'Vegetable stock', amount: '4 cups' },
       { ingredient: 'Olive oil', amount: '2 tablespoons' },
       { ingredient: 'Salt', amount: 'to taste' },
-      { ingredient: 'Black pepper', amount: 'to taste' },
+      { ingredient: 'Black pepper', amount: 'to taste' }
     ],
     cookingTime: { hours: 1, minutes: 0 },
     type: 'main',
@@ -762,8 +762,8 @@ export default [
       'Add lentils and vegetable stock.',
       'Simmer until lentils are tender.',
       'Season with salt and pepper.',
-      'Serve hot.',
-    ],
+      'Serve hot.'
+    ]
   },
   {
     title: 'Chicken Fajitas',
@@ -778,7 +778,7 @@ export default [
       { ingredient: 'Paprika', amount: '1 teaspoon' },
       { ingredient: 'Olive oil', amount: '2 tablespoons' },
       { ingredient: 'Salt', amount: 'to taste' },
-      { ingredient: 'Black pepper', amount: 'to taste' },
+      { ingredient: 'Black pepper', amount: 'to taste' }
     ],
     cookingTime: { hours: 0, minutes: 30 },
     type: 'main',
@@ -790,9 +790,9 @@ export default [
       'Heat olive oil in a pan.',
       'Cook chicken until done.',
       'In the same pan, sauté bell peppers and onion.',
-      'Serve in tortillas.',
+      'Serve in tortillas.'
     ],
-    spiceLevel: 2,
+    spiceLevel: 2
   },
   {
     title: 'Greek Moussaka',
@@ -807,7 +807,7 @@ export default [
       { ingredient: 'Bechamel sauce', amount: '2 cups' },
       { ingredient: 'Olive oil', amount: '2 tablespoons' },
       { ingredient: 'Salt', amount: 'to taste' },
-      { ingredient: 'Pepper', amount: 'to taste' },
+      { ingredient: 'Pepper', amount: 'to taste' }
     ],
     cookingTime: { hours: 1, minutes: 30 },
     type: 'main',
@@ -820,8 +820,8 @@ export default [
       'Layer eggplant and meat sauce in a baking dish.',
       'Top with bechamel sauce.',
       'Bake at 350°F (175°C) for 45 minutes.',
-      'Serve hot.',
-    ],
+      'Serve hot.'
+    ]
   },
   {
     title: 'Steak Diane',
@@ -838,7 +838,7 @@ export default [
       { ingredient: 'Worcestershire sauce', amount: '1 tablespoon' },
       { ingredient: 'Butter', amount: '2 tablespoons' },
       { ingredient: 'Salt', amount: 'to taste' },
-      { ingredient: 'Pepper', amount: 'to taste' },
+      { ingredient: 'Pepper', amount: 'to taste' }
     ],
     cookingTime: { hours: 0, minutes: 30 },
     type: 'main',
@@ -852,8 +852,8 @@ export default [
       'Add beef stock, cream, mustard, and Worcestershire sauce.',
       'Simmer until sauce thickens.',
       'Return steaks to the pan to warm through.',
-      'Serve hot.',
-    ],
+      'Serve hot.'
+    ]
   },
   {
     title: 'Szechuan Chicken',
@@ -866,7 +866,7 @@ export default [
       { ingredient: 'Garlic', amount: '2 cloves' },
       { ingredient: 'Green onions', amount: '2' },
       { ingredient: 'Sesame oil', amount: '1 tablespoon' },
-      { ingredient: 'Red chilies', amount: '2' },
+      { ingredient: 'Red chilies', amount: '2' }
     ],
     cookingTime: { hours: 0, minutes: 20 },
     type: 'main',
@@ -879,9 +879,9 @@ export default [
       'Add minced garlic and chicken to the wok.',
       'Stir-fry until chicken is cooked.',
       'Add chopped green onions.',
-      'Serve hot with steamed rice.',
+      'Serve hot with steamed rice.'
     ],
-    spiceLevel: 3,
+    spiceLevel: 3
   },
   {
     title: 'Butter Chicken',
@@ -895,7 +895,7 @@ export default [
       { ingredient: 'Ginger garlic paste', amount: '1 tablespoon' },
       { ingredient: 'Garam masala', amount: '1 teaspoon' },
       { ingredient: 'Red chili powder', amount: '1 teaspoon' },
-      { ingredient: 'Salt', amount: 'to taste' },
+      { ingredient: 'Salt', amount: 'to taste' }
     ],
     cookingTime: { hours: 0, minutes: 30 },
     type: 'main',
@@ -907,8 +907,8 @@ export default [
       'Add tomato sauce and simmer.',
       'Stir in cream and garam masala.',
       'Cook until sauce thickens.',
-      'Serve hot with naan or rice.',
+      'Serve hot with naan or rice.'
     ],
-    spiceLevel: 2,
-  },
+    spiceLevel: 2
+  }
 ]
