@@ -473,7 +473,7 @@ export default [
   },
   {
     title: 'Vegan Stir-Fried Tofu',
-    image: 'vegan_stir_fried_tofu.png',
+    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694787588/flavour-finder/tofu-stir-fry_crsths.jpg',
     cuisine: 'Asian',
     ingredients: [
       { ingredient: 'Tofu', amount: '400 grams' },
