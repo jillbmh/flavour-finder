@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 
 const recipeSchema = new mongoose.Schema(
   {
@@ -15,14 +15,14 @@ const recipeSchema = new mongoose.Schema(
     isVegan: { type: Boolean },
     isVegetarian: { type: Boolean },
     isPescatarian: { type: Boolean },
-    isGlutenFree: { type: Boolean }
+    isGlutenFree: { type: Boolean },
     // comments: [commentSchema],
     // rating: [ratingSchema]
   },
   {
-    timestamps: true
+    timestamps: true,
   }
-);
+)
 
 // const commentSchema = new mongoose.Schema(
 //     {
@@ -39,4 +39,4 @@ const recipeSchema = new mongoose.Schema(
 //     addedBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
 // });
 
-export default mongoose.model('Recipe', recipeSchema);
+export default mongoose.model('Recipe', recipeSchema)

@@ -3,7 +3,7 @@ export default [
     image: 'healthy_breakfast_ideas.png',
     title: 'Revolutionize Your Breakfast',
     author: 'Jane Doe',
-    dateCreated: '2023-09-11',
+    dateCreated: '01/07/2023',
     content: `Breakfast is often called the most important meal of the day, and for good reason. Not only does it provide the essential nutrients and energy needed to kickstart your morning, but a healthy breakfast also sets the stage for the choices you make throughout the rest of the day. However, we often find ourselves stuck in a breakfast rut, eating the same cereal or toast day in and day out. To inspire you to revolutionize your mornings, here are some healthy breakfast ideas that are both delicious and nutritious.
   
     ### Overnight Oats
@@ -30,7 +30,7 @@ export default [
     image: 'turmeric_health_benefits.png',
     title: 'Unlocking the Health Benefits of Turmeric',
     author: 'John Smith',
-    dateCreated: '2023-09-11',
+    dateCreated: '15/08/2023',
     content: `Turmeric, the vibrant yellow spice commonly used in Asian cuisine, has been a staple in traditional medicine for thousands of years. More recently, scientific studies have started to confirm its myriad of health benefits, making it more than just a flavorful addition to your curry. In this blog post, we'll delve into some of the remarkable health benefits of turmeric and how you can incorporate it into your daily diet.
   
     ### Anti-Inflammatory Properties
@@ -60,7 +60,7 @@ export default [
     image: 'vegan_protein_sources.png',
     title: 'Plant-Powered Protein: A Vegan’s Guide',
     author: 'Emily Johnson',
-    dateCreated: '2023-09-11',
+    dateCreated: '03/09/2023',
     content: `One of the most common questions vegans get asked is, "Where do you get your protein?" The misconception that a plant-based diet lacks sufficient protein has been debunked time and time again, but the question still persists. In this blog post, we’ll explore various plant-based protein sources and how to incorporate them into your daily meals.
   
     ### Legumes: The Protein Powerhouse
@@ -93,7 +93,7 @@ export default [
     image: 'saving_on_groceries.png',
     title: 'Smart Shopping: Tips to Save Money on Groceries',
     author: 'Alex Williams',
-    dateCreated: '2023-09-11',
+    dateCreated: '12/05/2022',
     content: `Food shopping is a significant part of any household's budget, but it's also one area where you can make smart choices to save money without sacrificing quality. If you’ve ever felt the pinch when looking at your grocery bill, this blog is for you. Below are some tips and tricks to help you save money the next time you hit the supermarket.
   
     ### Make a List and Stick to It
@@ -128,4 +128,4 @@ export default [
   
     By applying these tips, you'll find that your food bills start to decrease, leaving you with extra money to use elsewhere. Saving on groceries doesn't mean you have to compromise on quality or variety; it simply means you need to shop smarter. Happy shopping!`
   }
-];
+]
