@@ -10,7 +10,7 @@ export default function SingleRecipe(){
   useEffect(() => {
     async function getRecipeData(){
       try {
-        const { data } = await axios.get('/api/recipes/650341baa6e0615a7848824a')
+        const { data } = await axios.get('/api/recipes/65042b20bfcf5e62e7bee306')
         setRecipe(data)
       } catch (error) {
         console.error(error)
@@ -24,8 +24,19 @@ export default function SingleRecipe(){
   return (
     <>
       <h1>{ recipe.title }</h1>
-    
-      <section>
+      <h2>Author: { recipe.addedBy.username}</h2>
+      
+      <section className= "recipe-info-container">
+        <h3>{ recipe.cuisine }</h3>
+        <div>{ recipe.type }</div>
+        <div>Serves: { recipe.serves }</div> 
+        <div>
+          {recipe.cookingTime.hours > 0 ? `Hours: ${recipe.cookingTime.hours} - ` : ''}
+            Minutes: {recipe.cookingTime.minutes}
+        </div>
+      </section>
+
+      <section className= "ingredients-container">
         <div>{recipe.ingredients.map((val) => {
           return (
             <div key={`${recipe._id}_${val.ingredient}`}>
@@ -36,9 +47,13 @@ export default function SingleRecipe(){
         </div>
       </section>
 
-      <section>
-        <div>{recipe.method.map(() => {
-          
+      <section className= "method-container">
+        <div> Method: {recipe.method.map((val) => {
+          return (
+            <div key={`${recipe._id}_${val}`}>
+              {val}
+            </div>
+          )
         })}</div>
       </section>
     </>
