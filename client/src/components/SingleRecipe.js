@@ -7,10 +7,14 @@ export default function SingleRecipe(){
 
   const [ recipe, setRecipe ] = useState(null)
   console.log(recipe)
+  
+  const { id } = useParams()
+
   useEffect(() => {
-    async function getRecipeData(){
+    async function getRecipeData() {
+
       try {
-        const { data } = await axios.get('/api/recipes/65042b20bfcf5e62e7bee306')
+        const { data } = await axios.get(`/api/recipes/${id}`)
         setRecipe(data)
       } catch (error) {
         console.error(error)
@@ -24,6 +28,7 @@ export default function SingleRecipe(){
   return (
     <>
       <h1>{ recipe.title }</h1>
+      <img src={recipe.image} />
       <h2>Author: { recipe.addedBy.username}</h2>
       
       <section className= "recipe-info-container">

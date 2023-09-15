@@ -1,6 +1,7 @@
 @import 'variables.scss';
 @import 'partials/header';
 @import 'partials/singlerecipe';
+@import 'partials/browseRecipes.scss';
 
 * {
   box-sizing: border-box;
@@ -10,4 +11,5 @@
 body {
   background-color: $background-dark;
   color: $text-light;
+  font-family: Helvetica;
 }

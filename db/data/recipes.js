@@ -1,7 +1,7 @@
 export default [
   {
     title: 'Sushi',
-    image: 'sushi.png',
+    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694790480/flavour-finder/sushi_dhqk4c.jpg',
     cuisine: 'Japanese',
     ingredients: [
       { ingredient: 'Rice', amount: '300 grams' },

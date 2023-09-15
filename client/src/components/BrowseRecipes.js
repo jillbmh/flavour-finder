@@ -22,25 +22,22 @@ export default function BrowseRecipes() {
   return (
     <>
       <h1>All Recipes</h1>
-      <div className="grid-container">
-        {recipes.length > 0 ? (
-          recipes.map(recipe => (
-            <div key={recipe._id} className="recipe-container">
+      <div className='grid-container'>
+        {recipes.length > 0
+          ? recipes.map(recipe => (
+            <div key={recipe._id} className='recipe-container' style={{ backgroundImage: `url(${recipe.image})` }}>
               <Link
                 to={`/recipes/${recipe._id}`}
-                className="recipe"
-                style={{ backgroundImage: `url(${recipe.image})` }}
+                className='recipe'
+                
               >
-                <div key={recipe.title} className="recipe-title">
+                <div key={recipe.title} className='recipe-title'>
                   <h3>{recipe.title}</h3>
                 </div>
               </Link>
             </div>
-            
           ))
-        ) : (
-          'Loading...'
-        )}
+          : 'Loading...'}
       </div>
       {/* <h1>{state.category}</h1>
       <div className="grid-container">
