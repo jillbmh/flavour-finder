@@ -38,8 +38,8 @@ export const createRecipe = async (req, res) => {
       return res.status(422).json({
         error: {
           name: 'Duplicate recipe',
-          field: error.keyValue
-        }
+          field: error.keyValue,
+        },
       })
     }
     return res.status(422).json(error)
@@ -77,7 +77,7 @@ export const deleteRecipe = async (req, res) => {
   try {
     const foundRecipe = await Recipe.findById(id)
 
-    console.log(req.user);
+    console.log(req.user)
 
     if (!foundRecipe.addedBy.equals(req.user._id)) {
       return res.status(401).json({ error: 'Unauthorized' })

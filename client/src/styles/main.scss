@@ -1,8 +1,6 @@
 @import 'variables.scss';
 @import 'partials/header';
 
-@import url("https://use.typekit.net/pqx5rxr.css");
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,4 +8,5 @@
 
 body {
   background-color: $background-dark;
+  color: $text-light;
 }

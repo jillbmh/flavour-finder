@@ -52,5 +52,5 @@ export default [
     email: 'steve@gmail.com',
     password: 'stevepass',
     passwordConfirmation: 'stevepass',
-  }  
+  },
 ]
