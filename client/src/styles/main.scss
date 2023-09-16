@@ -1,6 +1,6 @@
 @import 'variables.scss';
 @import 'partials/header';
-@import 'partials/singlerecipe';
+@import 'partials/singlerecipe.scss';
 @import 'partials/browseRecipes.scss';
 @import 'partials/blogs.scss';
 @import 'partials/singleBlog.scss';
@@ -16,4 +16,10 @@ body {
   background-color: $background-dark;
   color: $text-light;
   font-family: 'Quicksand';
+}
+
+h1 {
+  text-align: center;
+  color:#f7f3e8;
+  margin-top: 120px;
 }

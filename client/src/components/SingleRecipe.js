@@ -3,11 +3,11 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 
 
-export default function SingleRecipe(){
+export default function SingleRecipe() {
 
-  const [ recipe, setRecipe ] = useState(null)
+  const [recipe, setRecipe] = useState(null)
   console.log(recipe)
-  
+
   const { id } = useParams()
 
   useEffect(() => {
@@ -27,40 +27,48 @@ export default function SingleRecipe(){
 
   return (
     <>
-      <h1>{ recipe.title }</h1>
-      <img src={recipe.image} />
-      <h2>Author: { recipe.addedBy.username}</h2>
-      
-      <section className= "recipe-info-container">
-        <h3>{ recipe.cuisine }</h3>
-        <div>{ recipe.type }</div>
-        <div>Serves: { recipe.serves }</div> 
-        <div>
-          {recipe.cookingTime.hours > 0 ? `Hours: ${recipe.cookingTime.hours} - ` : ''}
-            Minutes: {recipe.cookingTime.minutes}
-        </div>
-      </section>
+      <h1>{recipe.title}</h1>
 
-      <section className= "ingredients-container">
-        <div>{recipe.ingredients.map((val) => {
-          return (
-            <div key={`${recipe._id}_${val.ingredient}`}>
-              {val.ingredient} - {val.amount} 
-            </div>
-          )
-        })}
-        </div>
-      </section>
+      <div className="recipe-container">
+        <img src={recipe.image} />
+        <h2>Author: {recipe.addedBy.username.charAt(0).toUpperCase() + recipe.addedBy.username.slice(1)}</h2>
 
-      <section className= "method-container">
-        <div> Method: {recipe.method.map((val) => {
-          return (
-            <div key={`${recipe._id}_${val}`}>
-              {val}
+        <div className="ingredients-method-container">
+          <section className="recipe-info-container">
+            <div>{recipe.cuisine}</div>
+            <div>{recipe.type.charAt(0).toUpperCase() + recipe.type.slice(1)}</div>
+            <div>Serves: {recipe.serves}</div>
+            <div>
+              {recipe.cookingTime.hours > 0 ? `Hours: ${recipe.cookingTime.hours} - ` : ''}
+              Minutes: {recipe.cookingTime.minutes}
             </div>
-          )
-        })}</div>
-      </section>
+          </section>
+
+          <section className="ingredients-container">
+            <div className="ingredients"> Ingredients:</div>
+            <div>{recipe.ingredients.map((val) => {
+              return (
+                <div key={`${recipe._id}_${val.ingredient}`}>
+                  {val.ingredient} - {val.amount}
+                </div>
+              )
+            })}
+            </div>
+          </section>
+
+          <section className="method-container">
+            <div className="method"> Method:</div>
+            <div> {recipe.method.map((val, index) => {
+              return (
+                <div key={`${recipe._id}_${val}`}>
+                  Step {index + 1}:  {val}
+                </div>
+              )
+            })}</div>
+          </section>
+        </div>
+      </div>
+
     </>
   )
 }
