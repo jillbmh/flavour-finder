@@ -1,0 +1,40 @@
+.animation-container {
+    position: relative;
+    img {
+      width: 100%;  
+      height: auto; 
+  }
+  
+  #animated-words,
+  .hero-heading {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+  .animated-words {
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 60vh;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  #animated-words {
+    left: 0;
+    transform: translate3d(0%, -50%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    opacity: 1;
+    animation: scrollText 10s linear infinite;
+  }
+  
+  .hero-heading {
+    transform: translate3d(-50%, -50%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  }
+  
+  @keyframes scrollText {
+    0% {
+      left: 100%;
+    }
+    100% {
+    left: -100%;
+    }
+  }}
