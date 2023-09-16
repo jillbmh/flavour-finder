@@ -9,6 +9,9 @@ import NewLogo from '../images/new-logo.png'
 export default function Header() {
   return (
     <header>
+      {/* Burger menu for mobile */}
+      <img src={MenuIcon} width='18px' className='menu-icon'></img>
+
       {/* Tablet Up Menu */}
       <div className='tablet-up-menu-items'>
         <Link to='/recipes'>Recipes</Link>
@@ -31,7 +34,6 @@ export default function Header() {
         </div>
         <img src={SearchIcon} className='header-buttons-search'></img>
         <img src={AccountIcon}></img>
-        <img src={MenuIcon} width='18px' className='menu-icon'></img>
       </div>
     </header>
   )
