@@ -1,6 +1,49 @@
 @import '../variables.scss';
 
+.recipe-container{
+display: flex;
+flex-direction: column;
+max-width: 40rem;
+justify-content: center;
+margin: 0 auto;
+}
 
-h1 {
-margin-top: 55px;
+.recipe-info-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: $background-light;
+  border-radius: 5px;
+  padding: 0 2rem;
+}
+
+.recipe-info-container > div {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  
+}
+
+.ingredients, .method {
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+
+
+.ingredients-method-container {
+  padding: 15px;
+}
+
+.ingredients-container {
+  background-color: $background-light;
+  margin: 2.5rem 0;
+  padding: 1rem 1.5rem 1rem;
+  border-radius: 5px;
+}
+
+.method-container {
+  background-color: $background-light;
+  margin-bottom: 2.5rem;
+  padding: 1rem 1.5rem 1rem;
+  border-radius: 5px;
 }
