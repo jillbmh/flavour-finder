@@ -31,7 +31,9 @@ export default function SingleRecipe() {
 
       <div className="recipe-container">
         <img src={recipe.image} />
-        <h2>Author: {recipe.addedBy.username.charAt(0).toUpperCase() + recipe.addedBy.username.slice(1)}</h2>
+        <h2 style={{
+          padding: '15px',
+        }}>Author: {recipe.addedBy.username.charAt(0).toUpperCase() + recipe.addedBy.username.slice(1)}</h2>
 
         <div className="ingredients-method-container">
           <section className="recipe-info-container">
