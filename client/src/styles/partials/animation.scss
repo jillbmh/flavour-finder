@@ -28,7 +28,7 @@
     left: 0;
     transform: translate3d(0%, -50%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
     opacity: 1;
-    animation: scrollText 10s linear infinite;
+    animation: scrollText 7s linear infinite;
   }
 
   .hero-heading {
@@ -43,7 +43,7 @@
       left: 100%;
     }
     100% {
-      left: -100%;
+      left: -170%;
     }
   }
 }
