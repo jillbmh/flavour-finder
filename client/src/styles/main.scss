@@ -18,3 +18,28 @@ body {
   color: $text-light;
   font-family: 'Quicksand';
 }
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #ffffff21;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+
+  input {
+    height: 16px;
+    font-family: 'Quicksand';
+    border: none;
+    background: none;
+    color: $text-light;
+    width: 18ch;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  img {
+    height: 16px;
+  }
+}
