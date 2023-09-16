@@ -48,7 +48,9 @@ export default function SingleRecipe() {
             <div className="ingredients"> Ingredients:</div>
             <div>{recipe.ingredients.map((val) => {
               return (
-                <div key={`${recipe._id}_${val.ingredient}`}>
+                <div style={{
+                  lineHeight: '1.5rem',
+                }} key={`${recipe._id}_${val.ingredient}`}>
                   {val.ingredient} - {val.amount}
                 </div>
               )
@@ -60,7 +62,9 @@ export default function SingleRecipe() {
             <div className="method"> Method:</div>
             <div> {recipe.method.map((val, index) => {
               return (
-                <div key={`${recipe._id}_${val}`}>
+                <div style={{
+                  lineHeight: '1.5rem',
+                }} key={`${recipe._id}_${val}`}>
                   Step {index + 1}:  {val}
                 </div>
               )
