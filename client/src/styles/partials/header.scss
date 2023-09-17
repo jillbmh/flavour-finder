@@ -11,7 +11,7 @@ header {
   align-items: center;
   padding: 1.5rem;
   border-bottom: 1px solid $border-light;
-  z-index: 100;
+  z-index: 1000;
 
   * {
     user-select: none;
@@ -94,13 +94,14 @@ header {
 
   .side-menu {
     position: absolute;
-    left: calc(-300px - 1.5rem * 2);
+    left: calc(-302px - 1.5rem * 2);
     width: fit-content;
     height: 100%;
     padding: 1.5rem;
     background-color: $background-dark;
     border-right: 1px solid $border-light;
     transition: left 0.4s ease-in-out;
+    z-index: 1000;
 
     a {
       border-bottom: 1px solid $border-light;

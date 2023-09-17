@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import AccountIcon from '../images/account-icon.png'
 import SearchIcon from '../images/search-icon.png'
@@ -5,30 +6,47 @@ import MenuIcon from '../images/menu-icon.png'
 import CloseIcon from '../images/close-icon.png'
 import NewLogo from '../images/new-logo.png'
 import ArrowIcon from '../images/arrow-icon.png'
-import { useState, useEffect } from 'react'
+import AccountModal from './AccountModal'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [animation, setAnimation] = useState('none')
   const [openSideMenu, setOpenSideMenu] = useState(false)
+  const [isModalVisible, setModalVisible] = useState(false)
 
   useEffect(() => {
     if (animation === 'shrinking') {
       setTimeout(() => {
         setIsMenuOpen(!isMenuOpen)
         setAnimation('growing')
-      }, 250) // 300ms matches the animation duration. Adjust if needed.
+      }, 250)
     } else if (animation === 'growing') {
       setTimeout(() => {
         setAnimation('none')
-      }, 250) // 300ms matches the animation duration. Adjust if needed.
+      }, 250)
     }
   }, [animation])
 
   const handleClick = () => {
     setAnimation('shrinking')
-    setOpenSideMenu(!openSideMenu)
+    if (isModalVisible) {
+      setTimeout(() => setOpenSideMenu(!openSideMenu), 500)
+      setModalVisible(false)
+    } else {
+      setOpenSideMenu(!openSideMenu)
+    }
   }
+
+  const toggleModal = () => {
+    if (isMenuOpen) {
+      setOpenSideMenu(false)
+      setTimeout(() => setModalVisible(!isModalVisible), 400)
+      setAnimation('shrinking')
+    } else {
+      setModalVisible(!isModalVisible)
+    }
+  }
+
 
   return (
     <div className='header-menu-container'>
@@ -47,8 +65,12 @@ export default function Header() {
         </div>
 
         {/* LOGO */}
-        <Link to='/'>
-          <img src={NewLogo} className='logo'></img>
+        <Link to='/' onClick={() => {
+          if (openSideMenu) setAnimation('shrinking')
+          setOpenSideMenu(false)
+          setModalVisible(false)
+        }}>
+          <img src={NewLogo} className='logo' />
         </Link>
 
         {/* BUTTONS */}
@@ -57,23 +79,26 @@ export default function Header() {
             <input type='text' placeholder='Search...' />
             <img src={SearchIcon}></img>
           </div>
-          <img src={SearchIcon} className='header-buttons-search'></img>
-          <img src={AccountIcon}></img>
+          <img src={SearchIcon} className='header-buttons-search' />
+          <img src={AccountIcon} onClick={toggleModal} />
         </div>
       </header>
+
       {/* MENU */}
       <div className='side-menu-container'>
         <div className={`side-menu ${openSideMenu ? 'open' : ''}`}>
-          <Link to='/recipes'>
+          <Link to='/recipes' onClick={() => setOpenSideMenu(false)}>
             <span>Recipes</span>
             <img src={ArrowIcon} height='13px' />
           </Link>
-          <Link to='/blogs'>
+          <Link to='/blogs' onClick={() => setOpenSideMenu(false)}>
             <span>Blogs</span>
             <img src={ArrowIcon} height='13px' />
           </Link>
         </div>
       </div>
+
+      <AccountModal isVisible={isModalVisible} closeModal={toggleModal} />
     </div>
   )
 }

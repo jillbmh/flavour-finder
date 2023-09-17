@@ -1,0 +1,25 @@
+@import '../variables.scss';
+
+.account-modal-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 100%;
+  background-color: $text-light;
+  transition: top 0.5s ease-in-out;
+  z-index: 900;
+
+  h1 {
+    color: black;
+    margin: 0;
+  }
+
+  &.open {
+    top: 65px;
+
+    @media (min-width: $tablet-width) {
+      top: 76.19px;
+    }
+  }
+}
