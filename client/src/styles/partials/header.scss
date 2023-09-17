@@ -103,8 +103,6 @@ header {
     transition: left 0.4s ease-in-out;
 
     a {
-      color: white;
-      text-decoration: none;
       border-bottom: 1px solid $border-light;
       padding: 0.5rem 0;
       width: 300px;
@@ -126,6 +124,10 @@ header {
   height: 100vh;
   width: 100%;
   position: fixed;
+  pointer-events: none;
+  header, .side-menu {
+    pointer-events: auto;
+  }
 }
 
 @keyframes shrinkIcon {
