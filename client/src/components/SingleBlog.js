@@ -29,7 +29,7 @@ export default function SingleBlog(){
     <>
       {
         blog ? (
-          <main>
+          <main className='single-blog-page'>
             <section className='blog-single-container'>
               <h2>{blog.title}</h2>
               <img src={blog.image} alt={blog.title} />

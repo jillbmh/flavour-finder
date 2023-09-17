@@ -27,7 +27,12 @@ export default function BrowseRecipes() {
           {recipes.length > 0
             ? recipes.map(recipe => (
               <Link key={recipe._id} to={`/recipes/${recipe._id}`} className='recipe'>
-                <div className='recipe-container' style={{ backgroundImage: `url(${recipe.image})` }}>
+                <div
+                  className='recipe-container'
+                  style={{
+                    backgroundImage: `url(${recipe.image})`,
+                  }}
+                >
                   <div className='recipe-title'>
                     <h3>{recipe.title}</h3>
                   </div>
