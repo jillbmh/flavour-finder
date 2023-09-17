@@ -21,10 +21,17 @@ body {
   overflow: hidden;
 }
 
+main {
+  padding-top: 65px;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 76.19px;
+  }
+}
+
 h1 {
   text-align: center;
   color: #f7f3e8;
-  margin-top: 120px;
 }
 
 .search-bar {

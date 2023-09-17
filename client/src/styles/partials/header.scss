@@ -1,9 +1,8 @@
 @import '../variables.scss';
 
 header {
+  position: relative;
   width: 100%;
-  position: fixed;
-  top: 0;
   font-size: 0.9rem;
   font-weight: 300;
   background-color: $background-dark;
@@ -28,11 +27,11 @@ header {
       cursor: pointer;
 
       &.shrink-icon {
-        animation: shrinkIcon 0.2s forwards;
+        animation: shrinkIcon 0.25s forwards;
       }
 
       &.grow-icon {
-        animation: growIcon 0.2s forwards;
+        animation: growIcon 0.25s forwards;
       }
     }
   }
@@ -87,29 +86,46 @@ header {
       }
     }
   }
+}
+
+.side-menu-container {
+  flex: 1;
+  overflow: hidden;
 
   .side-menu {
-    position: fixed;
-    top: 75px;
-    left: -250px;
-    width: 250px;
-    bottom: 0;
+    position: absolute;
+    left: calc(-300px - 1.5rem * 2);
+    width: fit-content;
+    height: 100%;
     padding: 1.5rem;
     background-color: $background-dark;
-    transition: left 0.3s ease-in-out;
+    border-right: 1px solid $border-light;
+    transition: left 0.4s ease-in-out;
 
     a {
-      display: block;
       color: white;
       text-decoration: none;
       border-bottom: 1px solid $border-light;
       padding: 0.5rem 0;
+      width: 300px;
+      max-width: 100vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     &.open {
       left: 0;
     }
   }
+}
+
+.header-menu-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
 }
 
 @keyframes shrinkIcon {
