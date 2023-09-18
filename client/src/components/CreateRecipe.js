@@ -7,7 +7,7 @@ import { useEffect } from 'react'
 
 
 
-export default function CreateRecipe({ user }){
+export default function CreateRecipe({ user }) {
 
   const navigate = useNavigate()
 
@@ -23,7 +23,7 @@ export default function CreateRecipe({ user }){
     { type: 'text', name: 'cookingTime', label: 'Cooking Time' },
     { type: 'number', name: 'serves', label: 'Serves' },
     [{ type: 'text', name: 'ingredients', label: 'Ingredient' },
-      { type: 'text', name: 'ingredientAmount', label: 'Ingredient Amount' }
+    { type: 'text', name: 'ingredientAmount', label: 'Ingredient Amount' }
     ],
     { type: 'text', name: 'method', label: 'Method' },
     { type: 'number', name: 'spiceLevel', label: 'Spice Level' },
@@ -32,9 +32,9 @@ export default function CreateRecipe({ user }){
     { type: 'checkbox', name: 'isPescatarian', label: 'Is Pescatarian?' },
     { type: 'checkbox', name: 'isGlutenFree', label: 'Is Gluten-Free?' }
   ]
-  
 
-  async function createRecipe(formData){
+
+  async function createRecipe(formData) {
     try {
       const response = await axios.post('/api/recipes', formData, {
         headers: {
@@ -54,6 +54,6 @@ export default function CreateRecipe({ user }){
     }
   }
   return (
-    <RecipeForm title="Create Recipe" request={createRecipe} fields={fields}/>
+    <RecipeForm title="Create Recipe" request={createRecipe} fields={fields} />
   )
 }
