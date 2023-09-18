@@ -1,15 +1,27 @@
-// import { useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
+import { Player, Controls } from '@lottiefiles/react-lottie-player'
 
 export default function LoginForm(props) {
-  // const { register, handleSubmit, errors } = useForm()
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm()
+  const password = watch('password')
 
-  // const onSubmit = (data) => {
-  //   console.log(data)
-  // }
+  const onSubmit = data => {
+    console.log(data)
+  }
 
   return (
     <>
       <h1>Login</h1>
+
+      <Player autoplay loop src='https://lottie.host/80783cd9-26e4-4e23-8b4b-25925db6efda/cQzQqQiozx.json' style={{ height: '300px', width: '300px' }}>
+        <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
+      </Player>
+
       {/* <div className='form-container'>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div>
