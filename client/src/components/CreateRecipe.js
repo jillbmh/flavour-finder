@@ -22,7 +22,10 @@ export default function CreateRecipe({ user }){
     { type: 'text', name: 'type', label: 'Type' },
     { type: 'text', name: 'cookingTime', label: 'Cooking Time' },
     { type: 'number', name: 'serves', label: 'Serves' },
-    //ADD INGREDIENTS AND METHODS
+    [{ type: 'text', name: 'ingredients', label: 'Ingredient' },
+      { type: 'text', name: 'ingredientAmount', label: 'Ingredient Amount' }
+    ],
+    { type: 'text', name: 'method', label: 'Method' },
     { type: 'number', name: 'spiceLevel', label: 'Spice Level' },
     { type: 'checkbox', name: 'isVegan', label: 'Is Vegan?' },
     { type: 'checkbox', name: 'isVegetarian', label: 'Is Vegetarian?' },
