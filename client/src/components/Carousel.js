@@ -1,5 +1,4 @@
 import axios from 'axios'
-<<<<<<< HEAD
 import { useState, useEffect } from 'react'
 import Carousel from 'react-bootstrap/Carousel'
 
@@ -49,11 +48,4 @@ export default function CarouselWrapper() {
       }
     </Carousel>
   )
-=======
-
-
-export default function Carousel() {
-
-  return <h1>Carousel</h1>
->>>>>>> 3ba24f6ba3ee5c6a9bc5517094b96b29c3f60656
 }
