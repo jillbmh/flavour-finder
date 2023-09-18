@@ -1,0 +1,71 @@
+@import '../variables.scss';
+
+.recipe-form-page {
+  form {
+    font-weight: 300;
+    display: grid;
+    place-items: center;
+    padding: 0 5rem;
+    max-width: 500px;
+
+    input {
+        font-family: 'Poppins';
+        display: block;
+        background-color: white;
+        width: 100%;
+        border: none;
+        padding: 0.5rem;
+        border-radius: 9px;
+        margin-bottom: 0.85rem;
+
+        &[type='submit'] {
+          cursor: pointer;
+          background-color: $button;
+          color: $text-light;
+          font-weight: 700;
+        }
+
+        &::placeholder {
+          color: #a8a8a8;
+          font-family: 'Poppins';
+          font-weight: 300;
+        }
+      }
+
+    label, ::placeholder, input, select {
+      font-family: 'Poppins';
+      font-weight: 300;
+    }
+
+    label {
+      display: block;
+      margin: 0.5rem;
+    }
+
+    .ingredient-container {
+      display: flex;
+      gap: 5px;
+      width: 100%;
+      margin-bottom: 0.5rem;
+
+      .ingredient-input {
+        display: inline-block;
+        margin: 0;
+      }
+    }
+
+    .container-ingredients {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: 1rem;
+
+      button {
+        background: none;
+        padding: 0;
+        border: none;
+        margin: 0.5rem 0;
+      }
+    }
+  }
+}

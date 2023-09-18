@@ -5,7 +5,7 @@ import AnimationImage from '../images/animation-image.jpeg'
 export default function Home() {
   return (
     <main>
-      <CarouselWrapper />
+      {/* <CarouselWrapper /> */}
 
       {/* <div className='animation-container'>
         <img src={AnimationImage} alt='Animation' />
