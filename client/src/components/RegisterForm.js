@@ -10,13 +10,16 @@ export default function RegisterForm(props) {
 
   return (
     <>
-      <h1>Register</h1>
+      {/* <h1>Register</h1> */}
       <div className='form-container'>
+        <h1>Register</h1>
+        
         <form onSubmit={handleSubmit(onSubmit)}>
           <input placeholder='Username' {...register('example')} />
 
           <input type='submit' value='Sign Up' />
         </form>
+
         <p>
           {' '}
           Already have an account?{' '}

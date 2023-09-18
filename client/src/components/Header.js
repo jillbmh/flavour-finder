@@ -12,7 +12,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [animation, setAnimation] = useState('none')
   const [openSideMenu, setOpenSideMenu] = useState(false)
-  const [isModalVisible, setModalVisible] = useState(false)
+  const [isModalVisible, setModalVisible] = useState(true)
 
   useEffect(() => {
     if (animation === 'shrinking') {
