@@ -1,12 +1,14 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import Carousel from 'react-bootstrap/Carousel'
+import { useNavigate } from 'react-router-dom'
 
 
 export default function CarouselWrapper() {
 
   // State
   const [topRecipes, setTopRecipes] = useState([])
+  const navigate = useNavigate()
 
   useEffect(() => {
     async function getAllRecipeData() {
@@ -24,22 +26,23 @@ export default function CarouselWrapper() {
     getAllRecipeData()
   }, [])
 
+  function handleImageClick(recipeId) {
+    navigate(`/recipes/${recipeId}`)
+  }
+
   return (
     <Carousel fade={true} data-bs-theme="dark">
       {
         topRecipes.map((val, index) => {
           return (
-
             <Carousel.Item key={`${val._id}`}>
               <img
-                style={{
-                  maxHeight: '65vh', minHeight: '65vh', objectFit: 'cover',
-                }}
                 className="d-block w-100"
                 src={val.image}
                 alt={`Image of ${val.title}`}
+                onClick={() => handleImageClick(val._id)}
               />
-              <Carousel.Caption>
+              <Carousel.Caption >
                 <h5>{val.title}</h5>
               </Carousel.Caption>
             </Carousel.Item>
