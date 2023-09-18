@@ -34,7 +34,7 @@ export default function BrowseRecipes() {
                   }}
                 >
                   <div className='recipe-title'>
-                    <h3>{recipe.title}</h3>
+                    <p>{recipe.title}</p>
                   </div>
                 </div>
               </Link>
