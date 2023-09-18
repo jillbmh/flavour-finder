@@ -16,7 +16,8 @@ export default [
   },
   {
     title: 'Caprese Salad',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694794140/flavour-finder/caprese-salad_azhifp.jpg',
+    image:
+      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694913941/flavour-finder/Caprese-Salad-main-1_zo4xc0.jpg',
     cuisine: 'Italian',
     ingredients: [
       { ingredient: 'Tomatoes', amount: '4 medium' },
@@ -41,7 +42,8 @@ export default [
   },
   {
     title: 'Chocolate Avocado Pudding',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694794142/flavour-finder/chocolate-avocado-pudding_dawnva.jpg',
+    image:
+      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694794142/flavour-finder/chocolate-avocado-pudding_dawnva.jpg',
     cuisine: 'American',
     ingredients: [
       { ingredient: 'Avocado', amount: '2 medium' },
@@ -79,7 +81,8 @@ export default [
   },
   {
     title: 'Spicy Chickpea Curry',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694794159/flavour-finder/spicy-chickpea-curry_bgbbkp.jpg',
+    image:
+      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694794159/flavour-finder/spicy-chickpea-curry_bgbbkp.jpg',
     cuisine: 'Indian',
     ingredients: [
       { ingredient: 'Chickpeas', amount: '1 can' },
@@ -101,7 +104,8 @@ export default [
   },
   {
     title: 'Grilled Chicken Caesar Salad',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694794151/flavour-finder/grilled-chicken-caesar-salad_qi7ti0.jpg',
+    image:
+      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694794151/flavour-finder/grilled-chicken-caesar-salad_qi7ti0.jpg',
     cuisine: 'American',
     ingredients: [
       { ingredient: 'Chicken breast', amount: '2 pieces' },
@@ -116,7 +120,8 @@ export default [
   },
   {
     title: 'Stir-fry Tofu and Vegetables',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694794161/flavour-finder/stir-fry-tofu-and-vegetables_xtgyiv.jpg',
+    image:
+      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694915608/flavour-finder/Spicy-Tofu-Stirfry-LEAD-3-3da17681605c41688be8742e045f71f5_lbbbz9.jpg',
     cuisine: 'Asian',
     ingredients: [
       { ingredient: 'Tofu', amount: '300 grams' },
@@ -136,7 +141,8 @@ export default [
   },
   {
     title: 'Fish Tacos',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694794147/flavour-finder/fish-tacos_vtfjre.jpg',
+    image:
+      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694915699/flavour-finder/53729-fish-tacos-DDMFS-4x3-b5547c67c6f0432da06ad8f905e82c1e_hci9nx.jpg',
     cuisine: 'Mexican',
     ingredients: [
       { ingredient: 'Fish fillets', amount: '2 pieces' },
@@ -152,7 +158,8 @@ export default [
   },
   {
     title: 'Spaghetti Carbonara',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694794157/flavour-finder/spaghetti-carbonara_atxqrp.jpg',
+    image:
+      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694915784/flavour-finder/Spaghetti-Carbonara-feature4_hgyqqj.jpg',
     cuisine: 'Italian',
     ingredients: [
       { ingredient: 'Spaghetti', amount: '300 grams' },
@@ -167,7 +174,8 @@ export default [
   },
   {
     title: 'Apple Crumble',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694794140/flavour-finder/apple-crumble_skoir4.jpg',
+    image:
+      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694915866/flavour-finder/vegan_apple_crumble_72530_16x9_g3s48b.jpg',
     cuisine: 'British',
     ingredients: [
       { ingredient: 'Apples', amount: '4' },
@@ -182,7 +190,8 @@ export default [
   },
   {
     title: 'Churros',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694794144/flavour-finder/churros_dvurqe.jpg',
+    image:
+      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694915938/flavour-finder/churros-chocolate-0f3587a6a59f4696af610cafe100d1fe_rpsqo3.jpg',
     cuisine: 'Spanish',
     ingredients: [
       { ingredient: 'Flour', amount: '1 cup' },
@@ -197,7 +206,7 @@ export default [
   },
   {
     title: 'Spicy Mango Salsa',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694794160/flavour-finder/spicy-mango-salsa_c2tib0.jpg',
+    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694915984/flavour-finder/IMG_1599_e67kue.jpg',
     cuisine: 'Mexican',
     ingredients: [
       { ingredient: 'Mango', amount: '2 medium' },
@@ -222,7 +231,8 @@ export default [
   },
   {
     title: 'Cucumber Gazpacho',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694794146/flavour-finder/cucumber-gazpacho_kaqpve.jpg',
+    image:
+      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694916023/flavour-finder/cucumber_gazpacho_46557_16x9_peybup.jpg',
     cuisine: 'Spanish',
     ingredients: [
       { ingredient: 'Cucumber', amount: '2 large' },
@@ -246,7 +256,8 @@ export default [
   },
   {
     title: 'Beef Stir-Fry',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694794137/flavour-finder/beef-stir-fry_jpqpzm.jpg',
+    image:
+      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694916064/flavour-finder/228823-quick-beef-stir-fry-DDMFS-4x3-1f79b031d3134f02ac27d79e967dfef5_xmgoum.jpg',
     cuisine: 'Asian',
     ingredients: [
       { ingredient: 'Beef strips', amount: '400 grams' },
@@ -272,7 +283,8 @@ export default [
   },
   {
     title: 'Chicken Alfredo Pasta',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694794137/flavour-finder/chicken-alfredo-pasta_oqhedj.jpg',
+    image:
+      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694916113/flavour-finder/Chicken-Alfredo-Pasta-1x1-1_apne1t.jpg',
     cuisine: 'Italian',
     ingredients: [
       { ingredient: 'Pasta', amount: '400 grams' },
@@ -301,7 +313,8 @@ export default [
   },
   {
     title: 'Garlic Bread',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694794150/flavour-finder/garlic-bread_hz3m9v.jpg',
+    image:
+      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694916165/flavour-finder/0213-GT-MRET04_01_RECIPE_final_zsot7s.jpg',
     cuisine: 'Italian',
     ingredients: [
       { ingredient: 'Baguette', amount: '1' },
@@ -326,7 +339,7 @@ export default [
   },
   {
     title: 'Roasted Sweet Potatoes',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694794154/flavour-finder/roasted-sweet-potatoes_abxrdx.jpg',
+    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694916204/flavour-finder/SWEET-POTATOES_fe6ee1.jpg',
     cuisine: 'American',
     ingredients: [
       { ingredient: 'Sweet potatoes', amount: '4 medium' },
@@ -349,7 +362,7 @@ export default [
   },
   {
     title: 'Chocolate Brownies',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694794143/flavour-finder/chocolate-brownies_pvog6l.jpg',
+    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694916518/flavour-finder/1C5A9329_rz25ay.jpg',
     cuisine: 'American',
     ingredients: [
       { ingredient: 'Butter', amount: '1/2 cup' },
@@ -378,7 +391,7 @@ export default [
   },
   {
     title: 'Fruit Salad',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694794148/flavour-finder/fruit-salad_bn2l2q.jpg',
+    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694916552/flavour-finder/salad-1_dmjjcr.jpg',
     cuisine: 'International',
     ingredients: [
       { ingredient: 'Apple', amount: '1' },
@@ -402,7 +415,8 @@ export default [
   },
   {
     title: 'Shrimp Cocktail',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694794155/flavour-finder/shrimp-cocktail_fkvcme.jpg',
+    image:
+      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694916601/flavour-finder/ba-best-shrimp-cocktail-2_xgdhyq.jpg',
     cuisine: 'American',
     ingredients: [
       { ingredient: 'Shrimp', amount: '1 pound' },
@@ -421,7 +435,8 @@ export default [
   },
   {
     title: 'Stuffed Mushrooms',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694794162/flavour-finder/stuffed-mushrooms_qbmykg.jpg',
+    image:
+      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694916676/flavour-finder/7032138-3b643290901d4283963338d37a5e557e_xhizbv.jpg',
     cuisine: 'Italian',
     ingredients: [
       { ingredient: 'Mushroom caps', amount: '20' },
@@ -446,7 +461,8 @@ export default [
   },
   {
     title: 'Paneer Tikka',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694787582/flavour-finder/paneer-tikka_xj2uuj.jpg',
+    image:
+      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694916715/flavour-finder/tandoori_paneer_tikka_restaurant_style_if0fkm.jpg',
     cuisine: 'Indian',
     ingredients: [
       { ingredient: 'Paneer', amount: '400 grams' },
@@ -473,7 +489,8 @@ export default [
   },
   {
     title: 'Vegan Stir-Fried Tofu',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694787588/flavour-finder/tofu-stir-fry_crsths.jpg',
+    image:
+      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694916779/flavour-finder/easy-tofu-stir-fry-square_i0altg.jpg',
     cuisine: 'Asian',
     ingredients: [
       { ingredient: 'Tofu', amount: '400 grams' },
@@ -500,7 +517,8 @@ export default [
   },
   {
     title: 'Quinoa Salad',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694787579/flavour-finder/quinoa-salad_u1szof.jpg',
+    image:
+      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694916833/flavour-finder/k_2FPhoto_2FRecipes_2F2019-11-recipe-mediterranean-quinoa-salad_2F2019-10-21_Kitchn89095_Mediteranean-Quinoa-Salad_yhi6ag.jpg',
     cuisine: 'Mediterranean',
     ingredients: [
       { ingredient: 'Quinoa', amount: '1 cup' },
@@ -525,7 +543,8 @@ export default [
   },
   {
     title: 'Mashed Potatoes',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694787578/flavour-finder/mashed-potatoes_fkbq0d.jpg',
+    image:
+      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694916878/flavour-finder/Simply-Recipes-Perfect-Mashed-Potatoes-LEAD-04-150be63f396d4055aaee2584ac31ef14_qd5qsr.jpg',
     cuisine: 'American',
     ingredients: [
       { ingredient: 'Potatoes', amount: '4 large' },
@@ -549,7 +568,8 @@ export default [
   },
   {
     title: 'Vegan Tacos',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694787589/flavour-finder/vegan-tacos_gilub8.jpg',
+    image:
+      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694916953/flavour-finder/20230508-0523_20ITS_20THAT_20SIMPLE30468_vvlvgj.jpg',
     cuisine: 'Mexican',
     ingredients: [
       { ingredient: 'Corn tortillas', amount: '8' },
@@ -575,7 +595,8 @@ export default [
   },
   {
     title: 'Quinoa Stuffed Peppers',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694787580/flavour-finder/quinoa-stuffed-peppers_ypjrad.jpg',
+    image:
+      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694917019/flavour-finder/quinoa-stuffed-peppers-2238585-08-43c24df24a3e4aa8991d22337e1ded40_fw3o0y.jpg',
     cuisine: 'American',
     ingredients: [
       { ingredient: 'Bell peppers', amount: '4' },
@@ -605,7 +626,8 @@ export default [
   },
   {
     title: 'Chicken Marsala',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694787573/flavour-finder/chicken-marsala_r8smbw.jpg',
+    image:
+      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694917116/flavour-finder/slow-cooker-chicken-marsala-recipe-scaled_sgeh8f.jpg',
     cuisine: 'Italian',
     ingredients: [
       { ingredient: 'Chicken breasts', amount: '4' },
@@ -634,7 +656,8 @@ export default [
   },
   {
     title: 'Lamb Curry',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694787575/flavour-finder/lamb-curry_qel0c8.jpg',
+    image:
+      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694917156/flavour-finder/Slow-Cooker-Lamb-Curry-3_rrdpvc.jpg',
     cuisine: 'Indian',
     ingredients: [
       { ingredient: 'Lamb', amount: '500 grams' },
@@ -665,7 +688,7 @@ export default [
   },
   {
     title: 'Shrimp Paella',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694787584/flavour-finder/shrimp-paella_ciddr0.jpg',
+    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694917200/flavour-finder/goya-shrimp-paella_buoydi.jpg',
     cuisine: 'Spanish',
     ingredients: [
       { ingredient: 'Rice', amount: '1 cup' },
@@ -694,7 +717,7 @@ export default [
   },
   {
     title: 'Pulled Pork Sandwich',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694787583/flavour-finder/pulled-pork-sandwich_u6hi4i.jpg',
+    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694917264/flavour-finder/BBQ-Pulled-Pork-16_h2dfil.jpg',
     cuisine: 'American',
     ingredients: [
       { ingredient: 'Pork shoulder', amount: '1 kg' },
@@ -741,7 +764,7 @@ export default [
   },
   {
     title: 'Lentil Soup',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694787576/flavour-finder/lentil-soup_cyfrsy.jpg',
+    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694917337/flavour-finder/lentil-soup-3sq_ajr0i0.jpg',
     cuisine: 'Mediterranean',
     ingredients: [
       { ingredient: 'Lentils', amount: '1 cup' },
@@ -767,7 +790,8 @@ export default [
   },
   {
     title: 'Chicken Fajitas',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694787571/flavour-finder/chicken-fajitas_euzbwl.jpg',
+    image:
+      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694917397/flavour-finder/Flavorful-Chicken-Fajitas_EXPS_CIW19_12540_B08_30_6b_skjil3.jpg',
     cuisine: 'Mexican',
     ingredients: [
       { ingredient: 'Chicken breast', amount: '500 grams' },
@@ -796,7 +820,8 @@ export default [
   },
   {
     title: 'Greek Moussaka',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694787574/flavour-finder/greek-moussaka_wvicnt.jpg',
+    image:
+      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694917495/flavour-finder/classic-moussaka-79675-1_xmatzj.jpg',
     cuisine: 'Greek',
     ingredients: [
       { ingredient: 'Eggplant', amount: '2' },
@@ -825,7 +850,8 @@ export default [
   },
   {
     title: 'Steak Diane',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694787585/flavour-finder/steak-diane_smlvfq.jpg',
+    image:
+      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694917549/flavour-finder/diane_sauce_57749_16x9_kimckj.jpg',
     cuisine: 'European',
     ingredients: [
       { ingredient: 'Beef fillets', amount: '4' },
@@ -857,7 +883,8 @@ export default [
   },
   {
     title: 'Szechuan Chicken',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694787586/flavour-finder/szechuan-chicken_bxw72r.jpg',
+    image:
+      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694917613/flavour-finder/Szechuan-Chicken-wide-FS-and-foodporn-102_ibu2ft.jpg',
     cuisine: 'Chinese',
     ingredients: [
       { ingredient: 'Chicken', amount: '500 grams' },
@@ -885,7 +912,8 @@ export default [
   },
   {
     title: 'Butter Chicken',
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694787571/flavour-finder/butter-chicken_thrfdw.jpg',
+    image:
+      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694917701/flavour-finder/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2019__01__Butter-Chicken-LEAD-2-6ca76f24bbe74114a09958073cb9c76f_bfz9ks.jpg',
     cuisine: 'Indian',
     ingredients: [
       { ingredient: 'Chicken', amount: '500 grams' },

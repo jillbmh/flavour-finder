@@ -26,7 +26,7 @@ export default function SingleRecipe() {
   if (!recipe) return <></>
 
   return (
-    <>
+    <main>
       <h1>{recipe.title}</h1>
 
       <div className="recipe-container">
@@ -75,6 +75,6 @@ export default function SingleRecipe() {
         </div>
       </div>
 
-    </>
+    </main>
   )
 }

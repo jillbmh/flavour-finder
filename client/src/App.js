@@ -17,11 +17,11 @@ export default function App() {
         <Route path='/' element={<Home />} />
         <Route path='/recipes' element={<BrowseRecipes />} />
         <Route path='/recipes/:id' element={<SingleRecipe />} />
-        <Route path='/blogs/:id' element={<SingleBlog />} />
         <Route path='/blogs' element={<Blog />} />
+        <Route path='/blogs/:id' element={<SingleBlog />} />
       </Routes>
       {/* Show Footer on all pages */}
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
   )
 }

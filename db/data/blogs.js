@@ -1,6 +1,7 @@
 export default [
   {
-    image: 'healthy_breakfast_ideas.png',
+    image:
+      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694982354/flavour-finder/best-healthy-breakfast-tout-1-c5c4576de1b54a3ca5441c4502301970_ci3m9s.jpg',
     title: 'Revolutionize Your Breakfast',
     author: 'Jane Doe',
     dateCreated: '01/07/2023',
@@ -27,7 +28,7 @@ export default [
     The key to a revolutionary breakfast is not just what you eat but also how you prepare it. Incorporate fresh ingredients, experiment with new recipes, and take the time to savor each bite. Not only will these healthy breakfast ideas help improve your physical well-being, but they'll also give you the mental boost needed to tackle whatever challenges the day may bring.`
   },
   {
-    image: 'turmeric_health_benefits.png',
+    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694982422/flavour-finder/Turmeric_c8wswf.jpg',
     title: 'Unlocking the Health Benefits of Turmeric',
     author: 'John Smith',
     dateCreated: '15/08/2023',
@@ -57,7 +58,8 @@ export default [
     In conclusion, the health benefits of turmeric make it a worthy addition to anyone's diet. Whether you're trying to reduce inflammation, boost your antioxidants, or simply add some zest to your meals, turmeric has something to offer. So the next time you're cooking, consider reaching for that jar of turmeric to not just spice up your dish, but also your life.`
   },
   {
-    image: 'vegan_protein_sources.png',
+    image:
+      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694982460/flavour-finder/vegan-protein-sources-2000-b9bf0e04cb5746b9ac878063c4e1dac4_cv8jei.jpg',
     title: 'Plant-Powered Protein: A Vegan’s Guide',
     author: 'Emily Johnson',
     dateCreated: '03/09/2023',
@@ -90,7 +92,8 @@ export default [
     Being vegan doesn’t mean compromising on protein or relying on supplements. Mother Nature offers a cornucopia of protein-rich foods that are plant-based, proving that you can be vegan and still meet all your nutritional needs. So the next time someone asks, "Where do you get your protein?", you’ll have plenty to say.`
   },
   {
-    image: 'saving_on_groceries.png',
+    image:
+      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694982508/flavour-finder/save-money-on-groceries-GettyImages-471453337-MLedit_qxjgtu.jpg',
     title: 'Smart Shopping: Tips to Save Money on Groceries',
     author: 'Alex Williams',
     dateCreated: '12/05/2022',
