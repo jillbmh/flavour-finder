@@ -49,7 +49,8 @@ export default function Header() {
 
 
   return (
-    <div className='header-menu-container'>
+    <>
+      {/* <div className='header-menu-container'> */}
       <header>
         {/* MENU ICON */}
         <div className='menu-icon-container'>
@@ -65,11 +66,14 @@ export default function Header() {
         </div>
 
         {/* LOGO */}
-        <Link to='/' onClick={() => {
-          if (openSideMenu) setAnimation('shrinking')
-          setOpenSideMenu(false)
-          setModalVisible(false)
-        }}>
+        <Link
+          to='/'
+          onClick={() => {
+            if (openSideMenu) setAnimation('shrinking')
+            setOpenSideMenu(false)
+            setModalVisible(false)
+          }}
+        >
           <img src={NewLogo} className='logo' />
         </Link>
 
@@ -85,20 +89,36 @@ export default function Header() {
       </header>
 
       {/* MENU */}
-      <div className='side-menu-container'>
-        <div className={`side-menu ${openSideMenu ? 'open' : ''}`}>
-          <Link to='/recipes' onClick={() => setOpenSideMenu(false)}>
-            <span>Recipes</span>
-            <img src={ArrowIcon} height='13px' />
-          </Link>
-          <Link to='/blogs' onClick={() => setOpenSideMenu(false)}>
-            <span>Blogs</span>
-            <img src={ArrowIcon} height='13px' />
-          </Link>
-        </div>
+      {/* <div className='side-menu-container'> */}
+      <div className={`side-menu ${openSideMenu ? 'open' : ''}`}>
+        <Link
+          to='/recipes'
+          onClick={() => {
+            if (openSideMenu) setAnimation('shrinking')
+            setOpenSideMenu(false)
+            setModalVisible(false)
+          }}
+        >
+          <span>Recipes</span>
+          <img src={ArrowIcon} height='13px' />
+        </Link>
+        <Link
+          to='/blogs'
+          onClick={() => {
+            if (openSideMenu) setAnimation('shrinking')
+            setOpenSideMenu(false)
+            setModalVisible(false)
+          }}
+        >
+          <span>Blogs</span>
+          <img src={ArrowIcon} height='13px' />
+        </Link>
       </div>
+      {/* </div> */}
+      
 
       <AccountModal isVisible={isModalVisible} closeModal={toggleModal} />
-    </div>
+      {/* </div> */}
+    </>
   )
 }

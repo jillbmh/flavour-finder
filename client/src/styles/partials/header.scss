@@ -1,7 +1,8 @@
 @import '../variables.scss';
 
 header {
-  position: relative;
+  position: fixed;
+  z-index: 1;
   width: 100%;
   font-size: 0.9rem;
   font-weight: 300;
@@ -11,7 +12,6 @@ header {
   align-items: center;
   padding: 1.5rem;
   border-bottom: 1px solid $border-light;
-  z-index: 1000;
 
   * {
     user-select: none;
@@ -88,46 +88,33 @@ header {
   }
 }
 
-.side-menu-container {
-  flex: 1;
-  overflow: hidden;
-
-  .side-menu {
-    position: absolute;
-    left: calc(-302px - 1.5rem * 2);
-    width: fit-content;
-    height: 100%;
-    padding: 1.5rem;
-    background-color: $background-dark;
-    border-right: 1px solid $border-light;
-    transition: left 0.4s ease-in-out;
-    z-index: 1000;
-
-    a {
-      border-bottom: 1px solid $border-light;
-      padding: 0.5rem 0;
-      width: 300px;
-      max-width: 100vw;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    &.open {
-      left: 0;
-    }
-  }
-}
-
-.header-menu-container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 100%;
+.side-menu {
+  z-index: 1000;
   position: fixed;
-  pointer-events: none;
-  header, .side-menu {
-    pointer-events: auto;
+  left: calc(-302px - 1.5rem * 2);
+  width: fit-content;
+  bottom: 0;
+  top: 65px;
+  @media (min-width: $tablet-width) {
+    top: 76.19px;
+  }
+  padding: 1.5rem;
+  background-color: $background-dark;
+  border-right: 1px solid $border-light;
+  transition: left 0.4s ease-in-out;
+
+  a {
+    border-bottom: 1px solid $border-light;
+    padding: 0.5rem 0;
+    width: 300px;
+    max-width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &.open {
+    left: 0;
   }
 }
 
