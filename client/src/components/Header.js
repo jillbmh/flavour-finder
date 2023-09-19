@@ -50,7 +50,6 @@ export default function Header() {
 
   return (
     <>
-      {/* <div className='header-menu-container'> */}
       <header>
         {/* MENU ICON */}
         <div className='menu-icon-container'>
@@ -89,7 +88,6 @@ export default function Header() {
       </header>
 
       {/* MENU */}
-      {/* <div className='side-menu-container'> */}
       <div className={`side-menu ${openSideMenu ? 'open' : ''}`}>
         <Link
           to='/recipes'
@@ -114,11 +112,9 @@ export default function Header() {
           <img src={ArrowIcon} height='13px' />
         </Link>
       </div>
-      {/* </div> */}
       
 
       <AccountModal isVisible={isModalVisible} closeModal={toggleModal} />
-      {/* </div> */}
     </>
   )
 }
