@@ -1,2 +1,27 @@
 @import '../variables.scss';
 
+footer {
+  
+  display: flex;
+  flex-direction: space-between;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px 10px 20px;
+  font-weight: 500;
+  a {
+    color: $text-light;
+    text-decoration: none;
+    margin-left: 0.8rem;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+
+.footer-logo {
+  margin-left: 10px;
+  height: 20px;
+
+}
