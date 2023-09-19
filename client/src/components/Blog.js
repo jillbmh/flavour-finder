@@ -21,7 +21,6 @@ export default function Blog() {
   }, [])
   return (
     <>
-      <h1>blogs</h1>
       <section className='blog-container'>
         {blogs.length > 0 ? 
           blogs.map(blog => (
