@@ -21,23 +21,25 @@ export default function Blog() {
   }, [])
   return (
     <>
-      <section className='blog-container'>
-        {blogs.length > 0 ? 
-          blogs.map(blog => (
-            <div 
-              className='individual-blog' 
-              key={blog._id} 
-              style={{ backgroundImage: `url(${blog.image})` }}
-            >
-              <Link to={`/blogs/${blog._id}`}>
-                <div className='blog-title'>
-                  <h3>{blog.title}</h3>
+      <main>
+        <div className='grid-container'>
+          {blogs.length > 0 
+            ? blogs.map(blog => (
+              <Link key={blog._id} to={`/blogs/${blog._id}`} className='blog'>
+                <div 
+                  className= 'individual-blog'
+                  style={{ backgroundImage: `url(${blog.image})`,
+                  }}
+                >
+                  <div className='blog-title'>
+                    <p>{blog.title}</p>
+                  </div>
                 </div>
               </Link>
-            </div>
-          ))
-          : 'Loading...'}
-      </section>
+            ))
+            : 'Loading...'}
+        </div>
+      </main>
     </>
   )
 }
