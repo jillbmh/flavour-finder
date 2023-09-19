@@ -18,11 +18,11 @@ export default function RecipeForm() {
 
   // State
   const [ingredients, setIngredients] = useState([{ name: '', amount: '' }])
-  
+
   const addIngredient = () => {
-    setIngredients([ ...ingredients, { name: '', amount: '' } ])
+    setIngredients([...ingredients, { name: '', amount: '' }])
   }
-  
+
   const removeIngredient = (index) => {
     const newIngredients = [...ingredients]
 
