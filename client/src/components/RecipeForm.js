@@ -65,7 +65,7 @@ export default function RecipeForm() {
         <input placeholder='New Recipe' {...register('title', { required: true })} />
         {/* {errors.username && <span>Username is required</span>} */}
         {/* <input type='file' accept='image/png, image/jpeg, image/jpg' {...register('image', { required: false })} /> */}
-        <input type='text' {...register('image', { required: true })} />
+        <input type='text' placeholder='Image Path' {...register('image', { required: true })} />
         <select {...register('cuisine', { required: true })}>
           <option value='' disabled>
             Choose a cuisine
