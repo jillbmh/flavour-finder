@@ -18,12 +18,43 @@ export default function RecipeForm() {
 
   // State
   const [ingredients, setIngredients] = useState([{ name: '', amount: '' }])
+  const [methods, setMethods] = useState([''])
+  console.log(methods)
+
+  // Method
+  const addMethod = () => {
+    setMethods([...methods, ''])
+  }
+
+  const removeMethod = (index) => {
+    // TODO - Fix the bug here by specifically deleting the correct index, use .filter()
+    const newMethod = [...methods]
+
+    newMethod.splice(index, 1)
+
+    setMethods(newMethod)
+  }
+
+  const handleMethodNameChange = (e, index) => {
+    const newMethods = methods.map((item, idx) => {
+      // When the current index matches the provided index, return the new value
+      if (idx === index) {
+        return e.target.value
+      }
+      // Otherwise, return the original item
+      return item
+    })
+    setMethods(newMethods)
+
+  }
+  // Ingredients
 
   const addIngredient = () => {
     setIngredients([...ingredients, { name: '', amount: '' }])
   }
 
   const removeIngredient = (index) => {
+    // TODO - Fix the bug here by specifically deleting the correct index, use .filter()
     const newIngredients = [...ingredients]
 
     newIngredients.splice(index, 1)
@@ -66,7 +97,7 @@ export default function RecipeForm() {
         {/* {errors.username && <span>Username is required</span>} */}
         {/* <input type='file' accept='image/png, image/jpeg, image/jpg' {...register('image', { required: false })} /> */}
         <input type='text' placeholder='Image Path' {...register('image', { required: true })} />
-        <select {...register('cuisine', { required: true })}>
+        <select className='dropbtn' {...register('cuisine', { required: true })}>
           <option value='' disabled>
             Choose a cuisine
           </option>
@@ -84,7 +115,7 @@ export default function RecipeForm() {
           <option value='asian'>Asian</option>
         </select>
 
-        <select {...register('type', { required: true })}>
+        <select className='dropbtn' {...register('type', { required: true })}>
           <option value='' disabled>
             Choose the dish type
           </option>
@@ -102,6 +133,29 @@ export default function RecipeForm() {
         <label>Serves</label>
         <input type='number' min='0' max='12' {...register('serves', { required: true })} />
 
+        <section className="checkbox-container">
+          <label>
+            <input type="checkbox" />
+            Vegan
+          </label>
+
+          <label>
+            <input type="checkbox" />
+            Vegetarian
+          </label>
+
+          <label>
+            <input type="checkbox" />
+            Gluten Free
+          </label>
+
+          <label>
+            <input type="checkbox" />
+            Pescatarian
+          </label>
+        </section>
+
+        {/* Ingredients */}
         <label>Ingredients</label>
         <div className='container-ingredients'>
           {ingredients.map((ingredient, index) => (
@@ -152,7 +206,42 @@ export default function RecipeForm() {
           </button>
         </div>
 
+        {/* Method */}
+        <label>Method</label>
+        <div className='container-methods'>
+          {methods.map((method, index) => (
+            <div className='methods' key={`method_${index}`}>
+              <Controller
+                name={`method[${index}].method`}
+                control={control}
+                defaultValue={method}
+                rules={{ required: true }}
+                render={({ field }) => (
+                  <input
+                    className='methods-input'
+                    placeholder='Add Method'
+                    {...field}
+                    onChange={e => {
+                      field.onChange(e)
+                      handleMethodNameChange(e, index)
+                    }}
+                  />
+                )}
+              />
+              <button type='button' onClick={() => removeMethod(index)}>
+                <img src={RemoveIcon} width='18px' />
+              </button>
+            </div>
+          ))}
+          <button className='remove-icon' type='button' onClick={addMethod}>
+            <img src={PlusIcon} width='28px' alt='Add Ingredient' />
+          </button>
+        </div>
+
+
         <input type='submit' value='Submit Recipe' />
+
+
       </form>
     </main>
   )
