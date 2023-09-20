@@ -1,11 +1,9 @@
 import { useState } from 'react'
 import LoginForm from './LoginForm'
 import RegisterForm from './RegisterForm'
-import Illustration from '../images/chef-illustration.png'
-import RecipeUploadIllustration from '../images/upload-illustration.png'
 
 export default function AccountModal({ isVisible, closeModal }) {
-  const [isLogin, setIsLogin] = useState(true)
+  const [isLogin, setIsLogin] = useState(false)
 
   const switchToRegister = () => {
     setIsLogin(false)

@@ -9,10 +9,17 @@ import ArrowIcon from '../images/arrow-icon.png'
 import AccountModal from './AccountModal'
 
 export default function Header() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isModalVisible, setModalVisible] = useState(false)
+  const [isUserDropdownVisible, setUserDropdownVisible] = useState(false)
   const [animation, setAnimation] = useState('none')
   const [openSideMenu, setOpenSideMenu] = useState(false)
-  const [isModalVisible, setModalVisible] = useState(true)
+
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    setIsLoggedIn(!!token)
+  }, [])
 
   useEffect(() => {
     if (animation === 'shrinking') {
@@ -38,6 +45,10 @@ export default function Header() {
   }
 
   const toggleModal = () => {
+    if (isLoggedIn) {
+      setUserDropdownVisible(!isUserDropdownVisible)
+      return
+    }
     if (isMenuOpen) {
       setOpenSideMenu(false)
       setTimeout(() => setModalVisible(!isModalVisible), 400)
@@ -45,6 +56,16 @@ export default function Header() {
     } else {
       setModalVisible(!isModalVisible)
     }
+  }
+
+  const UserDropdown = () => {
+    return (
+      <div className='user-dropdown'>
+        <Link to='/my-recipes'>My Recipes</Link>
+        <Link to='/my-account'>My Account</Link>
+        {/* Add more links or options as needed */}
+      </div>
+    )
   }
 
 
@@ -112,8 +133,9 @@ export default function Header() {
           <img src={ArrowIcon} height='13px' />
         </Link>
       </div>
-      
 
+      {isLoggedIn && isUserDropdownVisible && <UserDropdown />}
+      
       <AccountModal isVisible={isModalVisible} closeModal={toggleModal} />
     </>
   )

@@ -100,7 +100,7 @@ export default function RegisterForm(props) {
         {errors.email && errors.email.type === 'pattern' && (
           <div className='error'>
             <img src={ErrorIcon} width='15px' />
-            <p>Email is invalid</p>
+            <p>Please check your email format</p>
           </div>
         )}
         {errors.email && errors.email.type === 'duplicate' && (

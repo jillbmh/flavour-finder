@@ -3,12 +3,14 @@ import { useForm } from 'react-hook-form'
 import { Player, Controls } from '@lottiefiles/react-lottie-player'
 import axios from 'axios'
 import LoadingSpinner from '../images/Rolling-1s-200px.svg'
+import ErrorIcon from '../images/error.png'
 
 export default function LoginForm(props) {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    setError,
   } = useForm()
 
   const successIconRef = useRef(null)
@@ -31,12 +33,16 @@ export default function LoginForm(props) {
 
           setTimeout(() => {
             props.closeModal()
-          }, 2000)
-        }, 1500)
+          }, 1500)
+        }, 1000)
       } catch (error) {
         console.log(error)
         document.getElementById('loading-icon').style.display = 'none'
         document.getElementById('submit-button').style.display = 'block'
+        setError('loginFailed', {
+          type: 'loginFailed',
+          message: 'The email address or password is incorrect',
+        })
       }
     }
 
@@ -82,6 +88,12 @@ export default function LoginForm(props) {
       <form onSubmit={handleSubmit(onSubmit)} autoComplete='off'>
         <input placeholder='Email' {...register('email', { required: true })} />
         <input type='password' placeholder='Password' {...register('password', { required: true })} />
+        {errors.loginFailed && errors.loginFailed.type === 'loginFailed' && (
+          <div className='error'>
+            <img src={ErrorIcon} width='15px' />
+            <p>{errors.loginFailed.message}</p>
+          </div>
+        )}
 
         <input id='submit-button' type='submit' value='Log In' />
         <div className='status-icon-container'>
