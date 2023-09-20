@@ -59,7 +59,8 @@ export default function Header() {
   }
 
   const logOutuser = () => {
-    
+    localStorage.removeItem('token')
+    window.location.reload()
   }
   
   const UserDropdown = () => {
@@ -67,7 +68,7 @@ export default function Header() {
       <div className='user-dropdown'>
         <Link to='/my-recipes/:userId'>My Recipes</Link>
         <Link to='/my-account/:userId'>My Account</Link>
-        <Link to='/'>Log Out</Link>
+        <Link to='/' onClick={logOutuser}>Log Out</Link>
       </div>
     )
   }
