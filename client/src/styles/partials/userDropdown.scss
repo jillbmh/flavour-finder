@@ -1,13 +1,19 @@
 @import '../variables.scss';
 
 .user-dropdown {
-  width: 200px;
-  height: 400px;
-  background-color: white;
-  color: black;
-
+  background-color: $background-dark;
   position: absolute;
   top: 76.19px;
   right: 0;
   z-index: 1;
+
+  a {
+    display: block;
+    color: $text-light;
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid $border-light;
+    text-transform: uppercase;
+  }
 }
