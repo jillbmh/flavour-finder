@@ -57,6 +57,10 @@ export default function Header() {
       setModalVisible(!isModalVisible)
     }
   }
+
+  const logOutuser = () => {
+    
+  }
   
   const UserDropdown = () => {
     return (
