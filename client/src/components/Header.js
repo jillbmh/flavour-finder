@@ -12,7 +12,7 @@ export default function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isModalVisible, setModalVisible] = useState(false)
-  const [isUserDropdownVisible, setUserDropdownVisible] = useState(false)
+  const [isUserDropdownVisible, setUserDropdownVisible] = useState(true)
   const [animation, setAnimation] = useState('none')
   const [openSideMenu, setOpenSideMenu] = useState(false)
 
@@ -57,17 +57,16 @@ export default function Header() {
       setModalVisible(!isModalVisible)
     }
   }
-
+  
   const UserDropdown = () => {
     return (
       <div className='user-dropdown'>
-        <Link to='/my-recipes'>My Recipes</Link>
-        <Link to='/my-account'>My Account</Link>
-        {/* Add more links or options as needed */}
+        <Link to='/my-recipes/:userId'>My Recipes</Link>
+        <Link to='/my-account/:userId'>My Account</Link>
+        <Link to='/'>Log Out</Link>
       </div>
     )
   }
-
 
   return (
     <>
@@ -135,7 +134,7 @@ export default function Header() {
       </div>
 
       {isLoggedIn && isUserDropdownVisible && <UserDropdown />}
-      
+
       <AccountModal isVisible={isModalVisible} closeModal={toggleModal} />
     </>
   )
