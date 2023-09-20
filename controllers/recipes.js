@@ -4,7 +4,7 @@ import Recipe from '../models/recipe.js'
 
 // Index route
 export const getAllRecipes = async (req, res) => {
-  const { cuisine, type, spiceLevel,  } = req.query
+  const { cuisine, type, spiceLevel } = req.query
   const filterCriteria = {}
 
   if (cuisine) {

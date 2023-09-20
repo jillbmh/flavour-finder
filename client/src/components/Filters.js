@@ -1,13 +1,9 @@
 import { useState, useRef } from 'react'
+import SliderMarker from '../images/speech-bubble.png'
 
 export default function Filters({ filter, setFilter }) {
   const [value, setValue] = useState(0)
   const sliderRef = useRef(null)
-
-  const handleInputChange = event => {
-    const newValue = event.target.value
-    setValue(newValue)
-  }
 
   const handleSliderChange = event => {
     const newValue = event.target.value
@@ -17,9 +13,21 @@ export default function Filters({ filter, setFilter }) {
   const sliderValuePosition = () => {
     if (sliderRef.current) {
       const slider = sliderRef.current
+      const min = parseInt(slider.min, 10)
+      const max = parseInt(slider.max, 10)
+      const val = parseInt(value, 10)
+
+      // Calculate percentage (0-1) of where the slider's value is
+      const percentage = (val - min) / (max - min)
+
+      // Calculate the actual width of the slider (excluding the thumb width)
       const trackWidth = slider.clientWidth
-      const thumbWidth = (slider.clientWidth / (slider.max - slider.min)) * (slider.step || 1)
-      const thumbPosition = (value / slider.max) * trackWidth - thumbWidth / 2
+
+      // You might need to tweak the thumbWidth based on your styling
+      const thumbWidth = 16 // Assume a thumb width of 16px. Adjust as needed.
+
+      // Calculate the left position
+      const thumbPosition = percentage * (trackWidth - thumbWidth)
       return { left: `${thumbPosition}px` }
     }
     return { left: '0' }
@@ -63,9 +71,10 @@ export default function Filters({ filter, setFilter }) {
           value={value}
           onChange={handleSliderChange}
         />
-        <span className='slider-value' style={sliderValuePosition}>
-          {value}
-        </span>
+        <div className='slider-marker' style={sliderValuePosition()}>
+          <img src={SliderMarker} />
+          <span className='slider-value'>{value}</span>
+        </div>
       </div>
     </div>
   )
