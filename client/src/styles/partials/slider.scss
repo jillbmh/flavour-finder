@@ -1,0 +1,21 @@
+.slider-container {
+  position: relative;
+  width: 250px;
+}
+
+input[type="range"] {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.slider-value {
+  position: absolute;
+  top: -25px; /* adjust according to your design */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 2px 5px;
+  border-radius: 4px;
+  transform: translateX(-50%); /* This will center it above the thumb */
+  z-index: 2; /* So it's above the slider */
+}
