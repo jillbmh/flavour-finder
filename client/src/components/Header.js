@@ -12,7 +12,7 @@ export default function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isModalVisible, setModalVisible] = useState(false)
-  const [isUserDropdownVisible, setUserDropdownVisible] = useState(false)
+  const [isUserDropdownVisible, setUserDropdownVisible] = useState(true)
   const [animation, setAnimation] = useState('none')
   const [openSideMenu, setOpenSideMenu] = useState(false)
 
@@ -67,7 +67,6 @@ export default function Header() {
       </div>
     )
   }
-
 
   return (
     <>
@@ -135,7 +134,7 @@ export default function Header() {
       </div>
 
       {isLoggedIn && isUserDropdownVisible && <UserDropdown />}
-      
+
       <AccountModal isVisible={isModalVisible} closeModal={toggleModal} />
     </>
   )

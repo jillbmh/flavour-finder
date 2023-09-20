@@ -1,0 +1,13 @@
+@import '../variables.scss';
+
+.user-dropdown {
+  width: 200px;
+  height: 400px;
+  background-color: white;
+  color: black;
+
+  position: absolute;
+  top: 76.19px;
+  right: 0;
+  z-index: 1;
+}
