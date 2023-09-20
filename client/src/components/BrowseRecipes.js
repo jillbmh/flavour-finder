@@ -1,31 +1,52 @@
 import { useState, useEffect } from 'react'
-import { useLocation, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
+import Filters from './Filters'
 
 export default function BrowseRecipes() {
-  const { state } = useLocation()
   const [recipes, setRecipes] = useState([])
+  const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
-    async function getRecipesData() {
-      try {
-        const { data } = await axios.get('/api/recipes')
-        setRecipes(data)
-        console.log(data)
-      } catch (error) {
-        console.error(error)
+  const [filter, setFilter] = useState({
+    cuisine: '',
+    type: '',
+    // Add more filters as needed
+  })
+
+  async function getRecipesData() {
+    setLoading(true)
+    try {
+      let url = '/api/recipes'
+      const queryParams = []
+      if (filter.cuisine) queryParams.push(`cuisine=${filter.cuisine}`)
+      if (filter.type) queryParams.push(`type=${filter.type}`)
+      if (queryParams.length) {
+        url = url + '?' + queryParams.join('&')
       }
+      const { data } = await axios.get(url)
+      setRecipes(data)
+      console.log(data)
+      setLoading(false)
+    } catch (error) {
+      console.error(error)
+      setLoading(false)
     }
+  }
+
+  // Re-fetch recipes whenever filter is changed
+  useEffect(() => {
     getRecipesData()
-  }, [])
+  }, [filter])
 
   return (
     <>
       <main>
-        {/* <h1>All Recipes</h1> */}
+        <Filters filter={filter} setFilter={setFilter} />
         <div className='grid-container'>
-          {recipes.length > 0
-            ? recipes.map(recipe => (
+          {loading ? (
+            'Loading...'
+          ) : recipes.length > 0 ? (
+            recipes.map(recipe => (
               <Link key={recipe._id} to={`/recipes/${recipe._id}`} className='recipe'>
                 <div
                   className='recipe-container'
@@ -39,31 +60,11 @@ export default function BrowseRecipes() {
                 </div>
               </Link>
             ))
-            : 'Loading...'}
+          ) : (
+            'No recipes found'
+          )}
         </div>
       </main>
-      {/* <h1>{state.category}</h1>
-      <div className="grid-container">
-        {recipes.length > 0 ? (
-          recipes
-            .filter(recipe => recipe.category === state.category)
-            .map(recipe => (
-              <div key={recipe._id} className="recipe-container">
-                <Link
-                  to={`/recipes/${recipe._id}`}
-                  className="recipe-small"
-                  style={{ backgroundImage: `url(${recipe.image})` }}
-                >
-                  <div className="recipe-text">
-                    <h3>{recipe.title}</h3>
-                  </div>
-                </Link>
-              </div>
-            ))
-        ) : (
-          'ERROR'
-        )}
-      </div> */}
     </>
   )
 }

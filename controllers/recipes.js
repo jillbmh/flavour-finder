@@ -4,8 +4,29 @@ import Recipe from '../models/recipe.js'
 
 // Index route
 export const getAllRecipes = async (req, res) => {
-  const recipes = await Recipe.find()
-  return res.json(recipes)
+  const { cuisine, type } = req.query
+  console.log(req.query)
+  console.log(cuisine)
+  console.log(type)
+  const filterCriteria = {}
+
+  if (cuisine) {
+    filterCriteria.cuisine = new RegExp(cuisine, 'i')
+  }
+
+  if (type) {
+    filterCriteria.type = type
+  }
+
+  console.log(filterCriteria)
+  try {
+    const recipes = await Recipe.find(filterCriteria)
+    console.log(recipes)
+    return res.json(recipes)
+  } catch (error) {
+    console.log(error)
+    return res.status(500).json({ message: error.message })
+  }
 }
 
 // Show route
