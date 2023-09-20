@@ -1,14 +1,51 @@
-import { useState, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import SliderMarker from '../images/speech-bubble.png'
 
 export default function Filters({ filter, setFilter }) {
   const [value, setValue] = useState(0)
+  const [isMarkerVisible, setIsMarkerVisible] = useState(false) // Add this line
   const sliderRef = useRef(null)
+  const hideTimeout = useRef(null) // Reference for the timeout
 
   const handleSliderChange = event => {
     const newValue = event.target.value
     setValue(newValue)
   }
+
+  useEffect(() => {
+    const showMarker = () => {
+      setIsMarkerVisible(true)
+      clearTimeout(hideTimeout.current) // Clear any ongoing timeout
+    }
+
+    const hideMarkerAfterDelay = () => {
+      clearTimeout(hideTimeout.current) // Clear any ongoing timeout
+      hideTimeout.current = setTimeout(() => {
+        setIsMarkerVisible(false)
+      }, 500)
+    }
+
+    const slider = sliderRef.current
+    if (slider) {
+      slider.addEventListener('mousedown', showMarker)
+      slider.addEventListener('mouseup', hideMarkerAfterDelay)
+
+      // Add these if you want to support touch devices
+      slider.addEventListener('touchstart', showMarker)
+      slider.addEventListener('touchend', hideMarkerAfterDelay)
+    }
+
+    return () => {
+      if (slider) {
+        slider.removeEventListener('mousedown', showMarker)
+        slider.removeEventListener('mouseup', hideMarkerAfterDelay)
+
+        // For touch devices
+        slider.removeEventListener('touchstart', showMarker)
+        slider.removeEventListener('touchend', hideMarkerAfterDelay)
+      }
+    }
+  }, [])
 
   const sliderValuePosition = () => {
     if (sliderRef.current) {
@@ -17,16 +54,12 @@ export default function Filters({ filter, setFilter }) {
       const max = parseInt(slider.max, 10)
       const val = parseInt(value, 10)
 
-      // Calculate percentage (0-1) of where the slider's value is
       const percentage = (val - min) / (max - min)
 
-      // Calculate the actual width of the slider (excluding the thumb width)
       const trackWidth = slider.clientWidth
 
-      // You might need to tweak the thumbWidth based on your styling
-      const thumbWidth = 16 // Assume a thumb width of 16px. Adjust as needed.
+      const thumbWidth = 16
 
-      // Calculate the left position
       const thumbPosition = percentage * (trackWidth - thumbWidth)
       return { left: `${thumbPosition}px` }
     }
@@ -71,8 +104,9 @@ export default function Filters({ filter, setFilter }) {
           value={value}
           onChange={handleSliderChange}
         />
-        <div className='slider-marker' style={sliderValuePosition()}>
-          <img src={SliderMarker} />
+
+        <div className={`slider-marker ${isMarkerVisible ? 'visible' : ''}`} style={sliderValuePosition()}>
+          <img src={SliderMarker} alt='Slider Marker' />
           <span className='slider-value'>{value}</span>
         </div>
       </div>
