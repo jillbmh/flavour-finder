@@ -7,7 +7,6 @@
   right: 0;
   top: 100vh;
   height: calc(100% - 65px);
-  background-color: $background-dark;
   color: $text-light;
   transition: top 0.5s ease-in-out;
   padding: 1.5rem;
@@ -22,13 +21,6 @@
     @media (min-width: $tablet-width) {
       top: 76.19px;
     }
-  }
-
-  img {
-    position: absolute;
-    top: 20px;
-    right: -120px;
-    z-index: -1;
   }
 
   .heading-container {
@@ -47,19 +39,34 @@
     }
   }
 
+  .welcome-back-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    * {
+      display: inline-block;
+    }
+
+    .lf-player-container {
+      height: 26px;
+    }
+  }
+
   .form-container {
     width: 100%;
     max-width: 350px;
-    background: rgba(58, 49, 40, 0.3);
-    backdrop-filter: blur(3.5px);
-    -webkit-backdrop-filter: blur(3.5px);
+    background: rgba(58, 49, 40, 0.65);
+    backdrop-filter: blur(7.5px);
+    -webkit-backdrop-filter: blur(5.5px);
     border-radius: 12px;
-    padding: 1.5rem;
+    padding: 2rem;
 
     p {
       span {
         font-weight: 500;
         color: #ffbf92;
+        cursor: pointer;
       }
     }
 
@@ -71,10 +78,30 @@
     form {
       margin: 1rem 0;
 
-      span {
-        font-size: 0.85rem;
-        color: #ea3333;
+      div.error {
+        color: #ffffff;
         margin: 0.5rem 0;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        p {
+          transform: translateY(1.5px);
+        }
+      }
+
+      .status-icon-container {
+        max-height: 50px;
+        display: grid;
+        place-items: center;
+
+        #loading-icon, #success-icon {
+          display: none;
+        }
+
+        #loading-icon {
+          padding: 5px;
+        }
       }
     }
 
@@ -84,10 +111,14 @@
       background-color: white;
       width: 100%;
       border: none;
-      padding: 1rem 0.75rem;
+      padding: 0.85rem 0.75rem;
       border-radius: 9px;
 
-      &:not(:last-of-type) {
+      &:has(+ .error) {
+        outline: solid 1.75px $error;
+      }
+
+      &:not(:last-of-type):not(:has(+ .error)) {
         margin-bottom: 0.85rem;
       }
 
@@ -97,6 +128,10 @@
         color: $text-light;
         font-weight: 700;
         font-size: 0.95rem;
+
+        &:hover {
+          background-color: #f39d60;
+        }
       }
 
       &::placeholder {
