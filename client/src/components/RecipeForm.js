@@ -2,13 +2,41 @@
 // CLOUDINARY NEEDS TO RETURN THE IMAGE URL AS A STRING SO THE POST REQUEST WORKS
 
 import { useForm, Controller } from 'react-hook-form'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import PlusIcon from '../images/plus-icon.png'
 import RemoveIcon from '../images/remove-icon.png'
 import axios from 'axios'
+import { v4 as uuidv4 } from 'uuid'
+import { useEffect } from 'react'
+
+const generateUniqueId = () => uuidv4()
+
+export default function RecipeForm({ formId }) {
+
+  console.log(formId)
+
+  const [isFetching, setIsFetching] = useState(false)
+  const [recipeInformation, setRecipeInformation] = useState({
+    'name': '',
+    'imagePath': '',
+    'dishType': '',
+  })
+
+  useEffect(() => {
+    if (!formId) return
+
+    // 1. Async function
+    // 2. Get data --> { wrangle the data and set each bit of state. RecipeName, Hours, Minutes}
+    // 3. setIngredients() -> setMethods() --> setRecipeInformation()
+    // 4. setIsFetching(true)
+
+  }, [])
+
+  // if (formId && !setIsFetching) return <></>
+  // Else render the form and we have the data in the form:
 
 
-export default function RecipeForm() {
+
   const { register, handleSubmit, formState: { errors }, control } = useForm({
     defaultValues: {
       cuisine: '',
@@ -17,48 +45,39 @@ export default function RecipeForm() {
   })
 
   // State
-  const [ingredients, setIngredients] = useState([{ name: '', amount: '' }])
-  const [methods, setMethods] = useState([''])
-  console.log(methods)
+  const [ingredients, setIngredients] = useState([{ id: generateUniqueId(), name: '', amount: '' }])
+  const [methods, setMethods] = useState([{ id: generateUniqueId(), value: '' }])
 
   // Method
   const addMethod = () => {
-    setMethods([...methods, ''])
+    setMethods([...methods, { id: generateUniqueId(), value: '' }])
   }
 
-  const removeMethod = (index) => {
-    // TODO - Fix the bug here by specifically deleting the correct index, use .filter()
-    const newMethod = [...methods]
-
-    newMethod.splice(index, 1)
-
-    setMethods(newMethod)
+  const removeMethod = (methodId) => {
+    setMethods(methods.filter(method => method.id !== methodId))
   }
 
-  const handleMethodNameChange = (e, index) => {
-    const newMethods = methods.map((item, idx) => {
-      // When the current index matches the provided index, return the new value
-      if (idx === index) {
-        return e.target.value
+  const handleMethodNameChange = (e, methodId) => {
+    const newMethods = methods.map((method) => {
+      if (method.id === methodId) {
+        return { ...method, value: e.target.value }
       }
-      // Otherwise, return the original item
-      return item
+      return method
     })
     setMethods(newMethods)
-
   }
+
+
+
   // Ingredients
-
   const addIngredient = () => {
-    setIngredients([...ingredients, { name: '', amount: '' }])
+    setIngredients([...ingredients, { id: generateUniqueId(), name: '', amount: '' }])
   }
 
-  const removeIngredient = (index) => {
-    // TODO - Fix the bug here by specifically deleting the correct index, use .filter()
-    const newIngredients = [...ingredients]
-
-    newIngredients.splice(index, 1)
-
+  const removeIngredient = (ingredientId) => {
+    const newIngredients = ingredients.filter(ingredient => {
+      return ingredient.id !== ingredientId
+    })
     setIngredients(newIngredients)
   }
 
@@ -159,7 +178,7 @@ export default function RecipeForm() {
         <label>Ingredients</label>
         <div className='container-ingredients'>
           {ingredients.map((ingredient, index) => (
-            <div className='ingredient-container' key={index}>
+            <div className='ingredient-container' key={ingredient.id}>
               <Controller
                 name={`ingredients[${index}].ingredient`}
                 control={control}
@@ -196,7 +215,7 @@ export default function RecipeForm() {
                 )}
               />
 
-              <button type='button' onClick={() => removeIngredient(index)}>
+              <button type='button' onClick={() => removeIngredient(ingredient.id)}>
                 <img src={RemoveIcon} width='18px' />
               </button>
             </div>
@@ -210,11 +229,11 @@ export default function RecipeForm() {
         <label>Method</label>
         <div className='container-methods'>
           {methods.map((method, index) => (
-            <div className='methods' key={`method_${index}`}>
+            <div className='methods' key={method.id}>
               <Controller
                 name={`method[${index}].method`}
                 control={control}
-                defaultValue={method}
+                defaultValue={method.value}
                 rules={{ required: true }}
                 render={({ field }) => (
                   <input
@@ -223,12 +242,12 @@ export default function RecipeForm() {
                     {...field}
                     onChange={e => {
                       field.onChange(e)
-                      handleMethodNameChange(e, index)
+                      handleMethodNameChange(e, method.id)
                     }}
                   />
                 )}
               />
-              <button type='button' onClick={() => removeMethod(index)}>
+              <button type='button' onClick={() => removeMethod(method.id)}>
                 <img src={RemoveIcon} width='18px' />
               </button>
             </div>
