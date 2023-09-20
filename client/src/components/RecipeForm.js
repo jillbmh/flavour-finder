@@ -1,6 +1,3 @@
-// CHANGE IMAGE INPUT THE COMMENTED OUT ONE WHEN WE HAVE CLOUDINARY WORKING
-// CLOUDINARY NEEDS TO RETURN THE IMAGE URL AS A STRING SO THE POST REQUEST WORKS
-
 import { useForm, Controller } from 'react-hook-form'
 import { useState } from 'react'
 import PlusIcon from '../images/plus-icon.png'
@@ -11,16 +8,27 @@ import { useEffect } from 'react'
 
 const generateUniqueId = () => uuidv4()
 
-export default function RecipeForm({ formId }) {
+export default function RecipeForm({ formId, userId }) {
 
-  console.log(formId)
-
+  // State:
+  const [ingredients, setIngredients] = useState([{ id: generateUniqueId(), name: '', amount: '' }])
+  const [methods, setMethods] = useState([{ id: generateUniqueId(), value: '' }])
   const [isFetching, setIsFetching] = useState(false)
   const [recipeInformation, setRecipeInformation] = useState({
     'name': '',
-    'imagePath': '',
+    'image': '',
     'dishType': '',
+    'hours': '',
+    'minutes': '',
+    'serves': '',
+    isVegan: false,
+    isVegetarian: false,
+    isPescatarian: false,
+    isGlutenFree: false,
+    // TODO - Add the addedBy:
+    // addedBy: userId,
   })
+
 
   useEffect(() => {
     if (!formId) return
@@ -32,10 +40,42 @@ export default function RecipeForm({ formId }) {
 
   }, [])
 
+  // Generic handlers:
+  const handleInputChange = (attribute, value) => {
+    let finalValue
+
+    if (['serves', 'hours', 'minutes'].includes(attribute)) {
+      finalValue = parseInt(value, 10)
+    } else {
+      finalValue = value
+    }
+
+    setRecipeInformation(prevState => ({
+      ...prevState,
+      [attribute]: finalValue,
+    }))
+  }
+
+  const handleDietaryCheckboxChange = (value) => {
+    setRecipeInformation(prevState => {
+      switch (value) {
+        case 'vegan':
+          return { ...prevState, isVegan: !prevState.isVegan }
+        case 'vegetarian':
+          return { ...prevState, isVegetarian: !prevState.isVegetarian }
+        case 'glutenFree':
+          return { ...prevState, isGlutenFree: !prevState.isGlutenFree }
+        case 'pescatarian':
+          return { ...prevState, isPescatarian: !prevState.isPescatarian }
+        default:
+          return prevState
+      }
+    })
+  }
+
+
   // if (formId && !setIsFetching) return <></>
   // Else render the form and we have the data in the form:
-
-
 
   const { register, handleSubmit, formState: { errors }, control } = useForm({
     defaultValues: {
@@ -44,9 +84,7 @@ export default function RecipeForm({ formId }) {
     },
   })
 
-  // State
-  const [ingredients, setIngredients] = useState([{ id: generateUniqueId(), name: '', amount: '' }])
-  const [methods, setMethods] = useState([{ id: generateUniqueId(), value: '' }])
+
 
   // Method
   const addMethod = () => {
@@ -68,7 +106,6 @@ export default function RecipeForm({ formId }) {
   }
 
 
-
   // Ingredients
   const addIngredient = () => {
     setIngredients([...ingredients, { id: generateUniqueId(), name: '', amount: '' }])
@@ -85,91 +122,118 @@ export default function RecipeForm({ formId }) {
     const newIngredients = [...ingredients]
     newIngredients[index].name = e.target.value
     setIngredients(newIngredients)
-    console.log('Event value: ', e.target.value)
-    console.log('Updated Ingredients: ', newIngredients)
-    console.log(errors)
   }
 
   const handleIngredientAmountChange = (e, index) => {
     const newIngredients = [...ingredients]
     newIngredients[index].amount = e.target.value
     setIngredients(newIngredients)
-    console.log(errors)
   }
 
   const onSubmit = data => {
-    console.log(data)
-    console.log(errors)
+    const newObject = {
+      ...recipeInformation,
+      ingredients: ingredients,
+      method: methods,
+      cookingTime: { hours: recipeInformation.hours, minutes: recipeInformation.minutes },
+    }
+    // Delete hours and minutes 
+    delete newObject.hours
+    delete newObject.minutes
+
 
     const createRecipe = async () => {
-      const response = await axios.post('/api/recipes', data)
+      const response = await axios.post('/api/recipes', newObject)
       console.log(response)
     }
-
     createRecipe()
   }
+
+
+
+
   return (
     <main className='recipe-form-page'>
       <form onSubmit={handleSubmit(onSubmit)}>
         <label>Recipe Name</label>
-        <input placeholder='New Recipe' {...register('title', { required: true })} />
+        <input
+          value={recipeInformation.name}
+          placeholder='New Recipe' {...register('title', { required: true })}
+          onChange={(e) => handleInputChange('name', e.target.value)}
+        />
         {/* {errors.username && <span>Username is required</span>} */}
         {/* <input type='file' accept='image/png, image/jpeg, image/jpg' {...register('image', { required: false })} /> */}
-        <input type='text' placeholder='Image Path' {...register('image', { required: true })} />
-        <select className='dropbtn' {...register('cuisine', { required: true })}>
+        <input type='text' placeholder='Image Path' {...register('image', { required: true })}
+          onChange={(e) => handleInputChange('image', e.target.value)}
+        />
+        <select className='dropbtn' {...register('cuisine', { required: true })}
+          onChange={(e) => handleInputChange('cusine', e.target.value)}
+
+        >
           <option value='' disabled>
             Choose a cuisine
           </option>
-          <option value='italian'>Italian</option>
-          <option value='japanese'>Japanese</option>
-          <option value='chinese'>Chinese</option>
-          <option value='indian'>Indian</option>
-          <option value='thai'>Thai</option>
-          <option value='mexican'>Mexican</option>
-          <option value='american'>American</option>
-          <option value='british'>British</option>
-          <option value='spanish'>Spanish</option>
-          <option value='korean'>Korean</option>
-          <option value='vietnamese'>Vietnamese</option>
-          <option value='asian'>Asian</option>
+          <option value='Italian'>Italian</option>
+          <option value='Japanese'>Japanese</option>
+          <option value='Chinese'>Chinese</option>
+          <option value='Indian'>Indian</option>
+          <option value='Thai'>Thai</option>
+          <option value='Mexican'>Mexican</option>
+          <option value='American'>American</option>
+          <option value='British'>British</option>
+          <option value='Spanish'>Spanish</option>
+          <option value='Korean'>Korean</option>
+          <option value='Vietnamese'>Vietnamese</option>
+          <option value='Asian'>Asian</option>
         </select>
 
-        <select className='dropbtn' {...register('type', { required: true })}>
+        <select className='dropbtn' {...register('type', { required: true })}
+          value={recipeInformation.dishType}
+          placeholder='New Recipe'
+          onChange={(e) => handleInputChange('dishType', e.target.value)}
+        >
           <option value='' disabled>
             Choose the dish type
           </option>
-          <option value='starter'>Starter</option>
-          <option value='main'>Main</option>
-          <option value='side'>Side</option>
-          <option value='dessert'>Dessert</option>
+          <option value='Starter'>Starter</option>
+          <option value='Main'>Main</option>
+          <option value='Side'>Side</option>
+          <option value='Dessert'>Dessert</option>
         </select>
 
         <label>Hours</label>
-        <input type='number' min='0' max='12' {...register('hours', { required: true })} />
+        <input type='number' min='0' max='12' {...register('hours', { required: true })} onChange={(e) => handleInputChange('hours', e.target.value)} />
         <label>Minutes</label>
-        <input type='number' min='0' max='59' {...register('minutes', { required: true })} />
+        <input type='number' min='0' max='59' {...register('minutes', { required: true })} onChange={(e) => handleInputChange('minutes', e.target.value)} />
 
         <label>Serves</label>
-        <input type='number' min='0' max='12' {...register('serves', { required: true })} />
+        <input type='number' min='0' max='12' {...register('serves', { required: true })} onChange={(e) => handleInputChange('serves', e.target.value)} />
 
         <section className="checkbox-container">
           <label>
-            <input type="checkbox" />
+            <input type="checkbox"
+              checked={recipeInformation.isVegan}
+              onChange={() => handleDietaryCheckboxChange('vegan')} />
             Vegan
           </label>
 
           <label>
-            <input type="checkbox" />
+            <input type="checkbox" checked={recipeInformation.isVegetarian}
+              onChange={() => handleDietaryCheckboxChange('vegetarian')} />
             Vegetarian
           </label>
 
           <label>
-            <input type="checkbox" />
+            <input type="checkbox"
+              checked={recipeInformation.isGlutenFree}
+              onChange={() => handleDietaryCheckboxChange('glutenFree')} />
             Gluten Free
           </label>
 
           <label>
-            <input type="checkbox" />
+            <input type="checkbox"
+              checked={recipeInformation.isPescatarian}
+              onChange={() => handleDietaryCheckboxChange('pescatarian')} />
             Pescatarian
           </label>
         </section>
@@ -262,6 +326,6 @@ export default function RecipeForm({ formId }) {
 
 
       </form>
-    </main>
+    </main >
   )
 }
