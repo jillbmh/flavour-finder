@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useState, useRef } from 'react'
 import { useForm } from 'react-hook-form'
 import { Player, Controls } from '@lottiefiles/react-lottie-player'
 import axios from 'axios'
@@ -13,32 +13,35 @@ export default function LoginForm(props) {
     setError,
   } = useForm()
 
+  const [isLoading, setIsLoading] = useState(false)
+  const [showSuccess, setShowSuccess] = useState(false)
+
   const successIconRef = useRef(null)
 
   const onSubmit = data => {
+    setIsLoading(true)
+
     const loginUser = async () => {
-      document.getElementById('submit-button').style.display = 'none'
-      document.getElementById('loading-icon').style.display = 'block'
       try {
         const response = await axios.post('/api/login', data)
 
+        console.log(response)
+        localStorage.setItem('token', response.data.token)
+        console.log(localStorage.getItem('token'))
+        
         setTimeout(() => {
-          console.log(response)
-          localStorage.setItem('token', response.data.token)
-          console.log(localStorage.getItem('token'))
-
-          document.getElementById('loading-icon').style.display = 'none'
-          document.getElementById('success-icon').style.display = 'block'
-          successIconRef.current.play()
+          setIsLoading(false)
+          setShowSuccess(true)
 
           setTimeout(() => {
+            props.setIsLoggedIn(true)
             props.closeModal()
+            setShowSuccess(false)
           }, 1500)
         }, 1000)
       } catch (error) {
         console.log(error)
-        document.getElementById('loading-icon').style.display = 'none'
-        document.getElementById('submit-button').style.display = 'block'
+        setIsLoading(false)
         setError('loginFailed', {
           type: 'loginFailed',
           message: 'The email address or password is incorrect',
@@ -95,19 +98,26 @@ export default function LoginForm(props) {
           </div>
         )}
 
-        <input id='submit-button' type='submit' value='Log In' />
-        <div className='status-icon-container'>
-          <Player
-            ref={successIconRef}
-            id='success-icon'
-            keepLastFrame
-            src='https://lottie.host/a016ac21-275a-4943-a7c2-a1ff2f38b3e9/IGfJPP0tln.json'
-            style={{ height: '32px', width: '32px' }}
-          >
-            <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
-          </Player>
-          <img id='loading-icon' src={LoadingSpinner} />
-        </div>
+        {isLoading ? (
+          <div className='status-icon-container'>
+            <img id='loading-icon' src={LoadingSpinner} />
+          </div>
+        ) : showSuccess ? (
+          <div className='status-icon-container'>    
+            <Player
+              ref={successIconRef}
+              id='success-icon'
+              autoplay
+              keepLastFrame
+              src='https://lottie.host/a016ac21-275a-4943-a7c2-a1ff2f38b3e9/IGfJPP0tln.json'
+              style={{ height: '32px', width: '32px' }}
+            >
+              <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
+            </Player>
+          </div>
+        ) : (
+          <input id='submit-button' type='submit' value='Log In' />
+        )}
       </form>
 
       <p>

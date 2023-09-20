@@ -59,8 +59,10 @@ export default function Header() {
   }
 
   const logOutuser = () => {
+    setUserDropdownVisible(false)
+    setIsLoggedIn(false)
     localStorage.removeItem('token')
-    window.location.reload()
+    // window.location.reload()
   }
   
   const UserDropdown = () => {
@@ -140,7 +142,7 @@ export default function Header() {
 
       {isLoggedIn && isUserDropdownVisible && <UserDropdown />}
 
-      <AccountModal isVisible={isModalVisible} closeModal={toggleModal} />
+      <AccountModal isVisible={isModalVisible} setIsLoggedIn={setIsLoggedIn} closeModal={toggleModal}  />
     </>
   )
 }
