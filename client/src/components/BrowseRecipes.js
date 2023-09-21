@@ -26,13 +26,11 @@ export default function BrowseRecipes() {
         url = url + '?' + queryParams.join('&')
       }
 
-      setTimeout( async () => {
-        const { data } = await axios.get(url)
-        setRecipes(data)
-        console.log(data)
-        setLoading(false)
-        document.querySelector('footer').style.visibility = 'visible'
-      }, 1500)
+      const { data } = await axios.get(url)
+      setRecipes(data)
+      console.log(data)
+      setLoading(false)
+      document.querySelector('footer').style.visibility = 'visible'
     } catch (error) {
       console.error(error)
       setLoading(false)
