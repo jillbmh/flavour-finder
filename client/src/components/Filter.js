@@ -8,7 +8,7 @@ export default function Filter() {
   useEffect(() => {
     async function getStarter() {
       try {
-        const { data } = await axios.get('/api/recipes/type')
+        const { data } = await axios.get('/api/recipes/type/starter')
         const filteredStarters = data.filter((recipe) => recipe.type === 'starter')
         setRecipes(filteredStarters)
         console.log(filteredStarters)
@@ -24,11 +24,22 @@ export default function Filter() {
       <div className="grid-container">
         {recipes.length > 0 ? (
           recipes.map((recipe) => (
-            <div key={recipe._id} className="recipe">
-              <Link to={`/recipe/${recipe._id}`}>
-                <h3>{recipe.title}</h3>
-              </Link>
-            </div>
+            <Link key={recipe._id} to={`/recipes/${recipe._id}`} className='recipe'>
+              <div key={recipe._id} className="recipe-container">
+              
+                <div
+                  className='recipe-container'
+                  style={{
+                    backgroundImage: `url(${recipe.image})`,
+                  }}
+                >
+                  <div className='recipe-title'>
+                    <p>{recipe.title}</p>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          
           ))
         ) : (
           'Loading...'
