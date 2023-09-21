@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import Spinner from './Spinner'
 
 export default function Filter() {
   const [recipes, setRecipes] = useState([])
@@ -42,7 +43,7 @@ export default function Filter() {
           
           ))
         ) : (
-          'Loading...'
+          <Spinner />
         )}
       </div>
     </main>

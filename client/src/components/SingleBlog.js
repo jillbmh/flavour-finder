@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import ReactMarkdown from 'react-markdown'
+import Spinner from './Spinner'
 
 
 export default function SingleBlog(){
@@ -46,7 +47,7 @@ export default function SingleBlog(){
             </section>
           </main>
         ) : (
-          'Loading...'
+          <Spinner />
         )
       }
     </>
