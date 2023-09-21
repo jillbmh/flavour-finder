@@ -25,7 +25,7 @@ export default function App() {
         <Route path='/recipes/create' element={<RecipeForm />} />
       </Routes>
       {/* Show Footer on all pages */}
-      {/* <Footer /> */}
+      <Footer />
     </BrowserRouter>
   )
 }

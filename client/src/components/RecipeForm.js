@@ -5,19 +5,23 @@ import RemoveIcon from '../images/remove-icon.png'
 import axios from 'axios'
 import { v4 as uuidv4 } from 'uuid'
 import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 
 const generateUniqueId = () => uuidv4()
 
 export default function RecipeForm({ formId, userId }) {
 
+  const navigate = useNavigate()
   // State:
+  const [errorMessage, setErrorMessage] = useState(null)
   const [ingredients, setIngredients] = useState([{ id: generateUniqueId(), name: '', amount: '' }])
   const [methods, setMethods] = useState([{ id: generateUniqueId(), value: '' }])
   const [isFetching, setIsFetching] = useState(false)
   const [recipeInformation, setRecipeInformation] = useState({
-    'name': '',
+    'title': '',
+    'type': '',
     'image': '',
-    'dishType': '',
     'hours': '',
     'minutes': '',
     'serves': '',
@@ -25,8 +29,6 @@ export default function RecipeForm({ formId, userId }) {
     isVegetarian: false,
     isPescatarian: false,
     isGlutenFree: false,
-    // TODO - Add the addedBy:
-    // addedBy: userId,
   })
 
 
@@ -130,23 +132,58 @@ export default function RecipeForm({ formId, userId }) {
     setIngredients(newIngredients)
   }
 
-  const onSubmit = data => {
+  const onSubmit = async (data) => {
+    // setErrors('')
     const newObject = {
       ...recipeInformation,
       ingredients: ingredients,
-      method: methods,
+      method: methods.map((method) => method.value),
       cookingTime: { hours: recipeInformation.hours, minutes: recipeInformation.minutes },
     }
     // Delete hours and minutes 
     delete newObject.hours
     delete newObject.minutes
 
-
     const createRecipe = async () => {
-      const response = await axios.post('/api/recipes', newObject)
-      console.log(response)
+      try {
+        const response = await axios.post('/api/recipes', newObject)
+
+        // Check if response has the created recipe object with an _id.
+        if (response && response.data && response.data._id) {
+          return response.data._id
+        } else {
+          throw new Error('Unexpected response format from the server.')
+        }
+
+      } catch (error) {
+        // Check for specific error responses from your server and adjust the error message.
+        if (error.response && error.response.data) {
+          if (error.response.data.error && error.response.data.error.name === 'Duplicate recipe') {
+            console.error('Duplicate recipe detected:', error.response.data.error.field)
+            throw new Error('Recipe already exists with the provided details.')
+          } else if (error.response.data.message) {
+            console.error('Error creating recipe:', error.response.data.message)
+            throw new Error(error.response.data.message)
+          }
+        } else {
+          console.error('Error creating recipe:', error.message)
+          throw error  // re-throw to handle it in the outer function or log it.
+        }
+      }
     }
-    createRecipe()
+
+    try {
+      const dataId = await createRecipe()
+      if (dataId) {
+        navigate(`/recipes/user/${dataId}`)
+      } else {
+        setErrorMessage('Failed to get the ID from the response. Please try again.')
+      }
+    } catch (error) {
+      setErrorMessage(`Error during recipe creation. Please check the details and try again. ${error.message}`)
+      console.error('Error during recipe creation:', error.message)
+    }
+
   }
 
 
@@ -154,12 +191,13 @@ export default function RecipeForm({ formId, userId }) {
 
   return (
     <main className='recipe-form-page'>
+      {errorMessage && <div className="error-message">{errorMessage}</div>}
       <form onSubmit={handleSubmit(onSubmit)}>
         <label>Recipe Name</label>
         <input
-          value={recipeInformation.name}
+          value={recipeInformation.title}
           placeholder='New Recipe' {...register('title', { required: true })}
-          onChange={(e) => handleInputChange('name', e.target.value)}
+          onChange={(e) => handleInputChange('title', e.target.value)}
         />
         {/* {errors.username && <span>Username is required</span>} */}
         {/* <input type='file' accept='image/png, image/jpeg, image/jpg' {...register('image', { required: false })} /> */}
@@ -167,7 +205,7 @@ export default function RecipeForm({ formId, userId }) {
           onChange={(e) => handleInputChange('image', e.target.value)}
         />
         <select className='dropbtn' {...register('cuisine', { required: true })}
-          onChange={(e) => handleInputChange('cusine', e.target.value)}
+          onChange={(e) => handleInputChange('cuisine', e.target.value)}
 
         >
           <option value='' disabled>
@@ -188,9 +226,9 @@ export default function RecipeForm({ formId, userId }) {
         </select>
 
         <select className='dropbtn' {...register('type', { required: true })}
-          value={recipeInformation.dishType}
+          value={recipeInformation.type}
           placeholder='New Recipe'
-          onChange={(e) => handleInputChange('dishType', e.target.value)}
+          onChange={(e) => handleInputChange('type', e.target.value)}
         >
           <option value='' disabled>
             Choose the dish type

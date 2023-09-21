@@ -1,8 +1,6 @@
 import { useState } from 'react'
 import LoginForm from './LoginForm'
 import RegisterForm from './RegisterForm'
-import Illustration from '../images/chef-illustration.png'
-
 
 export default function AccountModal({ isVisible, closeModal }) {
   const [isLogin, setIsLogin] = useState(false)
@@ -17,9 +15,12 @@ export default function AccountModal({ isVisible, closeModal }) {
 
   return (
     <div className={`account-modal-container ${isVisible ? 'open' : ''}`}>
-      <img src={Illustration} width='480px' />
-      <div className='form-and-title-container'>
-        {isLogin ? <LoginForm switchToRegister={switchToRegister} /> : <RegisterForm switchToLogin={switchToLogin} />}
+      <div className='form-container'>
+        {isLogin ? (
+          <LoginForm switchToRegister={switchToRegister} closeModal={closeModal} />
+        ) : (
+          <RegisterForm switchToLogin={switchToLogin} closeModal={closeModal} />
+        )}
       </div>
     </div>
   )
