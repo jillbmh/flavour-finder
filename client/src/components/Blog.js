@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
+import Spinner from './Spinner'
 
 
 export default function Blog() {
@@ -21,7 +22,7 @@ export default function Blog() {
   }, [])
   return (
     <>
-      <main>
+      <section>
         <div className='grid-container'>
           {blogs.length > 0 
             ? blogs.map(blog => (
@@ -37,9 +38,11 @@ export default function Blog() {
                 </div>
               </Link>
             ))
-            : 'Loading...'}
+            :
+            <Spinner />
+          }
         </div>
-      </main>
+      </section>
     </>
   )
 }

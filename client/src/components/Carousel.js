@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import Carousel from 'react-bootstrap/Carousel'
 import { useNavigate } from 'react-router-dom'
+import Spinner from './Spinner'
 
 
 export default function CarouselWrapper() {
@@ -31,24 +32,27 @@ export default function CarouselWrapper() {
   }
 
   return (
-    <Carousel fade={true} data-bs-theme="dark">
-      {
-        topRecipes.map((val, index) => {
-          return (
-            <Carousel.Item key={`${val._id}`}>
-              <img
-                className="d-block w-100"
-                src={val.image}
-                alt={`Image of ${val.title}`}
-                onClick={() => handleImageClick(val._id)}
-              />
-              <Carousel.Caption >
-                <h5>{val.title}</h5>
-              </Carousel.Caption>
-            </Carousel.Item>
-          )
-        })
-      }
-    </Carousel>
+    topRecipes.length > 0 
+      ? (
+        <Carousel fade={true} data-bs-theme="dark">
+          {
+            topRecipes.map((val, index) => (
+              <Carousel.Item key={`${val._id}`}>
+                <img
+                  className="d-block w-100"
+                  src={val.image}
+                  alt={`Image of ${val.title}`}
+                  onClick={() => handleImageClick(val._id)}
+                />
+                <Carousel.Caption>
+                  <h5>{val.title}</h5>
+                </Carousel.Caption>
+              </Carousel.Item>
+            ))
+          }
+        </Carousel>
+      ) 
+      : 
+      <Spinner />
   )
 }
