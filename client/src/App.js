@@ -17,7 +17,6 @@ export default function App() {
     <BrowserRouter>
       {/* Show Header on all pages */}
       <Header />
-
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/recipes' element={<BrowseRecipes />} />

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import LoginForm from './LoginForm'
 import RegisterForm from './RegisterForm'
 
-export default function AccountModal({ isVisible, closeModal, setIsLoggedIn }) {
+export default function AccountModal({ isVisible, closeModal, setIsLoggedIn, setUserId }) {
   const [isLogin, setIsLogin] = useState(false)
 
   const switchToRegister = () => {
@@ -17,7 +17,7 @@ export default function AccountModal({ isVisible, closeModal, setIsLoggedIn }) {
     <div className={`account-modal-container ${isVisible ? 'open' : ''}`}>
       <div className='form-container'>
         {isLogin ? (
-          <LoginForm switchToRegister={switchToRegister} closeModal={closeModal} setIsLoggedIn={setIsLoggedIn} />
+          <LoginForm setUserId={setUserId} switchToRegister={switchToRegister} closeModal={closeModal} setIsLoggedIn={setIsLoggedIn} />
         ) : (
           <RegisterForm switchToLogin={switchToLogin} closeModal={closeModal} />
         )}

@@ -15,9 +15,12 @@ export default function Header() {
   const [isUserDropdownVisible, setUserDropdownVisible] = useState(false)
   const [animation, setAnimation] = useState('none')
   const [openSideMenu, setOpenSideMenu] = useState(false)
+  const [userId, setUserId] = useState('')
 
   useEffect(() => {
     const token = localStorage.getItem('token')
+    const userId = localStorage.getItem('userId')
+    setUserId(userId)
     setIsLoggedIn(!!token)
   }, [])
 
@@ -61,19 +64,24 @@ export default function Header() {
   const logOutuser = () => {
     setUserDropdownVisible(false)
     setIsLoggedIn(false)
+    setUserId('')
     localStorage.removeItem('token')
+    localStorage.removeItem('userId')
     // window.location.reload()
   }
-  
+
   const UserDropdown = () => {
     return (
       <div className='user-dropdown'>
-        <Link className='nav-link' to='/my-recipes/:userId'>
+        {/* <Link className='nav-link' to='/my-recipes/:userId'>
           My Profile
-        </Link>
-        <Link className='nav-link' to='/my-account/:userId'>
+        </Link> */}
+        {userId ? <Link className='nav-link' to={`/user/${userId}`}>
           My Recipes
-        </Link>
+        </Link> : <></>}
+        {userId ? <Link className='nav-link' to={`/user/${userId}/create`}>
+          Create New Recipe
+        </Link> : <></>}
         <Link className='nav-link' to='/' onClick={logOutuser}>
           Log Out
         </Link>
@@ -89,9 +97,7 @@ export default function Header() {
           <img
             src={isMenuOpen ? CloseIcon : MenuIcon}
             width={isMenuOpen ? '11px' : '16px'}
-            className={`menu-icon ${
-              animation === 'shrinking' ? 'shrink-icon' : animation === 'growing' ? 'grow-icon' : ''
-            }`}
+            className={`menu-icon ${animation === 'shrinking' ? 'shrink-icon' : animation === 'growing' ? 'grow-icon' : ''}`}
             onClick={handleClick}
             alt='menu-icon'
           />
@@ -150,7 +156,7 @@ export default function Header() {
 
       {isLoggedIn && isUserDropdownVisible && <UserDropdown />}
 
-      <AccountModal isVisible={isModalVisible} setIsLoggedIn={setIsLoggedIn} closeModal={toggleModal} />
+      <AccountModal setUserId={setUserId} isVisible={isModalVisible} setIsLoggedIn={setIsLoggedIn} closeModal={toggleModal} />
     </>
   )
 }
