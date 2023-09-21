@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Filters from './Filters'
+import LoadingSpinner from './Spinner'
 
 export default function BrowseRecipes() {
   const [recipes, setRecipes] = useState([])
@@ -15,6 +16,7 @@ export default function BrowseRecipes() {
 
   async function getRecipesData() {
     setLoading(true)
+    document.querySelector('footer').style.visibility = 'hidden'
     try {
       let url = '/api/recipes'
       const queryParams = []
@@ -23,10 +25,14 @@ export default function BrowseRecipes() {
       if (queryParams.length) {
         url = url + '?' + queryParams.join('&')
       }
-      const { data } = await axios.get(url)
-      setRecipes(data)
-      console.log(data)
-      setLoading(false)
+
+      setTimeout( async () => {
+        const { data } = await axios.get(url)
+        setRecipes(data)
+        console.log(data)
+        setLoading(false)
+        document.querySelector('footer').style.visibility = 'visible'
+      }, 1500)
     } catch (error) {
       console.error(error)
       setLoading(false)
@@ -43,9 +49,7 @@ export default function BrowseRecipes() {
       <main>
         <Filters filter={filter} setFilter={setFilter} />
         <div className='grid-container'>
-          {loading ? (
-            'Loading...'
-          ) : recipes.length > 0 ? (
+          {loading ? <LoadingSpinner /> : recipes.length > 0 ? (
             recipes.map(recipe => (
               <Link key={recipe._id} to={`/recipes/${recipe._id}`} className='recipe'>
                 <div
