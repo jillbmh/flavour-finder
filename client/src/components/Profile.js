@@ -47,7 +47,7 @@ export default function Profile() {
     <main className='user-profile'>
       <h1>Welcome back!</h1>
       <h2>My recipes</h2>
-      <Link to={`/user/${userId}/create`}>
+      <Link className='create-link' to={`/user/${userId}/create`}>
         Create New Recipe
       </Link>
       <section className='grid-container'>
@@ -60,10 +60,14 @@ export default function Profile() {
               }}
             >
               <div className="edit-buttons">
-                <FontAwesomeIcon onClick={() => handleDelete(recipe._id)} icon={faTrash} />
-                <Link to={`/user/${recipe.addedBy._id}/${id}`}>
-                  <FontAwesomeIcon className='update' icon={faPen} />
+                <Link to={`/user/${recipe.addedBy}/${recipe._id}`}>
+                  <div className='icon-container'>
+                    <FontAwesomeIcon className='update' icon={faPen} />
+                  </div>
                 </Link>
+                <div className='icon-container delete-icon'>
+                  <FontAwesomeIcon onClick={() => handleDelete(recipe._id)} icon={faTrash} />
+                </div>
               </div>
               <div className='recipe-title'>
                 <p>{recipe.title}</p>

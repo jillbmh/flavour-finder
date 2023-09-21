@@ -1,0 +1,45 @@
+@import '../variables.scss';
+
+.user-profile {
+  .create-link {
+    text-decoration: underline;
+  }
+
+  .edit-buttons {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    display: flex;
+    gap: 6px;
+
+    a {
+      width: fit-content;
+      height: fit-content;
+      margin: 0;
+    }
+
+    .icon-container {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      background-color: #191919;
+      border-radius: 50%;
+
+      &.delete-icon {
+        background-color: $error;
+      }
+
+      svg {
+        width: 48%;
+        height: 48%;
+      }
+
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: scale(1.15);
+      }
+    }
+  }
+}

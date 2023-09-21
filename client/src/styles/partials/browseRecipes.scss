@@ -1,36 +1,53 @@
 @import '../variables.scss';
 
 .grid-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    a {
-      width: 380px;
-      max-width: 100%;
-      height: 250px;
-      margin: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  a {
+    width: 380px;
+    max-width: 100%;
+    height: 250px;
+    margin: 8px;
+    // overflow: hidden;
+  }
+  .recipe-container {
+    // background-image: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+
+    p {
+      padding: 0.5rem 0.75rem;
+      margin-bottom: 0;
+      position: absolute;
+      bottom: 0;
+      left: 0;
       overflow: hidden;
-    }
-    .recipe-container {
-      // background-image: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%);
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      position: relative;
-      z-index: 0;
-        p {
-          margin: 0.5rem 0.75rem;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          box-shadow: 0px 0px 50px 50px rgba(0,0,0,0.45);
-          background-color: rgba(0,0,0,0.45);
-        }
+      // background-color: rgba(0, 0, 0, 0.45);
+      // text-transform: uppercase;
+      font-weight: 200;
     }
 
-    @media (min-width: $tablet-width) {
-      flex-direction: row;
-      flex-wrap: wrap;
+    p::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(24.5px);
+      -webkit-backdrop-filter: blur(4.5px);
+      z-index: -1;
     }
+  }
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }

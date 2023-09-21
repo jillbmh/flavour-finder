@@ -6,7 +6,7 @@ import axios from 'axios'
 import { v4 as uuidv4 } from 'uuid'
 import { useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { cloudinary } from 'cloudinary'
+// import { cloudinary } from 'cloudinary'
 
 
 
