@@ -4,6 +4,7 @@ import { Player, Controls } from '@lottiefiles/react-lottie-player'
 import axios from 'axios'
 import LoadingSpinner from '../images/Rolling-1s-200px.svg'
 import ErrorIcon from '../images/error.png'
+// import { Navigate } from 'react-router-dom'
 
 export default function LoginForm(props) {
   const {
@@ -25,6 +26,7 @@ export default function LoginForm(props) {
         setTimeout(() => {
           console.log(response)
           localStorage.setItem('token', response.data.token)
+          // Navigate('/profile')
           console.log(localStorage.getItem('token'))
 
           document.getElementById('loading-icon').style.display = 'none'

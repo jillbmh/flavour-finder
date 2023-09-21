@@ -8,6 +8,7 @@ import SingleBlog from './components/SingleBlog'
 import Footer from './components/Footer'
 import NotFound from './components/NotFound'
 import RecipeForm from './components/RecipeForm'
+import Profile from './components/Profile'
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="*" element={<NotFound />} />
         <Route path='/blogs/:id' element={<SingleBlog />} />
         <Route path='/recipes/create' element={<RecipeForm />} />
+        <Route path='/user/:addedBy' element={<Profile />} />
       </Routes>
       {/* Show Footer on all pages */}
       <Footer />
