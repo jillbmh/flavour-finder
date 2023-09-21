@@ -5,8 +5,9 @@ import RemoveIcon from '../images/remove-icon.png'
 import axios from 'axios'
 import { v4 as uuidv4 } from 'uuid'
 import { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { useParams } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
+
+
 
 const generateUniqueId = () => uuidv4()
 
@@ -166,6 +167,47 @@ export default function RecipeForm() {
     setIngredients(newIngredients)
   }
 
+
+  const updateRecipe = async () => {
+    const newObject = {
+      ...recipeInformation,
+      ingredients: ingredients,
+      method: methods.map((method) => method.value),
+      cookingTime: { hours: recipeInformation.hours, minutes: recipeInformation.minutes },
+    }
+    // Delete hours and minutes 
+    delete newObject.hours
+    delete newObject.minutes
+    try {
+      const authorizationToken = localStorage.getItem('token')
+
+      const response = await axios.put(`/api/recipes/${id}`, newObject, {
+        headers: {
+          'Authorization': `Bearer ${authorizationToken}`,
+        },
+      })
+
+      console.log(response)
+      if (response && response.data) {
+        navigate(`/user/${addedBy}`)
+      } else {
+        throw new Error('Unexpected response format from the server.')
+      }
+
+    } catch (error) {
+
+      if (error.response && error.response.data) {
+        if (error.response.data.message) {
+          console.error('Error updating recipe:', error.response.data.message)
+          throw new Error(error.response.data.message)
+        }
+      } else {
+        console.error('Error updating recipe:', error.message)
+        throw error
+      }
+    }
+  }
+
   const onSubmit = async () => {
     const newObject = {
       ...recipeInformation,
@@ -232,7 +274,7 @@ export default function RecipeForm() {
   return (
     <main className='recipe-form-page'>
       {errorMessage && <div className="error-message">{errorMessage}</div>}
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={id ? handleSubmit(updateRecipe) : handleSubmit(onSubmit)}>
         <label>Recipe Name</label>
         <input
           value={recipeInformation.title}
