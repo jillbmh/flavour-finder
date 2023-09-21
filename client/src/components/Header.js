@@ -137,7 +137,7 @@ export default function Header() {
       </div>
 
       {!isLoggedIn && (
-        <AccountModal isVisible={isModalVisible} setIsLoggedIn={setIsLoggedIn} closeModal={toggleModal} />
+        <AccountModal setUserId={setUserId} isVisible={isModalVisible} setIsLoggedIn={setIsLoggedIn} closeModal={toggleModal} />
       )}
       {isLoggedIn && <UserDropdown isVisible={isUserDropdownVisible} logOutuser={logOutuser} />}
     </>
