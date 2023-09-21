@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
+import ReactMarkdown from 'react-markdown'
 
 
 export default function SingleBlog(){
@@ -40,7 +41,7 @@ export default function SingleBlog(){
               </section>
 
               <section className='content-container'>
-                <p>{blog.content}</p>
+                <ReactMarkdown>{blog.content}</ReactMarkdown>
               </section>
             </section>
           </main>

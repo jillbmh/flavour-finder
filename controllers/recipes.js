@@ -8,13 +8,31 @@ export const getAllRecipes = async (req, res) => {
   return res.json(recipes)
 }
 
+// Get all recipes by a specific user
+export const getRecipesByUser = async (req, res) => {
+  const userId = req.params.addedBy
+  if (!mongoose.isValidObjectId(userId)) {
+    return res.status(422).json({ error: 'Invalid User ID' })
+  }
+  try {
+    const recipes = await Recipe.find({ addedBy: userId })
+    if (!recipes) {
+      throw new Error('No recipes found for this user')
+    }
+    return res.status(200).json(recipes)
+  } catch (error) {
+    console.log(error)
+    return res.status(404).json({ message: error.message })
+  }
+}
+
+
 // Show route
 export const getSingleRecipe = async (req, res) => {
   const { id } = req.params
   if (!mongoose.isValidObjectId(id)) {
     return res.status(422).json({ error: 'Invalid ID' })
   }
-
   try {
     const recipe = await Recipe.findById(id).populate('addedBy')
     if (!recipe) {
