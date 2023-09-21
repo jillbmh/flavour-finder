@@ -2,12 +2,14 @@ import React from 'react'
 import CarouselWrapper from './Carousel'
 import AnimationImage from '../images/animation-image.jpeg'
 import Blogs from './Blog.js'
+import Featured from './FeaturedRecipes'
 
 export default function Home() {
   return (
     <main>
       <CarouselWrapper />
       <Blogs />
+      <Featured />
 
       {/* <div className='animation-container'>
         <img src={AnimationImage} alt='Animation' />
