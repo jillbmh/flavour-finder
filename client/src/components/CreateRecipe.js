@@ -54,6 +54,9 @@ export default function CreateRecipe({ user }) {
     }
   }
   return (
-    <RecipeForm title="Create Recipe" request={createRecipe} fields={fields} />
+    <main>
+      <RecipeForm title="Create Recipe" request={createRecipe} fields={fields} />
+    </main>
+
   )
 }

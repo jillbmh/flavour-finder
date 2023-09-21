@@ -17,7 +17,7 @@ Overnight oats are the perfect solution for those who always seem to be in a rus
 Avocado toast has been a breakfast staple for years, but have you ever tried elevating it with some unconventional toppings? A sprinkle of pomegranate seeds can add a surprising burst of flavor, while a drizzle of tahini will give your toast a creamy, nutty kick.
 
 
-#####Smoothie Bowls
+##### Smoothie Bowls
 Instead of sipping on a smoothie, why not turn it into a meal? Create a thicker version of your favorite smoothie and pour it into a bowl. Then, top it off with granola, fresh fruits, and even a handful of dark chocolate chips for a breakfast that feels indulgent but is packed with nutrients.
 
 
