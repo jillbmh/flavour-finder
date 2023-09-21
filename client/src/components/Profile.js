@@ -38,6 +38,8 @@ export default function Profile() {
                 backgroundImage: `url(${recipe.image})`,
               }}
             >
+              {/* Icon as button for delete -> onClick to delete, <Link> for update that redirects to update recipe page on click */}
+              {/* CSS: position: absolute, right: 0 (Must have position: relative; on the parent recipe container) */}
               <div className='recipe-title'>
                 <p>{recipe.title}</p>
               </div>
