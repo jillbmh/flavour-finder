@@ -7,6 +7,7 @@ import CloseIcon from '../images/close-icon.png'
 import NewLogo from '../images/new-logo.png'
 import ArrowIcon from '../images/arrow-icon.png'
 import AccountModal from './AccountModal'
+import UserDropdown from './UserDropdown'
 
 export default function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -62,23 +63,6 @@ export default function Header() {
     setUserDropdownVisible(false)
     setIsLoggedIn(false)
     localStorage.removeItem('token')
-    // window.location.reload()
-  }
-  
-  const UserDropdown = () => {
-    return (
-      <div className='user-dropdown'>
-        <Link className='nav-link' to='/my-recipes/:userId'>
-          My Profile
-        </Link>
-        <Link className='nav-link' to='/my-account/:userId'>
-          My Recipes
-        </Link>
-        <Link className='nav-link' to='/' onClick={logOutuser}>
-          Log Out
-        </Link>
-      </div>
-    )
   }
 
   return (
@@ -148,9 +132,9 @@ export default function Header() {
         </Link>
       </div>
 
-      {isLoggedIn && isUserDropdownVisible && <UserDropdown />}
 
-      <AccountModal isVisible={isModalVisible} setIsLoggedIn={setIsLoggedIn} closeModal={toggleModal} />
+      {!isLoggedIn && <AccountModal isVisible={isModalVisible} setIsLoggedIn={setIsLoggedIn} closeModal={toggleModal} />}
+      {isLoggedIn && <UserDropdown isVisible={isUserDropdownVisible} logOutuser={logOutuser} />}
     </>
   )
 }

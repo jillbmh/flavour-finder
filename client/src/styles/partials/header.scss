@@ -2,7 +2,7 @@
 
 header {
   position: fixed;
-  z-index: 3;
+  z-index: 4;
   width: 100%;
   font-size: 0.9rem;
   font-weight: 300;
@@ -106,7 +106,7 @@ header {
   a {
     border-bottom: 1px solid $border-light;
     padding: 0.5rem 0;
-    width: 300px;
+    width: 250px;
     max-width: 100vw;
     display: flex;
     justify-content: space-between;
