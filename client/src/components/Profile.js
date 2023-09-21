@@ -11,7 +11,6 @@ export default function Profile() {
     async function getRecipesByUser() {
       try {
         const { data } = await axios.get(`/api/user/${userId}`)
-        // const { data } = await axios.get('/api/user/650c2cfbde13d1a3da109eff')
         setUsersRecipes(data)
         console.log(userId)
         console.log(data)
