@@ -5,7 +5,8 @@ import RemoveIcon from '../images/remove-icon.png'
 import axios from 'axios'
 import { v4 as uuidv4 } from 'uuid'
 import { useEffect } from 'react'
-import { useParams, Link, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
+import { cloudinary } from 'cloudinary'
 
 
 
@@ -281,11 +282,40 @@ export default function RecipeForm() {
           placeholder='New Recipe' {...register('title', { required: true })}
           onChange={(e) => handleInputChange('title', e.target.value)}
         />
-        {/* {errors.username && <span>Username is required</span>} */}
-        {/* <input type='file' accept='image/png, image/jpeg, image/jpg' {...register('image', { required: false })} /> */}
-        <input type='text' value={recipeInformation.image} placeholder='Image Path' {...register('image', { required: true })}
-          onChange={(e) => handleInputChange('image', e.target.value)}
+        {recipeInformation.image && <img src={recipeInformation.image} alt="Selected Recipe" style={{ maxWidth: '100%', height: 'auto' }} />}
+
+
+        <input type='file' accept='image/png, image/jpeg, image/jpg' {...register('image', { required: false })}
+          onChange={(e) => {
+            const file = e.target.files[0]
+            if (!file) return
+
+            const reader = new FileReader()
+
+            reader.onloadend = async () => {
+              const blob = new Blob([new Uint8Array(reader.result)], { type: file.type })
+
+
+              // Send the blob to the CDN (pseudo-code as you haven't provided details)
+              // await axios.post('https://api.cloudinary.com/v1_1/{{cloud_name}}/:resource_type/upload', )
+              // const imageURL = await cloudinary.v2.uploader.unsigned_upload(file, process.env.CLOUDINARY_UPLOAD_PRESET, undefined)
+              console.log(imageURL)
+              // TODO - Fix this:
+              const imageURL = 'somepath'
+
+              // Once you have the imageURL, update the state of the recipeInformation.file
+              setRecipeInformation({ ...recipeInformation, file: imageURL })
+
+              console.log('Blob created and sent to CDN:', blob)
+            }
+
+            reader.readAsArrayBuffer(file)
+          }}
+
         />
+        {/* <input type='text' value={recipeInformation.image} placeholder='Image Path' {...register('image', { required: true })} */}
+        {/* onChange={(e) => handleInputChange('image', e.target.value)} */}
+        {/* /> */}
         <select className='dropbtn' {...register('cuisine', { required: true })}
           value={recipeInformation.cuisine}
           onChange={(e) => handleInputChange('cuisine', e.target.value)}
