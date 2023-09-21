@@ -34,10 +34,13 @@ export default function LoginForm(props) {
           setShowSuccess(true)
 
           setTimeout(() => {
-            props.setIsLoggedIn(true)
             props.closeModal()
-            setShowSuccess(false)
-          }, 1500)
+            props.setIsLoggedIn(true)
+            
+            setTimeout(() => {
+              setShowSuccess(false)
+            }, 250)
+          }, 1600)
         }, 1000)
       } catch (error) {
         console.log(error)

@@ -8,12 +8,17 @@
   z-index: 3;
 
   a {
+    font-size: 0.75rem;
+  }
+}
+
+.nav-link {
     display: block;
     color: $text-light;
     text-align: center;
-    font-size: 0.8rem;
-    padding: 1rem 2rem;
+    font-size: 0.85rem;
+    font-weight: 400;
+    padding: 1.5rem 5rem;
     border-bottom: 1px solid $border-light;
     text-transform: uppercase;
   }
-}

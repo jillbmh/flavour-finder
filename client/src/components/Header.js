@@ -68,9 +68,15 @@ export default function Header() {
   const UserDropdown = () => {
     return (
       <div className='user-dropdown'>
-        <Link to='/my-recipes/:userId'>My Recipes</Link>
-        <Link to='/my-account/:userId'>My Account</Link>
-        <Link to='/' onClick={logOutuser}>Log Out</Link>
+        <Link className='nav-link' to='/my-recipes/:userId'>
+          My Profile
+        </Link>
+        <Link className='nav-link' to='/my-account/:userId'>
+          My Recipes
+        </Link>
+        <Link className='nav-link' to='/' onClick={logOutuser}>
+          Log Out
+        </Link>
       </div>
     )
   }
@@ -82,7 +88,7 @@ export default function Header() {
         <div className='menu-icon-container'>
           <img
             src={isMenuOpen ? CloseIcon : MenuIcon}
-            width={isMenuOpen ? '14px' : '18px'}
+            width={isMenuOpen ? '11px' : '16px'}
             className={`menu-icon ${
               animation === 'shrinking' ? 'shrink-icon' : animation === 'growing' ? 'grow-icon' : ''
             }`}
@@ -117,6 +123,7 @@ export default function Header() {
       {/* MENU */}
       <div className={`side-menu ${openSideMenu ? 'open' : ''}`}>
         <Link
+          className='nav-link'
           to='/recipes'
           onClick={() => {
             if (openSideMenu) setAnimation('shrinking')
@@ -128,6 +135,7 @@ export default function Header() {
           <img src={ArrowIcon} height='13px' />
         </Link>
         <Link
+          className='nav-link'
           to='/blogs'
           onClick={() => {
             if (openSideMenu) setAnimation('shrinking')
@@ -142,7 +150,7 @@ export default function Header() {
 
       {isLoggedIn && isUserDropdownVisible && <UserDropdown />}
 
-      <AccountModal isVisible={isModalVisible} setIsLoggedIn={setIsLoggedIn} closeModal={toggleModal}  />
+      <AccountModal isVisible={isModalVisible} setIsLoggedIn={setIsLoggedIn} closeModal={toggleModal} />
     </>
   )
 }
