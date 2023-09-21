@@ -1,3 +1,5 @@
+import LoadingSpinner from '../images/Rolling-1s-200px.svg'
+
 export default function Spinner() {
-  return <h1>Spinner</h1>
+  return <img className='loading-spinner' src={LoadingSpinner} />
 }
