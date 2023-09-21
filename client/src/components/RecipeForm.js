@@ -6,13 +6,15 @@ import axios from 'axios'
 import { v4 as uuidv4 } from 'uuid'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-
+import { useParams } from 'react-router-dom'
 
 const generateUniqueId = () => uuidv4()
 
-export default function RecipeForm({ formId, userId }) {
+export default function RecipeForm({ formId }) {
+  const { addedBy } = useParams() // Extract addedBy from the route parameters
 
   const navigate = useNavigate()
+
   // State:
   const [errorMessage, setErrorMessage] = useState(null)
   const [ingredients, setIngredients] = useState([{ id: generateUniqueId(), name: '', amount: '' }])
@@ -132,8 +134,7 @@ export default function RecipeForm({ formId, userId }) {
     setIngredients(newIngredients)
   }
 
-  const onSubmit = async (data) => {
-    // setErrors('')
+  const onSubmit = async () => {
     const newObject = {
       ...recipeInformation,
       ingredients: ingredients,
@@ -146,7 +147,12 @@ export default function RecipeForm({ formId, userId }) {
 
     const createRecipe = async () => {
       try {
-        const response = await axios.post('/api/recipes', newObject)
+        const authorizationToken = localStorage.getItem('token')
+        const response = await axios.post('/api/recipes', newObject, {
+          headers: {
+            'Authorization': `Bearer ${authorizationToken}`,
+          },
+        })
 
         // Check if response has the created recipe object with an _id.
         if (response && response.data && response.data._id) {
@@ -175,7 +181,7 @@ export default function RecipeForm({ formId, userId }) {
     try {
       const dataId = await createRecipe()
       if (dataId) {
-        navigate(`/recipes/user/${dataId}`)
+        navigate(`/user/${addedBy}`)
       } else {
         setErrorMessage('Failed to get the ID from the response. Please try again.')
       }
@@ -185,9 +191,6 @@ export default function RecipeForm({ formId, userId }) {
     }
 
   }
-
-
-
 
   return (
     <main className='recipe-form-page'>
@@ -359,9 +362,7 @@ export default function RecipeForm({ formId, userId }) {
           </button>
         </div>
 
-
         <input type='submit' value='Submit Recipe' />
-
 
       </form>
     </main >

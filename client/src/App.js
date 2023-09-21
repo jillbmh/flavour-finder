@@ -23,11 +23,11 @@ export default function App() {
         <Route path='/recipes' element={<BrowseRecipes />} />
         <Route path='/recipes/:id' element={<SingleRecipe />} />
         <Route path='/blogs' element={<Blog />} />
-        <Route path= '/recipes/type/:type' element={<Filter/>} />
-        <Route path="*" element={<NotFound />} />
+        <Route path='/recipes/type/:type' element={<Filter />} />
         <Route path='/blogs/:id' element={<SingleBlog />} />
-        <Route path='/recipes/create' element={<RecipeForm />} />
+        <Route path='/user/:addedBy/create' element={<RecipeForm />} />
         <Route path='/user/:addedBy' element={<Profile />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       {/* Show Footer on all pages */}
       <Footer />
