@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
-import { isAuthenticated } from '../utils/auth.js'
+import { isAuthenticated, getToken } from '../utils/auth.js'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash, faPen } from '@fortawesome/free-solid-svg-icons'
+
+
 
 export default function Profile() {
+
   const userId = isAuthenticated()
   const [usersRecipes, setUsersRecipes] = useState([])
-  console.log(userId)
+  const { id } = useParams()
+  const navigate = useNavigate()
 
   useEffect(() => {
     async function getRecipesByUser() {
@@ -22,6 +28,21 @@ export default function Profile() {
     getRecipesByUser()
   }, [])
 
+  async function handleDelete(recipeId) {
+    try {
+      console.log('delete is broken')
+      await axios.delete(`/api/recipes/${recipeId}`, {
+        headers: {
+          Authorization: `Bearer ${getToken()}`,
+        },
+      })
+      navigate('/user/:addedBy')
+    } catch (error) {
+      console.log('delete is defo broken')
+      console.log(error)
+    }
+  }
+
   return (
     <main className='user-profile'>
       <h1>Welcome back!</h1>
@@ -29,7 +50,6 @@ export default function Profile() {
       <Link to={`/user/${userId}/create`}>
         Create New Recipe
       </Link>
-      <h2>Recipes you added:</h2>
       <section className='grid-container'>
         {usersRecipes.map((recipe) => (
           <Link key={recipe._id} to={`/recipes/${recipe._id}`} className='recipe'>
@@ -39,12 +59,17 @@ export default function Profile() {
                 backgroundImage: `url(${recipe.image})`,
               }}
             >
-              {/* Icon as button for delete -> onClick to delete, <Link> for update that redirects to update recipe page on click */}
-              {/* CSS: position: absolute, right: 0 (Must have position: relative; on the parent recipe container) */}
+              <div className="edit-buttons">
+                <FontAwesomeIcon onClick={() => handleDelete(recipe._id)} icon={faTrash} />
+                <Link to={`/user/${recipe.addedBy._id}/${id}`}>
+                  <FontAwesomeIcon className='update' icon={faPen} />
+                </Link>
+              </div>
               <div className='recipe-title'>
                 <p>{recipe.title}</p>
               </div>
             </div>
+
           </Link>
         ))}
       </section>
