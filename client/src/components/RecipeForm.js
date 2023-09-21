@@ -34,11 +34,6 @@ export default function RecipeForm() {
     isGlutenFree: false,
   })
 
-  console.log(ingredients)
-  console.log(methods)
-  console.log(recipeInformation)
-
-
   useEffect(() => {
     // Don't fetch any data if the recipe id doesn't exist, i.e. we're creating a recipe:
     if (!id) return
@@ -182,6 +177,9 @@ export default function RecipeForm() {
     delete newObject.hours
     delete newObject.minutes
 
+    // TODO - If no id (recipeId) --> run createRecipe --> redirect
+
+
     const createRecipe = async () => {
       try {
         const authorizationToken = localStorage.getItem('token')
@@ -215,6 +213,8 @@ export default function RecipeForm() {
       }
     }
 
+    // TODO If id --> run updateRecipe --> redirect
+
     try {
       const dataId = await createRecipe()
       if (dataId) {
@@ -228,9 +228,6 @@ export default function RecipeForm() {
     }
 
   }
-
-  // if (id || !setIsFetching) return <></>
-  // Else render the form and we have the data in the form:
 
   return (
     <main className='recipe-form-page'>
@@ -415,7 +412,7 @@ export default function RecipeForm() {
           </button>
         </div>
 
-        <input type='submit' value='Submit Recipe' />
+        <input type='submit' value={id ? 'Update Recipe' : 'Submit Recipe'} />
 
       </form>
     </main >
