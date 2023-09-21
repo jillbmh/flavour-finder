@@ -128,3 +128,32 @@ export const deleteRecipe = async (req, res) => {
     return res.status(404).json({ error: error.message })
   }
 }
+export const getRecipesByType = async (req, res) => {
+  try {
+    const { type } = req.params
+    const recipes = await Recipe.find({ type })
+    if (recipes.length === 0) {
+      return res.status(404).json({ message: 'No recipes found for the given type.' })
+    }
+
+    return res.json(recipes)
+  } catch (error) {
+    console.log('Error:', error)
+    return res.status(404).json({ message: error.message })
+  }
+}
+
+export const getRecipesByCuisine = async (req, res) => {
+  try {
+    const { cuisine } = req.params
+    const recipes = await Recipe.find({ cuisine })
+    if (recipes.length === 0) {
+      return res.status(404).json({ message: 'No recipes found for the given cuisine.' })
+    }
+
+    return res.json(recipes)
+  } catch (error) {
+    console.log('Error:', error)
+    return res.status(404).json({ message: error.message })
+  }
+}
