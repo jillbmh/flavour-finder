@@ -1,4 +1,4 @@
-const tokenName = 'flavourFinder-token'
+const tokenName = 'token'
 
 export function setToken(token){
   localStorage.setItem(tokenName, token)

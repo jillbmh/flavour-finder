@@ -8,6 +8,9 @@ import SingleBlog from './components/SingleBlog'
 import Footer from './components/Footer'
 import NotFound from './components/NotFound'
 import RecipeForm from './components/RecipeForm'
+import Profile from './components/Profile'
+import Filter from './components/Filter.js'
+import Featured from './components/FeaturedRecipes'
 
 export default function App() {
   return (
@@ -20,9 +23,11 @@ export default function App() {
         <Route path='/recipes' element={<BrowseRecipes />} />
         <Route path='/recipes/:id' element={<SingleRecipe />} />
         <Route path='/blogs' element={<Blog />} />
+        <Route path= '/recipes/type/:type' element={<Filter/>} />
         <Route path="*" element={<NotFound />} />
         <Route path='/blogs/:id' element={<SingleBlog />} />
         <Route path='/recipes/create' element={<RecipeForm />} />
+        <Route path='/user/:addedBy' element={<Profile />} />
       </Routes>
       {/* Show Footer on all pages */}
       <Footer />
