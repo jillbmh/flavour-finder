@@ -25,6 +25,7 @@ export default function App() {
         <Route path='/recipes/type/:type' element={<Filter />} />
         <Route path='/blogs/:id' element={<SingleBlog />} />
         <Route path='/user/:addedBy/create' element={<RecipeForm />} />
+        <Route path='/user/:addedBy/:id' element={<RecipeForm />} />
         <Route path='/user/:addedBy' element={<Profile />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
