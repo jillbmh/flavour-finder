@@ -28,7 +28,7 @@ export default function Profile() {
     getRecipesByUser()
   }, [])
 
-  async function handleDelete(recipeId){
+  async function handleDelete(recipeId) {
     try {
       console.log('delete is broken')
       await axios.delete(`/api/recipes/${recipeId}`, {
