@@ -29,11 +29,8 @@ app.use((req, res) => {
   return res.status(404).json({ message: 'Route not found' })
 })
 
-
 const startServer = async () => {
     try {
-
-      
         await mongoose.connect(process.env.CONNECTION_STRING);
         console.log(`✅ Database connection established`);
         app.listen(process.env.PORT, () => console.log(`🚀 Server listening on port ${process.env.PORT}`));
