@@ -21,14 +21,15 @@ export default function Blog() {
     getBlogData()
   }, [])
   return (
-    <main>
+    <section>
       <div className='grid-container'>
-        {blogs.length > 0 
+        {blogs.length > 0
           ? blogs.map(blog => (
             <Link key={blog._id} to={`/blogs/${blog._id}`} className='blog'>
-              <div 
-                className= 'individual-blog'
-                style={{ backgroundImage: `url(${blog.image})`,
+              <div
+                className='individual-blog'
+                style={{
+                  backgroundImage: `url(${blog.image})`,
                 }}
               >
                 <div className='blog-title'>
@@ -41,6 +42,6 @@ export default function Blog() {
           <Spinner />
         }
       </div>
-    </main>
+    </section>
   )
 }

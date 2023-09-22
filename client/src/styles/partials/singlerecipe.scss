@@ -5,7 +5,15 @@ display: flex;
 flex-direction: column;
 max-width: 40rem;
 justify-content: center;
+align-items: center;
 margin: 0 auto;
+  img{
+    max-width: 100%;
+    width: 610px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
 }
 
 .recipe-info-container{
@@ -32,6 +40,7 @@ margin: 0 auto;
 
 .ingredients-method-container {
   padding: 15px;
+  width: 100%;
 }
 
 .ingredients-container {
