@@ -1,9 +1,14 @@
 @import '../variables.scss';
 
-.user-profile {
-  .create-link {
-    text-decoration: underline;
-  }
+
+  a.create-link {
+  padding: 5px 5px;
+  border: none;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: #e7874c;
+}
+
 
   .edit-buttons {
     position: absolute;
@@ -42,4 +47,3 @@
       }
     }
   }
-}
