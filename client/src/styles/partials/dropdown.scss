@@ -1,0 +1,16 @@
+@import '../variables.scss';
+
+.filters-container {
+  padding: 1rem;
+
+  select {
+    background-color: rgb(244, 244, 244);
+    border: 1.5px solid #9d9d9d;
+    border-radius: 5px;
+    color: #676767;
+    font-weight: 500;
+    font-size: 0.75rem;
+    padding: 0.5rem;
+    margin-right: 0.25rem;
+  }
+}
