@@ -45,7 +45,7 @@ export default function BrowseRecipes() {
   return (
     <main className='browse-page'>
       <Filters filter={filter} setFilter={setFilter} />
-      <div className='grid-container'>
+      <div className='grid-container browse-grid'>
         {loading ? <LoadingSpinner /> : recipes.length > 0 ? (
           recipes.map(recipe => (
             <Link key={recipe._id} to={`/recipes/${recipe._id}`} className='recipe'>

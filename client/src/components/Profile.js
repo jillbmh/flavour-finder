@@ -48,7 +48,7 @@ export default function Profile() {
       <h1>Welcome back!</h1>
       <h2>My recipes</h2>
       <Link className='create-link' to={`/user/${userId}/create`}>
-        Create New Recipe
+        Create Recipe
       </Link>
       <section className='grid-container'>
         {usersRecipes.map((recipe) => (
