@@ -43,30 +43,28 @@ export default function BrowseRecipes() {
   }, [filter])
 
   return (
-    <>
-      <main>
-        <Filters filter={filter} setFilter={setFilter} />
-        <div className='grid-container'>
-          {loading ? <LoadingSpinner /> : recipes.length > 0 ? (
-            recipes.map(recipe => (
-              <Link key={recipe._id} to={`/recipes/${recipe._id}`} className='recipe'>
-                <div
-                  className='recipe-container'
-                  style={{
-                    backgroundImage: `url(${recipe.image})`,
-                  }}
-                >
-                  <div className='recipe-title'>
-                    <p>{recipe.title}</p>
-                  </div>
+    <main className='browse-page'>
+      <Filters filter={filter} setFilter={setFilter} />
+      <div className='grid-container'>
+        {loading ? <LoadingSpinner /> : recipes.length > 0 ? (
+          recipes.map(recipe => (
+            <Link key={recipe._id} to={`/recipes/${recipe._id}`} className='recipe'>
+              <div
+                className='recipe-container'
+                style={{
+                  backgroundImage: `url(${recipe.image})`,
+                }}
+              >
+                <div className='recipe-title'>
+                  <p>{recipe.title}</p>
                 </div>
-              </Link>
-            ))
-          ) : (
-            'No recipes found'
-          )}
-        </div>
-      </main>
-    </>
+              </div>
+            </Link>
+          ))
+        ) : (
+          'No recipes found'
+        )}
+      </div>
+    </main>
   )
 }

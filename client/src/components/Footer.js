@@ -6,10 +6,11 @@ import NewLogo from '../images/new-logo.png'
 export default function Footer() {
   return (
     <footer>
-      &copy; <img src={NewLogo} className='footer-logo' />
+      {/* &copy; */}
+      <img src={NewLogo} className='footer-logo' />
       <nav>
         <Link to="/contact-us">Contact Us</Link>
-        <Link to="/cookie-policy">Cookie Policy</Link>
+        <Link to="/cookie-policy" className='margin-right-link'>Cookie Policy</Link>
         <SocialIcon url="https://twitter.com" bgColor='#e99254' style={{ height: 40, width: 40 }} />
         <SocialIcon url="https://facebook.com" bgColor='#e99254' style={{ height: 40, width: 40 }} />
         <SocialIcon url="https://tiktok.com" bgColor='#e99254' style={{ height: 40, width: 40 }} />

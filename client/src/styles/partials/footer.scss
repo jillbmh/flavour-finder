@@ -2,8 +2,7 @@
 
 footer {
   display: flex;
-  flex-direction: space-between;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
   padding: 40px 10px 20px;
@@ -17,12 +16,15 @@ footer {
     &:hover {
       text-decoration: underline;
     }
+    
+    &.margin-right-link {
+      margin-right: 2rem;
+    }
   }
 }
 
 
 .footer-logo {
   margin-left: 10px;
-  height: 20px;
-
+  height: 30px;
 }
