@@ -27,7 +27,7 @@ export const loginUser = async (req, res) => {
 
     const token = jwt.sign({ sub: userLogin._id }, process.env.SECRET, { expiresIn: '5d' })
     console.log(`This is the user id:`, userLogin._id)
-    return res.json({ message: `Welcome back, ${userLogin.username}!`, token: token, userId: userLogin._id })
+    return res.json({ message: `Welcome back, ${userLogin.username}!`, token: token, userId: userLogin._id, username: userLogin.username })
   } catch (error) {
     console.log(error)
     return res.status(401).json({ error: 'no' })

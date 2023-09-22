@@ -12,6 +12,8 @@ export default function LoginForm(props) {
     handleSubmit,
     formState: { errors },
     setError,
+    reset,
+    clearErrors,
   } = useForm()
 
   const [isLoading, setIsLoading] = useState(false)
@@ -28,9 +30,9 @@ export default function LoginForm(props) {
 
         console.log(response)
         localStorage.setItem('token', response.data.token)
+        localStorage.setItem('username', response.data.username)
         localStorage.setItem('userId', response.data.userId)
         props.setUserId(response.data.userId)
-
 
         setTimeout(() => {
           setIsLoading(false)
@@ -47,6 +49,7 @@ export default function LoginForm(props) {
         }, 1000)
       } catch (error) {
         console.log(error)
+        // reset()
         setIsLoading(false)
         setError('loginFailed', {
           type: 'loginFailed',
@@ -95,8 +98,8 @@ export default function LoginForm(props) {
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} autoComplete='off'>
-        <input placeholder='Email' {...register('email', { required: true })} />
-        <input type='password' placeholder='Password' {...register('password', { required: true })} />
+        <input placeholder='Email' {...register('email', { required: true })} onChange={() => clearErrors('loginFailed')}/>
+        <input type='password' placeholder='Password' {...register('password', { required: true })} onChange={() => clearErrors('loginFailed')} />
         {errors.loginFailed && errors.loginFailed.type === 'loginFailed' && (
           <div className='error'>
             <img src={ErrorIcon} width='15px' />
