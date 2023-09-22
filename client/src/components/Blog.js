@@ -21,7 +21,7 @@ export default function Blog() {
     getBlogData()
   }, [])
   return (
-    <section>
+    <main className='blogs-page'>
       <div className='grid-container'>
         {blogs.length > 0
           ? blogs.map(blog => (
@@ -42,6 +42,6 @@ export default function Blog() {
           <Spinner />
         }
       </div>
-    </section>
+    </main>
   )
 }

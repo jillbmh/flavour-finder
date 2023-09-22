@@ -23,7 +23,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
+  
     a {
       width: 380px;
       max-width: 100%;
@@ -51,4 +51,14 @@
       flex-direction: row;
       flex-wrap: wrap;
     }
+}
+
+.home-page{
+  .featured-container{
+    margin-top: 0;
+  }
+  .blogs-page{
+    min-height: 0;
+
+  }
 }
