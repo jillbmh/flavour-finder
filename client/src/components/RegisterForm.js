@@ -12,6 +12,7 @@ export default function RegisterForm(props) {
   } = useForm()
 
   const onSubmit = data => {
+    props.switchToLogin()
     const createAccount = async () => {
       document.getElementsByClassName('submit-button')[0].style.display = 'none'
       try {
