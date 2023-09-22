@@ -8,8 +8,6 @@ import { useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 // import { cloudinary } from 'cloudinary'
 
-
-
 const generateUniqueId = () => uuidv4()
 
 export default function RecipeForm() {
@@ -23,13 +21,13 @@ export default function RecipeForm() {
   const [methods, setMethods] = useState([{ id: generateUniqueId(), value: '' }])
   const [isFetching, setIsFetching] = useState(false)
   const [recipeInformation, setRecipeInformation] = useState({
-    'cuisine': '',
-    'title': '',
-    'type': '',
-    'image': '',
-    'hours': '',
-    'minutes': '',
-    'serves': '',
+    cuisine: '',
+    title: '',
+    type: '',
+    image: '',
+    hours: '',
+    minutes: '',
+    serves: '',
     isVegan: false,
     isVegetarian: false,
     isPescatarian: false,
@@ -46,29 +44,32 @@ export default function RecipeForm() {
       const { data } = await axios.get(`/api/recipes/${id}`)
 
       // 1. Ingredients:
-      setIngredients(data.ingredients.map(ingredient => {
-        ingredient.id = generateUniqueId()
-        return ingredient
-      }))
+      setIngredients(
+        data.ingredients.map(ingredient => {
+          ingredient.id = generateUniqueId()
+          return ingredient
+        })
+      )
 
       // 2. Methods:
-      setMethods(data.method.map(method => {
-        return {
-          value: method,
-          id: generateUniqueId(),
-        }
-
-      }))
+      setMethods(
+        data.method.map(method => {
+          return {
+            value: method,
+            id: generateUniqueId(),
+          }
+        })
+      )
 
       // 3. RecipeInformation:
       setRecipeInformation({
-        'cuisine': data.cuisine,
-        'title': data.title,
-        'type': data.type,
-        'image': data.image,
-        'hours': data.cookingTime.hours,
-        'minutes': data.cookingTime.minutes,
-        'serves': data.serves,
+        cuisine: data.cuisine,
+        title: data.title,
+        type: data.type,
+        image: data.image,
+        hours: data.cookingTime.hours,
+        minutes: data.cookingTime.minutes,
+        serves: data.serves,
         isVegan: data.isVegan || false,
         isVegetarian: data.isVegetarian || false,
         isPescatarian: data.isPescatarian || false,
@@ -79,7 +80,6 @@ export default function RecipeForm() {
     }
 
     getAndUpdateState()
-
   }, [])
 
   // Generic handlers:
@@ -98,7 +98,44 @@ export default function RecipeForm() {
     }))
   }
 
-  const handleDietaryCheckboxChange = (value) => {
+  const handleUpload = event => {
+    event.preventDefault()
+
+    // Check if there's any file selected
+    if (!event.target.files || event.target.files.length === 0) {
+      alert('Please select a file.')
+      return
+    }
+
+    const file = event.target.files[0]
+
+    const formData = new FormData()
+    formData.append('file', file)
+    formData.append('upload_preset', process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET)
+    for (var pair of formData.entries()) {
+      console.log(pair[0] + ', ' + pair[1])
+    }
+
+    fetch(process.env.REACT_APP_CLOUDINARY_URL, {
+      method: 'POST',
+      body: formData,
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        setRecipeInformation(prevState => ({
+          ...prevState,
+          image: data.secure_url,
+        }))
+        alert('Upload successful')
+      })
+      .catch(error => {
+        console.error('Error uploading:', error)
+        alert('Upload failed')
+      })
+  }
+
+  const handleDietaryCheckboxChange = value => {
     setRecipeInformation(prevState => {
       switch (value) {
         case 'vegan':
@@ -115,26 +152,29 @@ export default function RecipeForm() {
     })
   }
 
-  const { register, handleSubmit, formState: { errors }, control } = useForm({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    control,
+  } = useForm({
     defaultValues: {
       cuisine: '',
       type: '',
     },
   })
 
-
-
   // Method
   const addMethod = () => {
     setMethods([...methods, { id: generateUniqueId(), value: '' }])
   }
 
-  const removeMethod = (methodId) => {
+  const removeMethod = methodId => {
     setMethods(methods.filter(method => method.id !== methodId))
   }
 
   const handleMethodNameChange = (e, methodId) => {
-    const newMethods = methods.map((method) => {
+    const newMethods = methods.map(method => {
       if (method.id === methodId) {
         return { ...method, value: e.target.value }
       }
@@ -143,13 +183,12 @@ export default function RecipeForm() {
     setMethods(newMethods)
   }
 
-
   // Ingredients
   const addIngredient = () => {
     setIngredients([...ingredients, { id: generateUniqueId(), ingredient: '', amount: '' }])
   }
 
-  const removeIngredient = (ingredientId) => {
+  const removeIngredient = ingredientId => {
     const newIngredients = ingredients.filter(ingredient => {
       return ingredient.id !== ingredientId
     })
@@ -168,15 +207,14 @@ export default function RecipeForm() {
     setIngredients(newIngredients)
   }
 
-
   const updateRecipe = async () => {
     const newObject = {
       ...recipeInformation,
       ingredients: ingredients,
-      method: methods.map((method) => method.value),
+      method: methods.map(method => method.value),
       cookingTime: { hours: recipeInformation.hours, minutes: recipeInformation.minutes },
     }
-    // Delete hours and minutes 
+    // Delete hours and minutes
     delete newObject.hours
     delete newObject.minutes
     try {
@@ -184,7 +222,7 @@ export default function RecipeForm() {
 
       const response = await axios.put(`/api/recipes/${id}`, newObject, {
         headers: {
-          'Authorization': `Bearer ${authorizationToken}`,
+          Authorization: `Bearer ${authorizationToken}`,
         },
       })
 
@@ -194,9 +232,7 @@ export default function RecipeForm() {
       } else {
         throw new Error('Unexpected response format from the server.')
       }
-
     } catch (error) {
-
       if (error.response && error.response.data) {
         if (error.response.data.message) {
           console.error('Error updating recipe:', error.response.data.message)
@@ -213,22 +249,21 @@ export default function RecipeForm() {
     const newObject = {
       ...recipeInformation,
       ingredients: ingredients,
-      method: methods.map((method) => method.value),
+      method: methods.map(method => method.value),
       cookingTime: { hours: recipeInformation.hours, minutes: recipeInformation.minutes },
     }
-    // Delete hours and minutes 
+    // Delete hours and minutes
     delete newObject.hours
     delete newObject.minutes
 
     // TODO - If no id (recipeId) --> run createRecipe --> redirect
-
 
     const createRecipe = async () => {
       try {
         const authorizationToken = localStorage.getItem('token')
         const response = await axios.post('/api/recipes', newObject, {
           headers: {
-            'Authorization': `Bearer ${authorizationToken}`,
+            Authorization: `Bearer ${authorizationToken}`,
           },
         })
 
@@ -238,7 +273,6 @@ export default function RecipeForm() {
         } else {
           throw new Error('Unexpected response format from the server.')
         }
-
       } catch (error) {
         // Check for specific error responses from your server and adjust the error message.
         if (error.response && error.response.data) {
@@ -251,7 +285,7 @@ export default function RecipeForm() {
           }
         } else {
           console.error('Error creating recipe:', error.message)
-          throw error  // re-throw to handle it in the outer function or log it.
+          throw error // re-throw to handle it in the outer function or log it.
         }
       }
     }
@@ -269,57 +303,41 @@ export default function RecipeForm() {
       setErrorMessage(`Error during recipe creation. Please check the details and try again. ${error.message}`)
       console.error('Error during recipe creation:', error.message)
     }
-
   }
 
   return (
     <main className='recipe-form-page'>
-      {errorMessage && <div className="error-message">{errorMessage}</div>}
+      {errorMessage && <div className='error-message'>{errorMessage}</div>}
       <form onSubmit={id ? handleSubmit(updateRecipe) : handleSubmit(onSubmit)}>
         <label>Recipe Name</label>
         <input
           value={recipeInformation.title}
-          placeholder='New Recipe' {...register('title', { required: true })}
-          onChange={(e) => handleInputChange('title', e.target.value)}
+          placeholder='New Recipe'
+          {...register('title', { required: true })}
+          onChange={e => handleInputChange('title', e.target.value)}
         />
-        {recipeInformation.image && <img src={recipeInformation.image} alt="Selected Recipe" style={{ maxWidth: '100%', height: 'auto' }} />}
+        {recipeInformation.image && (
+          <img src={recipeInformation.image} alt='Selected Recipe' style={{ maxWidth: '100%', height: 'auto' }} />
+        )}
 
+        <div className='field'>
+          <label htmlFor='image' className='label'>
+            Image
+          </label>
+          <div className='control'>
+            {recipeInformation.image ? (
+              <img src={recipeInformation.image} alt='Uploaded preview' style={{ maxWidth: '100%' }}></img>
+            ) : (
+              <input type='file' className='input' name='image' onChange={handleUpload} />
+            )}
+          </div>
+        </div>
 
-        <input type='file' accept='image/png, image/jpeg, image/jpg' {...register('image', { required: false })}
-          onChange={(e) => {
-            const file = e.target.files[0]
-            if (!file) return
-
-            const reader = new FileReader()
-
-            reader.onloadend = async () => {
-              const blob = new Blob([new Uint8Array(reader.result)], { type: file.type })
-
-
-              // Send the blob to the CDN (pseudo-code as you haven't provided details)
-              // await axios.post('https://api.cloudinary.com/v1_1/{{cloud_name}}/:resource_type/upload', )
-              // const imageURL = await cloudinary.v2.uploader.unsigned_upload(file, process.env.CLOUDINARY_UPLOAD_PRESET, undefined)
-              console.log(imageURL)
-              // TODO - Fix this:
-              const imageURL = 'somepath'
-
-              // Once you have the imageURL, update the state of the recipeInformation.file
-              setRecipeInformation({ ...recipeInformation, file: imageURL })
-
-              console.log('Blob created and sent to CDN:', blob)
-            }
-
-            reader.readAsArrayBuffer(file)
-          }}
-
-        />
-        {/* <input type='text' value={recipeInformation.image} placeholder='Image Path' {...register('image', { required: true })} */}
-        {/* onChange={(e) => handleInputChange('image', e.target.value)} */}
-        {/* /> */}
-        <select className='dropbtn' {...register('cuisine', { required: true })}
+        <select
+          className='dropbtn'
+          {...register('cuisine', { required: true })}
           value={recipeInformation.cuisine}
-          onChange={(e) => handleInputChange('cuisine', e.target.value)}
-
+          onChange={e => handleInputChange('cuisine', e.target.value)}
         >
           <option value='' disabled>
             Choose a cuisine
@@ -338,10 +356,12 @@ export default function RecipeForm() {
           <option value='Asian'>Asian</option>
         </select>
 
-        <select className='dropbtn' {...register('type', { required: true })}
+        <select
+          className='dropbtn'
+          {...register('type', { required: true })}
           value={recipeInformation.type}
           placeholder='New Recipe'
-          onChange={(e) => handleInputChange('type', e.target.value)}
+          onChange={e => handleInputChange('type', e.target.value)}
         >
           <option value='' disabled>
             Choose the dish type
@@ -353,47 +373,72 @@ export default function RecipeForm() {
         </select>
 
         <label>Hours</label>
-        <input type='number' min='0' max='12' {...register('hours', { required: true })} onChange={(e) => handleInputChange('hours', e.target.value)}
-          value={recipeInformation.hours} />
+        <input
+          type='number'
+          min='0'
+          max='12'
+          {...register('hours', { required: true })}
+          onChange={e => handleInputChange('hours', e.target.value)}
+          value={recipeInformation.hours}
+        />
         <label>Minutes</label>
-        <input type='number' min='0' max='59' {...register('minutes', { required: true })} onChange={(e) => handleInputChange('minutes', e.target.value)}
-          value={recipeInformation.minutes} />
+        <input
+          type='number'
+          min='0'
+          max='59'
+          {...register('minutes', { required: true })}
+          onChange={e => handleInputChange('minutes', e.target.value)}
+          value={recipeInformation.minutes}
+        />
 
         <label>Serves</label>
-        <input type='number' min='0' max='12' {...register('serves', { required: true })} onChange={(e) => handleInputChange('serves', e.target.value)}
+        <input
+          type='number'
+          min='0'
+          max='12'
+          {...register('serves', { required: true })}
+          onChange={e => handleInputChange('serves', e.target.value)}
           value={recipeInformation.serves}
         />
 
-
-        <section className="checkbox-container">
+        <section className='checkbox-container'>
           <label>
-            <input type="checkbox"
+            <input
+              type='checkbox'
               checked={recipeInformation.isVegan}
               value={recipeInformation.isVegan}
-              onChange={() => handleDietaryCheckboxChange('vegan')} />
+              onChange={() => handleDietaryCheckboxChange('vegan')}
+            />
             Vegan
           </label>
 
           <label>
-            <input type="checkbox" checked={recipeInformation.isVegetarian}
+            <input
+              type='checkbox'
+              checked={recipeInformation.isVegetarian}
               value={recipeInformation.isVegetarian}
-              onChange={() => handleDietaryCheckboxChange('vegetarian')} />
+              onChange={() => handleDietaryCheckboxChange('vegetarian')}
+            />
             Vegetarian
           </label>
 
           <label>
-            <input type="checkbox"
+            <input
+              type='checkbox'
               checked={recipeInformation.isGlutenFree}
               value={recipeInformation.isGlutenFree}
-              onChange={() => handleDietaryCheckboxChange('glutenFree')} />
+              onChange={() => handleDietaryCheckboxChange('glutenFree')}
+            />
             Gluten Free
           </label>
 
           <label>
-            <input type="checkbox"
+            <input
+              type='checkbox'
               checked={recipeInformation.isPescatarian}
               value={recipeInformation.isPescatarian}
-              onChange={() => handleDietaryCheckboxChange('pescatarian')} />
+              onChange={() => handleDietaryCheckboxChange('pescatarian')}
+            />
             Pescatarian
           </label>
         </section>
@@ -485,8 +530,7 @@ export default function RecipeForm() {
         </div>
 
         <input type='submit' value={id ? 'Update Recipe' : 'Submit Recipe'} />
-
       </form>
-    </main >
+    </main>
   )
 }
