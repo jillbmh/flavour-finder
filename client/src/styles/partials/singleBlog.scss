@@ -10,27 +10,33 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid #f7f3e838;
-    background-color: #db9c6f;
-    max-width: 500px;
+    max-width: 40rem;
     margin-top: 5rem;
     text-align: center;
     padding-bottom: 15px;
     margin-bottom: 15px;
+  }
+    .content-container {
+      padding: 15px;
+      background-color: #db9c6f;
+      margin: 15px;
+      border-radius: 5px;
+    }
     p {
       font-size: 1rem;
     }
+    .blog-info-container {
+      padding: 15px;
+    }
+    img {
+      max-width: 100%;
+      width: 610px;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 5px;
   }
 
-  h2,
-  h3 {
-    padding: 15px;
-  }
 
-  img {
-    border: 1px solid #f7f3e838;
-    // margin: 10px;
-  }
 
   p {
     padding: 10px 20px;
