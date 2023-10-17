@@ -1,11 +1,10 @@
 export default [
-  {
-    image:
-      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694982354/flavour-finder/best-healthy-breakfast-tout-1-c5c4576de1b54a3ca5441c4502301970_ci3m9s.jpg',
-    title: 'Revolutionize Your Breakfast',
-    author: 'Jane Doe',
-    dateCreated: '01/07/2023',
-    content: `Breakfast is often called the most important meal of the day, and for good reason. Not only does it provide the essential nutrients and energy needed to kickstart your morning, but a healthy breakfast also sets the stage for the choices you make throughout the rest of the day. However, we often find ourselves stuck in a breakfast rut, eating the same cereal or toast day in and day out. To inspire you to revolutionize your mornings, here are some healthy breakfast ideas that are both delicious and nutritious.
+	{
+		image: "https://res.cloudinary.com/v12b7n93a/image/upload/v1694982354/flavour-finder/best-healthy-breakfast-tout-1-c5c4576de1b54a3ca5441c4502301970_ci3m9s.jpg",
+		title: "Revolutionize Your Breakfast",
+		author: "Jane Doe",
+		dateCreated: "01/07/2023",
+		content: `Breakfast is often called the most important meal of the day, and for good reason. Not only does it provide the essential nutrients and energy needed to kickstart your morning, but a healthy breakfast also sets the stage for the choices you make throughout the rest of the day. However, we often find ourselves stuck in a breakfast rut, eating the same cereal or toast day in and day out. To inspire you to revolutionize your mornings, here are some healthy breakfast ideas that are both delicious and nutritious.
   
 
 ##### Overnight Oats
@@ -32,14 +31,14 @@ An omelet is an excellent way to incorporate vegetables into your breakfast. Whi
 ##### Nut Butter and Banana Sandwich
 For those who prefer a breakfast they can eat on the go, a nut butter and banana sandwich is an ideal option. Spread almond or peanut butter between two slices of whole-grain bread, add banana slices, and you have a sandwich that is both satisfying and healthy.
   
-The key to a revolutionary breakfast is not just what you eat but also how you prepare it. Incorporate fresh ingredients, experiment with new recipes, and take the time to savor each bite. Not only will these healthy breakfast ideas help improve your physical well-being, but they'll also give you the mental boost needed to tackle whatever challenges the day may bring.`,
-  },
-  {
-    image: 'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694982422/flavour-finder/Turmeric_c8wswf.jpg',
-    title: 'Unlocking the Health Benefits of Turmeric',
-    author: 'John Smith',
-    dateCreated: '15/08/2023',
-    content: `Turmeric, the vibrant yellow spice commonly used in Asian cuisine, has been a staple in traditional medicine for thousands of years. More recently, scientific studies have started to confirm its myriad of health benefits, making it more than just a flavorful addition to your curry. In this blog post, we'll delve into some of the remarkable health benefits of turmeric and how you can incorporate it into your daily diet.
+The key to a revolutionary breakfast is not just what you eat but also how you prepare it. Incorporate fresh ingredients, experiment with new recipes, and take the time to savor each bite. Not only will these healthy breakfast ideas help improve your physical well-being, but they'll also give you the mental boost needed to tackle whatever challenges the day may bring.`
+	},
+	{
+		image: "https://res.cloudinary.com/v12b7n93a/image/upload/v1694982422/flavour-finder/Turmeric_c8wswf.jpg",
+		title: "Unlocking the Health Benefits of Turmeric",
+		author: "John Smith",
+		dateCreated: "15/08/2023",
+		content: `Turmeric, the vibrant yellow spice commonly used in Asian cuisine, has been a staple in traditional medicine for thousands of years. More recently, scientific studies have started to confirm its myriad of health benefits, making it more than just a flavorful addition to your curry. In this blog post, we'll delve into some of the remarkable health benefits of turmeric and how you can incorporate it into your daily diet.
   
 ##### Anti-Inflammatory Properties
 One of the most well-documented benefits of turmeric is its powerful anti-inflammatory effects. Curcumin, the active ingredient in turmeric, has been shown to be as effective as some anti-inflammatory drugs, without the side effects.
@@ -62,15 +61,14 @@ Other health benefits attributed to turmeric include potential cancer prevention
 ##### How to Incorporate Turmeric into Your Diet
 Turmeric can be easily incorporated into your diet. It pairs well with a variety of foods, from scrambled eggs and soups to smoothies and rice dishes. One popular way to consume it is by making "Golden Milk," a warm beverage made with milk, turmeric, and other spices like cinnamon and ginger.
 
-In conclusion, the health benefits of turmeric make it a worthy addition to anyone's diet. Whether you're trying to reduce inflammation, boost your antioxidants, or simply add some zest to your meals, turmeric has something to offer. So the next time you're cooking, consider reaching for that jar of turmeric to not just spice up your dish, but also your life.`,
-  },
-  {
-    image:
-      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694982460/flavour-finder/vegan-protein-sources-2000-b9bf0e04cb5746b9ac878063c4e1dac4_cv8jei.jpg',
-    title: 'Plant-Powered Protein: A Vegan’s Guide',
-    author: 'Emily Johnson',
-    dateCreated: '03/09/2023',
-    content: `One of the most common questions vegans get asked is, "Where do you get your protein?" The misconception that a plant-based diet lacks sufficient protein has been debunked time and time again, but the question still persists. In this blog post, we’ll explore various plant-based protein sources and how to incorporate them into your daily meals.
+In conclusion, the health benefits of turmeric make it a worthy addition to anyone's diet. Whether you're trying to reduce inflammation, boost your antioxidants, or simply add some zest to your meals, turmeric has something to offer. So the next time you're cooking, consider reaching for that jar of turmeric to not just spice up your dish, but also your life.`
+	},
+	{
+		image: "https://res.cloudinary.com/v12b7n93a/image/upload/v1694982460/flavour-finder/vegan-protein-sources-2000-b9bf0e04cb5746b9ac878063c4e1dac4_cv8jei.jpg",
+		title: "Plant-Powered Protein: A Vegan’s Guide",
+		author: "Emily Johnson",
+		dateCreated: "03/09/2023",
+		content: `One of the most common questions vegans get asked is, "Where do you get your protein?" The misconception that a plant-based diet lacks sufficient protein has been debunked time and time again, but the question still persists. In this blog post, we’ll explore various plant-based protein sources and how to incorporate them into your daily meals.
   
 ##### Legumes: The Protein Powerhouse
 Lentils, chickpeas, and other legumes are some of the most protein-dense plant foods available. A cup of cooked lentils can offer around 18 grams of protein. You can easily make hearty salads, stews, and curries packed with these protein powerhouses.
@@ -96,15 +94,14 @@ Vegan protein powders made from hemp, rice, or pea protein can provide an extra 
 ##### Tips for Meal Planning
 The key to a protein-rich vegan diet is variety. Make sure to incorporate different protein sources throughout your day. You can also combine foods like legumes and grains to create a complete protein, which provides all nine essential amino acids.
 
-Being vegan doesn’t mean compromising on protein or relying on supplements. Mother Nature offers a cornucopia of protein-rich foods that are plant-based, proving that you can be vegan and still meet all your nutritional needs. So the next time someone asks, "Where do you get your protein?", you’ll have plenty to say.`,
-  },
-  {
-    image:
-      'https://res.cloudinary.com/dlcb7n93a/image/upload/v1694982508/flavour-finder/save-money-on-groceries-GettyImages-471453337-MLedit_qxjgtu.jpg',
-    title: 'Smart Shopping: Tips to Save Money on Groceries',
-    author: 'Alex Williams',
-    dateCreated: '12/05/2022',
-    content: `Food shopping is a significant part of any household's budget, but it's also one area where you can make smart choices to save money without sacrificing quality. If you’ve ever felt the pinch when looking at your grocery bill, this blog is for you. Below are some tips and tricks to help you save money the next time you hit the supermarket.
+Being vegan doesn’t mean compromising on protein or relying on supplements. Mother Nature offers a cornucopia of protein-rich foods that are plant-based, proving that you can be vegan and still meet all your nutritional needs. So the next time someone asks, "Where do you get your protein?", you’ll have plenty to say.`
+	},
+	{
+		image: "https://res.cloudinary.com/v12b7n93a/image/upload/v1694982508/flavour-finder/save-money-on-groceries-GettyImages-471453337-MLedit_qxjgtu.jpg",
+		title: "Smart Shopping: Tips to Save Money on Groceries",
+		author: "Alex Williams",
+		dateCreated: "12/05/2022",
+		content: `Food shopping is a significant part of any household's budget, but it's also one area where you can make smart choices to save money without sacrificing quality. If you’ve ever felt the pinch when looking at your grocery bill, this blog is for you. Below are some tips and tricks to help you save money the next time you hit the supermarket.
 
 ##### Make a List and Stick to It
 One of the best ways to avoid impulse buying is to make a shopping list before you go to the store. This helps you buy only what you need and minimizes the chances of filling your cart with items that catch your eye but aren’t really necessary.
@@ -136,6 +133,6 @@ Don’t just look at the total price; look at the price per unit or per ounce to
 ##### Don’t Be Afraid to Freeze
 If you find a good deal on something that can be frozen, like meat or bread, don’t be afraid to stock up and freeze the extras. Just make sure to use them before they get freezer burn.
 
-By applying these tips, you'll find that your food bills start to decrease, leaving you with extra money to use elsewhere. Saving on groceries doesn't mean you have to compromise on quality or variety; it simply means you need to shop smarter. Happy shopping!`,
-  }
-]
+By applying these tips, you'll find that your food bills start to decrease, leaving you with extra money to use elsewhere. Saving on groceries doesn't mean you have to compromise on quality or variety; it simply means you need to shop smarter. Happy shopping!`
+	}
+];
