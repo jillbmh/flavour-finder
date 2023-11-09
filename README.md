@@ -2,7 +2,7 @@
 
 ## Description
 
-This was our third project for SEI. It was a group project (3 of us) and we had 10 days to complete it. 
+This was our third project for the General Assembly, Software Engineering Immersive. It was a group project (3 of us) and we had 10 days to complete it. 
 
 You can find ‘Flavour Finder’ on Heroku, here: https://flavourfinder-b2585a80ca2e.herokuapp.com/
 
