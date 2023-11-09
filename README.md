@@ -48,13 +48,13 @@ Division of tasks: Luke really wanted to do the account modal and pagination. Ki
 
 Early on we realised that the way we divided the back end up didnt quite work, we were working separately on tasks that were really interlinked and testing them as we coded was challenging as each thing relied upon what someone else was doing. We adapted well though and kept committing often and jumping on zoom. 
 
-I did most of the seed data, the blog and recipe models, getRecipeByType and GetRecipeByCuisine functions. 
+I did most of the seed data, the blog and recipe models, getRecipeByType and GetRecipeByCuisine functions. I wanted to make the back end do the filtering to reduce the amount of data being pulled through to the client side.
 
 ![code example](client/src/images/p3-code1.png)
 
-I also did the blogs controller and some of the routes.
+I also did the blogs controller and some of the routes. 
 
-Once we moved onto the front end I did the authorisation functionality:
+Once we moved onto the front end I did the authorisation functionality. I wanted to make sure all the authorisation was done and could be used in any component:
 
 ![code example](client/src/images/p3-code2.png)
 
