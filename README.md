@@ -25,7 +25,7 @@ I used the following technologies:
 
 We were given the following brief:
 
-![tech requirements](../flavour-finder/client/src/images/p3-req.pmg.png)
+![tech requirements](/client/src/images/p3-req.pmg.png)
 
 ## The Idea
 
@@ -35,9 +35,9 @@ We decided to create a recipe sharing website where users could add their own re
 
 We started by meeting to plan the project. We had a shared trello board and we planned what features were needed, what our stretch goals were and what we wanted the user experience to be. We researched and shared colour schemes and planned our wireframes.
 
-![trello](../flavour-finder/client/src/images/p3-trello.png)
+![trello](client/src/images/p3-trello.png)
 
-![wireframe](../flavour-finder/client/src/images/p3-wireframe.png)
+![wireframe](/client/src/images/p3-wireframe.png)
 
 
 ## Build/Code Process
@@ -50,17 +50,17 @@ Early on we realised that the way we divided the back end up didnt quite work, w
 
 I did most of the seed data, the blog and recipe models, getRecipeByType and GetRecipeByCuisine functions. 
 
-![code example](../flavour-finder/client/src/images/p3-code1.png)
+![code example](client/src/images/p3-code1.png)
 
 I also did the blogs controller and some of the routes.
 
 Once we moved onto the front end I did the authorisation functionality:
 
-![code example](../flavour-finder/client/src/images/p3-code2.png)
+![code example](client/src/images/p3-code2.png)
 
 I did the following components: all blogs, single blog, home page featured (and starter filter), get all recipes (phase 1), the delete recipes function, the profile page and then went over the pages and added a loading spinner. 
 
-![code example](../flavour-finder/client/src/images/p3-code3.png)
+![code example](client/src/images/p3-code3.png)
 
 We all worked on styling jointly. I did everything to do with the blogs.
 
